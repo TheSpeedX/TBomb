@@ -34,7 +34,7 @@ def banner():
 
 #Counts Number Of SMS in Infinite Mode
 count_inf=0
-def infinite(pn,dl,ch):
+def infinite(pn,dl,ch,max):
 	global count_inf
 	while True:
 		while os.path.exists('proc.xxx'):
@@ -50,6 +50,8 @@ def infinite(pn,dl,ch):
 		count_inf+=1
 		#os.system('echo SpeedX >> count.xxx')
 		time.sleep(float(dl))
+		if (count_inf>maxlim):
+			exit()
 def checkinternet():
 	res=False
 	try:
@@ -356,7 +358,7 @@ if nm==0 :
 	os.system('rm *.xxx* > /dev/null 2>&1')
 	print("\n\nStarting Bomb....")
 	for i in range(nt):
-		t[i] = threading.Thread(target=infinite, args=(pn,dl,ch,))
+		t[i] = threading.Thread(target=infinite, args=(pn,dl,ch,maxlim,))
 		t[i].daemon=True
 		t[i].start()
 	time.sleep(2)
