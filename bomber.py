@@ -317,7 +317,6 @@ if not cc.strip()=="91":
 		banner()
 		exit()
 	ch=[0,14,15,16]
-	logit(cc+pn,type)
 	start(pn,nm,dl,ch,str(cc))
 	exit()
 ch=[ i for i in range(17)]
