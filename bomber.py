@@ -334,7 +334,6 @@ if type==1:
 	cbomb=True
 if cbomb:
 	chl=[100,101,102,103,104,105,106]
-	logit(cc+pn,type)
 	start(pn,nm,dl,chl,str(cc))
 	exit()
 if nm==0 :
