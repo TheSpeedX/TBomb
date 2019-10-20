@@ -211,7 +211,7 @@ def start(target, counter, delay,ch, cc):
 				ch.remove(api)
 		time.sleep(float(delay))
 		if requested%3==0:
-			checkintercept()
+			checkinternet()
 	print('\n\nBombing Completed..')
 	os.system('rm *.xxx* > /dev/null 2>&1')
 	banner()
