@@ -1,4 +1,4 @@
-# TBomb
+# TBomb v1.5b
 This is a SMS Bomber for Debian Based Linux And Termux..
 
 This Script is Only For Educational Purposes or To Prank.
@@ -78,9 +78,7 @@ Watch International Bombing Method <a href="https://youtu.be/JqsHkyIcnPM">here</
 [@] SC AMAN
 <br><br>
 # CONTACT
-For Any Queries Join Us On WhatsApp!!!
-          Group Link: http://bit.do/speedxgit
-  <a href="http://bit.do/speedxgit">Join My Group</a>
+Feel Free To Open An Issue...
 
            Mail: ggspeedx29@gmail.com
 
