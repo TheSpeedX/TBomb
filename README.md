@@ -1,4 +1,4 @@
-# TBomb v1.5b
+# TBomb v1.6b
 This is a Open-Sourced SMS And Call Bomber for Debian Based Linux And Termux..
 
 This Script is Only For Educational Purposes or To Prank.
