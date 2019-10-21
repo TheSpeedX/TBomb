@@ -383,6 +383,5 @@ if nm==0 :
 		if ci%3==0:
 			checkinternet()
 else:
-	logit('91'+pn,type)
 	start(pn,nm,dl,ch,'91')
 	exit()
