@@ -12,11 +12,8 @@ echo 'Installing Requirements....'
 echo .
 echo .
 apt install figlet toilet python curl -y
-apt install python-lzma
-apt install python3-lzma
 apt install python3-pip
-pip3 install urllib3
-pip3 install requests
+pip install -r requirements.txt
 echo This Script Was Made By SpeedX >update.speedx
 echo Requirements Installed....
 echo Press Enter To Continue...
