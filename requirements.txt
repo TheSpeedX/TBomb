@@ -1,0 +1,2 @@
+requests >=2, <3
+urllib3 >=1, <2
