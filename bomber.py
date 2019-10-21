@@ -150,7 +150,7 @@ def getapi(pn,lim,cc):
 		rd=os.popen('curl -s -X GET -H "Host:api.magicbricks.com" -H "Connection:keep-alive" -H "User-Agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.89 Safari/537.36" -H "Save-Data:on" -H "Accept:image/webp,image/apng,image/*,*/*;q=0.8" -H "Accept-Encoding:gzip, deflate, br" -H "Accept-Language:en-IN,en;q=0.9,en-GB;q=0.8,en-US;q=0.7,hi;q=0.6" "https://api.magicbricks.com/bricks/verifyOnCall.html?mobile='+pn+'"').read()
 		return rd.lower().strip().find('callmade')!=-1
 	elif lim==106:
-		rd=os.popen('curl -s "https://www.myupchar.com/user_profile/resend_otp_via_voice?id='+pn+'"').read().decode('utf-8')
+		rd=os.popen('curl -s "https://www.myupchar.com/user_profile/resend_otp_via_voice?id='+pn+'"').read()
 		return rd.find("1")!=-1
 	return False
 def remsp(num):
@@ -283,10 +283,10 @@ try:
 except:
 		type=0
 if type==1:
-	nm=int(input("Enter Number of Calls To Send(Maximum 30): "))
-	if nm>30:
-		print("\t\tYou Have Entered "+str(nm)+".\n\tNormalizing Value To 30")
-		nm=30
+	nm=int(input("Enter Number of Calls To Send(Maximum 15): "))
+	if nm>15:
+		print("\t\tYou Have Entered "+str(nm)+".\n\tNormalizing Value To 15")
+		nm=15
 	dl=float(input("Enter Delay time (in seconds) [Recommended 10 sec ] : "))
 elif type==0:
 	if cc=="91":
