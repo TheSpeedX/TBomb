@@ -14,8 +14,8 @@ import urllib.parse
 try:
     import requests
 except ImportError:
-    print('[!] Error: requests package is not installed')
-    print('Type \'pip3 install requests --user\' to install requests package')
+    print('[!] Error: some dependencies are not installed')
+    print('Type \'pip install -r requirements.txt\' to install all required packages')
     exit()
 
 # If You Wanna Take Credits For This Code, Please Look Yourrself Again
