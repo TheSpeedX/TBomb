@@ -62,13 +62,15 @@ Watch International Bombing Method <a href="https://youtu.be/JqsHkyIcnPM">here</
 
 # CONTRIBUTORS
 <br><br>
-[*]  SpeedX<br>
+=>  SpeedX<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-] Mail At: ggspeedx29@gmail.com  <br>
-[*]  The Black Hacker Roxstar<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-] Ping At: http://wa.me/917600140353 <br>
-[*]  Rieltar<br>
+=>  DarkestEntropy
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-] Check At: https://github.com/darkestentropy  <br>
+=>  The Black Hacker Roxstar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-] Ping At: NULL <br>
+=>  Rieltar<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-] Ping At: https://t.me/Rieltar  <br>
-[*]  0n1cOn3 (Stefan)<br>
+=>  0n1cOn3 (Stefan)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-] Mail At: 0n1cOn3@gmx.ch <br>
 
 ## Donators
