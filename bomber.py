@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from datetime import datetime
+from termcolor import cprint
 import os
 import hashlib
 import sys
@@ -229,7 +230,7 @@ country_codes = {
 
 
 def banner():
-    print("""                                                  
+    cprint("""                                                  
    ████████ ██████                 ██             
    ▒▒▒██▒▒▒ ██▒▒▒██                ██             
       ██    ██   ██  ████  ██   ██ ██             
@@ -238,7 +239,7 @@ def banner():
       ██    ██   ██ ██  ██ ██ ▒ ██ ██  ██         
       ██    ██████▒ ▒████▒ ██   ██ █████▒         
       ▒▒    ▒▒▒▒▒▒   ▒▒▒▒  ▒▒   ▒▒ ▒▒▒▒▒          
-                                         """)
+                                         """, 'green')
     print()
 
 
