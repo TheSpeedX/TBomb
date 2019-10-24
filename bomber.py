@@ -1,5 +1,6 @@
-
+#!/usr/bin/env python
 from datetime import datetime
+from termcolor import cprint
 import os
 import hashlib
 import sys
@@ -14,8 +15,8 @@ import urllib.parse
 try:
     import requests
 except ImportError:
-    print('[!] Error: requests package is not installed')
-    print('Type \'pip3 install requests --user\' to install requests package')
+    print('[!] Error: some dependencies are not installed')
+    print('Type \'pip install -r requirements.txt\' to install all required packages')
     exit()
 
 # If You Wanna Take Credits For This Code, Please Look Yourrself Again
@@ -229,12 +230,16 @@ country_codes = {
 
 
 def banner():
-    print(r" _____ ____                  _	    ")
-    print(r"|_   _| __ )  ___  _ __ ___ | |__   ")
-    print(r"  | | |  _ \ / _ \| '_ ` _ \| '_ \  ")
-    print(r"  | | | |_) | (_) | | | | | | |_) | ")
-    print(r"  |_| |____/ \___/|_| |_| |_|_.__/  ")
-    print()
+    cprint("""                                                  
+   ████████ ██████                 ██             
+   ▒▒▒██▒▒▒ ██▒▒▒██                ██             
+      ██    ██   ██  ████  ██   ██ ██             
+      ██    ██████▒ ██▒▒██ ███ ███ █████          
+      ██    ██▒▒▒██ ██  ██ ██▒█▒██ ██▒▒██         
+      ██    ██   ██ ██  ██ ██ ▒ ██ ██  ██         
+      ██    ██████▒ ▒████▒ ██   ██ █████▒         
+      ▒▒    ▒▒▒▒▒▒   ▒▒▒▒  ▒▒   ▒▒ ▒▒▒▒▒          
+                                         """, 'green')
     print()
 
 
