@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 from datetime import datetime
-from termcolor import cprint
 import os
 import hashlib
 import sys
@@ -19,7 +18,10 @@ except ImportError:
     print('Type \'pip install -r requirements.txt\' to install all required packages')
     exit()
 
-# If You Wanna Take Credits For This Code, Please Look Yourrself Again
+colors=['\033[1;31m','\033[1;32m','\033[1;33m','\033[1;34m','\033[1;35m','\033[1;36m']
+W='\033[0m'
+# The Credit For This Code Goes To SpeedX And All Other Contributors Listed At https://github.com/TheSpeedX/TBomb
+# If You Wanna Take Credits For This Code, Please Look Yourself Again
 
 country_codes = {
     '93': 'AF',
@@ -229,8 +231,15 @@ country_codes = {
 }
 
 
+def clr():
+    if os.name is 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
 def banner():
-    cprint("""                                                  
+    
+    clr()
+    logo="""                                                  
    ████████ ██████                 ██             
    ▒▒▒██▒▒▒ ██▒▒▒██                ██             
       ██    ██   ██  ████  ██   ██ ██             
@@ -239,11 +248,12 @@ def banner():
       ██    ██   ██ ██  ██ ██ ▒ ██ ██  ██         
       ██    ██████▒ ▒████▒ ██   ██ █████▒         
       ▒▒    ▒▒▒▒▒▒   ▒▒▒▒  ▒▒   ▒▒ ▒▒▒▒▒          
-                                         """, 'green')
-    print()
+                                         """
+    print(random.choice(colors)+logo+W)
+    print("\n")
 
 
-# Counts Number Of SMS in Infinite Mode
+
 count_inf = 0
 
 
@@ -395,7 +405,7 @@ def remsp(num):
 
 
 def start(target, counter, delay, ch, cc):
-    os.system("clear")
+    clr()
     banner()
     failed = 0
     requested = 0
@@ -429,6 +439,7 @@ def start(target, counter, delay, ch, cc):
                         '\t\tPlease Send A Mail To ggspeedx29@gmail.com To Let Us Know...')
                     input('Press Enter To Exit...')
                     exit()
+		print(random.choice(colors))
         print("==================================================================")
         print("                BOMBING in progress, please wait !!               ")
         print("     Please keep your data connection active during bombing !!    ")
@@ -441,7 +452,6 @@ def start(target, counter, delay, ch, cc):
         print("              Use this for fun, not for revenge !!                ")
         print("              This Bomber Was Created By SpeedX !!                ")
         print("==================================================================")
-
         try:
             result = getapi(target, api, cc)
         except Exception:
@@ -456,6 +466,7 @@ def start(target, counter, delay, ch, cc):
         time.sleep(float(delay))
         if requested % 3 == 0:
             checkinternet()
+	print(W)
     print('\n\nBombing Completed..')
     os.system('rm *.xxx* > /dev/null 2>&1')
     banner()
@@ -475,7 +486,7 @@ def update():
     exit()
 
 
-os.system("clear")
+clr()
 banner()
 try:
     urllib.request.urlopen('https://www.google.com')
@@ -598,6 +609,7 @@ if nm == 0:
         print('\tTBomb Shows Better Result in 10 to 25 Threads\n\t\tStill Continuing....')
     print("\n\nPlease Remember That This Is in Experimental Stage And Is Incredibly Fast...")
     t = [None] * nt
+	print(random.choice(colors))
     print("\n\n==================================================================")
     print("                Gearing Up Bomber, please wait !!               ")
     print("     Please keep your data connection active during bombing !!    ")
@@ -609,6 +621,7 @@ if nm == 0:
     print("              Use this for fun, not for revenge !!                ")
     print("              This Bomber Was Created By SpeedX !!                ")
     print("==================================================================")
+	print(W)
     input('\n\nPress CTRL+Z To STOP Bomber... \nPress Enter To Start Bomber...\n')
     os.system('rm *.xxx* > /dev/null 2>&1')
     print("\n\nStarting Bomb....")
@@ -621,7 +634,7 @@ if nm == 0:
     while True:
         ci += 1
         l = count_inf
-        print("	   Total Number of Requests Sent : ", l)
+        print("    Total Number of Requests Sent : ", l)
         if int(l) > maxlim:
             print('\n\n\tSorry Due To Misuse Of This Script We Only Provide ' +
                   str(maxlim) + ' SMS At Once...\n\n')
