@@ -21,7 +21,7 @@ That's All !!!
 
 Make sure you are using Python v3. How to check:
 ```sh
-$ env python -V
+$ python -V
 ```
 If output looks like `Python 3` - congrats, Python 3 is installed properly.
 
@@ -77,12 +77,12 @@ Watch International Bombing Method <a href="https://youtu.be/JqsHkyIcnPM">here</
 <br><br>
 =>  SpeedX<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-] Mail At: ggspeedx29@gmail.com  <br>
-=>  DarkestEntropy
+=>  DarkestEntropy<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-] Check At: https://github.com/darkestentropy  <br>
 =>  The Black Hacker Roxstar<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-] Ping At: NULL <br>
 =>  Rieltar<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-] Ping At: https://t.me/Rieltar  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-] Ping At: https://t.me/RieltarReborn  <br>
 =>  0n1cOn3 (Stefan)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-] Mail At: 0n1cOn3@gmx.ch <br>
 
