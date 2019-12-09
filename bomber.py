@@ -232,7 +232,7 @@ country_codes = {
 
 
 def clr():
-    if os.name is 'nt':
+    if os.name == 'nt':
         os.system('cls')
     else:
         os.system('clear')
