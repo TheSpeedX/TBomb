@@ -24,7 +24,7 @@ If output looks like `Python 3` - Congrats, Python 3 is installed properly.
 ## Features:
 
 - Lots of integrated SMS/call APIs
-- Unlimited and super-fast bombing
+- Unlimited (Limited against abusing) and super-fast bombing
 - International bombing available
 - Call bombing
 - Frequent updates
@@ -89,6 +89,10 @@ sudo pip install --upgrade pip
 git clone https://github.com/TheSpeedX/TBomb.git
 cd TBomb
 chmod +x TBomb.sh
+
+# Missing Tools
+
+Toilet cannot be installed yet. But TBomb does still work.
 
 # Run TBomb:
 
