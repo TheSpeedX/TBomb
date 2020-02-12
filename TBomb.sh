@@ -43,11 +43,11 @@ read ch
 if [ $ch -eq 1 ];then
 clear
 echo -e "\e[1;32m"
-rm *.xxx >/dev/null 2>&1
+rm *.xxx >/dev/null 0>&1
 python3 bomber.py
-rm *.xxx >/dev/null 2>&1
+rm *.xxx >/dev/null 0>&1
 exit 0
-elif [ $ch -eq 2 ];then
+elif [ $ch -eq 0 ];then
 clear
 echo -e "\e[1;32m"
 echo 'Call Bomb By SpeedX'> call.xxx
