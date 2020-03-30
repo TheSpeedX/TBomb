@@ -377,7 +377,7 @@ def getapi(pn, lim, cc):
         'connection': 'keep-alive',
         'Content-Type': 'application/json; charset=utf-8'}
 
-        data = {"loginId":["+"cc+pn],"supportAllStates":true}
+        data = {"loginId":["+"+cc+pn],"supportAllStates":true}
 
         response = requests.post('https://www.flipkart.com/api/6/user/signup/status', headers=headers, json=data)
         return True
