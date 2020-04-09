@@ -240,7 +240,7 @@ def banner():
     
     clr()
     logo="""                                                  
-   ████████ ██████                 ██             
+   ████████ ██████   SNIPER LB     ██             
    ▒▒▒██▒▒▒ ██▒▒▒██                ██             
       ██    ██   ██  ████  ██   ██ ██             
       ██    ██████▒ ██▒▒██ ███ ███ █████          
@@ -696,7 +696,7 @@ def start(target, counter, delay, ch, cc):
         print(random.choice(colors))
         print("==================================================================")
         print("                BOMBING in progress, please wait !!               ")
-        print("     Please keep your data connection active during bombing !!    ")
+        print("     Please keep your data connection active during Sniper  bombing !!    ")
         print("==================================================================")
         print("             Target Number           : +" + str(cc) + " ", target)
         print("             Number of Requests Sent : ", requested)
@@ -704,7 +704,7 @@ def start(target, counter, delay, ch, cc):
         print("             Failed Requests         : ", failed)
         print("==================================================================")
         print("              Use this for fun, not for revenge !!                ")
-        print("              This Bomber Was Created By SpeedX !!                ")
+        print("              This Bomber Was Created By SNIPER !!                ")
         print("==================================================================")
         try:
             result = getapi(target, api, cc)
