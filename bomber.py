@@ -799,12 +799,12 @@ try:
 except Exception:
     type = 0
 if type == 1:
-    nm = int(input("Enter Number of Calls To Send(Maximum 15): "))
+    nm = int(input("Enter Number of Calls To Send(Maximum 1000): "))
     if nm > 15:
         print("\t\tYou Have Entered " + str(nm) +
-              ".\n\tNormalizing Value To 15")
-        nm = 15
-    dl = float(input("Enter Delay time (in seconds) [Recommended 10 sec ] : "))
+              ".\n\tNormalizing Value To 1000")
+        nm = 1000
+    dl = float(input("Enter Delay time (in seconds) [Recommended 5 sec ] : "))
 elif type == 0:
     if cc == "91":
         nm = int(input("Enter Number of Messages To Send(0 For Unlimited): "))
@@ -813,12 +813,12 @@ elif type == 0:
     else:
         nm = int(input("Enter Number of Messages To Send: "))
         dl = float(
-            input("Enter Delay time (in seconds) [Recommended 10 sec ] : "))
+            input("Enter Delay time (in seconds) [Recommended 5 sec ] : "))
 maxlim = 0
 if cc == "91":
-    maxlim = 500
+    maxlim = 50000
 else:
-    maxlim = 100
+    maxlim = 10000
 if nm > maxlim:
     print('\n\n\tSorry Due To Misuse Of This Script We Only Provide ' +
           str(maxlim) + ' SMS At Once...\n\n')
