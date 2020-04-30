@@ -283,7 +283,8 @@ def infinite(pn, dl, ch, max):
 def checkinternet():
     res = False
     try:
-        requests.get('https://www.google.com', verify=True)
+        # requests.get('https://www.google.com', verify=True)
+        requests.get('https://www.google.com')
         res = False
     except Exception:
         res = True
