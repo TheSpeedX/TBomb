@@ -3,12 +3,15 @@
 
 ## Note:
 
+Due misusing of TBomb, several API's died. 
+Don't be afraid if you don't see all send messages.
+
 - The script requires working network connection to work.
 - No balance will be deducted for using this script to send SMS/calls.
 - While doing infinite bombing use 2-3 seconds delay and 10 to 20 threads for maximum performance.
 - Don't put spaces in between phone number (Ex- 99999 99999)
 - Make sure you are using the latest version of TBomb
-- Make sure you are using Python v3.
+- Make sure you are using Python3.
 
 Here's how you can check it. Type this command in your terminal.
 ```
@@ -25,7 +28,7 @@ If output looks like `Python 3` - Congrats, Python 3 is installed properly.
 
 - Lots of integrated SMS/call APIs
 - Unlimited (Limited against abusing) and super-fast bombing
-- International bombing available
+- International bombing available (not implemented yet!) 
 - Call bombing
 - Frequent updates
 - Automatic updating mechanism
@@ -90,7 +93,7 @@ git clone https://github.com/TheSpeedX/TBomb.git
 cd TBomb
 chmod +x TBomb.sh
 
-# Missing Tools
+# Missing Tools on MacOS
 
 Toilet cannot be installed yet. But TBomb does still work.
 
