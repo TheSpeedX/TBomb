@@ -28,7 +28,7 @@ If output looks like `Python 3` - Congrats, Python 3 is installed properly.
 
 - Lots of integrated SMS/call APIs
 - Unlimited (Limited against abusing) and super-fast bombing
-- International bombing available (not implemented yet!) 
+- International bombing available (APIS Dead. Try Your Luck.) 
 - Call bombing
 - Frequent updates
 - Automatic updating mechanism
