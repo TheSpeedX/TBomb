@@ -12,6 +12,9 @@
                 "Content-Type": "application/json",
                 "Content-Length": "30",
                 "Connection": "keep-alive"
+            },
+            "data": {
+                "contactNumber": "#PHONENO"
             }
         },
         "heromotorcorp": {
@@ -38,6 +41,7 @@
                 "Accept-Language": "en-IN,en;q=0.9,en-GB;q=0.8,en-US;q=0.7,hi;q=0.6"
             },
             "data": {
+                "mobile_no": "#PHONENO",
                 "randome": "ZZUC9WCCP3ltsd/JoqFe5HHe6WfNZfdQxqi9OZWvKis=",
                 "mobile_no_otp": "",
                 "csrf": "523bc3fa1857c4df95e4d24bbd36c61b"
@@ -80,6 +84,8 @@
             },
             "data": {
                 "aeyder03teaeare": "1",
+                "ertysvfj74sje": "#ISDCODE",
+                "jfsdfu14hkgertd": "#PHONENO",
                 "lj80gertdfg": "0"
             }
         },
@@ -96,6 +102,10 @@
                 "origin": "https://www.flipkart.com",
                 "connection": "keep-alive",
                 "Content-Type": "application/json; charset=utf-8"
+            },
+            "data": {
+                "loginId": "+#ISDCODE#PHONENO",
+                "supportAllStates": "true"
             }
         },
         "flipkart5": {
@@ -128,6 +138,7 @@
                 "Accept-Language": "en-IN,en;q=0.9,en-GB;q=0.8,en-US;q=0.7,hi;q=0.6"
             },
             "data": {
+                "loginId": "+#ISDCODE#PHONENO",
                 "state": "VERIFIED",
                 "churnEmailRequest": "false"
             }
@@ -147,6 +158,7 @@
                 "Connection": "keep-alive"
             },
             "data": {
+                "mobile": "#PHONENO",
                 "submit": "1",
                 "undefined": ""
             }
@@ -168,6 +180,7 @@
             },
             "data": {
                 "client_name": "Practo Android App",
+                "mobile": "+#ISDCODE#PHONENO",
                 "fingerprint": "",
                 "device_name": "samsung+SM-G9350"
             }
@@ -192,6 +205,8 @@
             },
             "data": {
                 "customer": {
+                    "MobileNo": "#PHONENO",
+                    "UserName": "#PHONENO",
                     "merchantId": "98d18d82-ba59-4957-9c92-3f89207a34f6"
                 }
             }
@@ -209,6 +224,9 @@
                 "content-length": "14",
                 "connection": "keep-alive",
                 "upgrade-insecure-requests": "1"
+            },
+            "data": {
+                "mbl": "#PHONENO"
             }
         },
         "apollopharmacy": {
@@ -226,6 +244,9 @@
                 "accept-encoding": "gzip, deflate, br",
                 "accept-language": "en-IN,en;q=0.9,en-GB;q=0.8,en-US;q=0.7,hi;q=0.6",
                 "cookie": "section_data_ids=%7B%22cart%22%3A1560239751%7D"
+            },
+            "data": {
+                "mobile": "#PHONENO"
             }
         },
         "ajio": {
@@ -267,7 +288,7 @@
                 "login": "johnyaho@gmail.com",
                 "password": "Rock@5star",
                 "genderType": "Male",
-                "mobileNumber": "0000",
+                "mobileNumber": "#PHONENO",
                 "requestType": "SENDOTP"
             }
         },
@@ -284,6 +305,10 @@
                 "Referer": "https://lite.altbalaji.com/subscribe?progress=input",
                 "Accept-Encoding": "gzip, deflate, br",
                 "Accept-Language": "en-IN,en;q=0.9,en-GB;q=0.8,en-US;q=0.7,hi;q=0.6"
+            },
+            "data": {
+                "country_code": "#ISDCODE",
+                "phone_number": "#PHONENO"
             }
         },
         "aala": {
@@ -308,6 +333,7 @@
                 "Accept-Language": "en-IN,en;q=0.9,en-GB;q=0.8,en-US;q=0.7,hi;q=0.6,ar;q=0.5"
             },
             "data": {
+                "email": "+#ISDCODE#PHONENO",
                 "firstname": "SpeedX",
                 "lastname": "SpeedX"
             }
@@ -317,6 +343,7 @@
             "data": {
                 "method": "SMS",
                 "countryCode": "id",
+                "phoneNumber": "#ISDCODE#PHONENO",
                 "templateID": "pax_android_production"
             }
         }
