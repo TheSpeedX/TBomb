@@ -1,5 +1,14 @@
 {
     "sitedata": {
+        "oyorooms": {
+            "hyperurl": "https://www.oyorooms.com/api/pwa/generateotp?country_code=%2B#ISDCODE&nod=4&phone=#PHONENO"
+        },
+        "delhivery": {
+            "hyperurl": "https://direct.delhivery.com/delhiverydirect/order/generate-otp?phoneNo=#PHONENO"
+        },
+        "confirmtkt": {
+            "hyperurl": "https://securedapi.confirmtkt.com/api/platform/register?mobileNumber=#PHONENO"
+        },
         "pharmeasy": {
             "hyperurl": "https://pharmeasy.in/api/auth/requestOTP",
             "headers": {
