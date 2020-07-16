@@ -24,15 +24,29 @@ If output looks like `Python 3` - Congrats, Python 3 is installed properly.
 - **None of the developers/contributors are responsible for the misuse of TBomb.**
 <br>
 
+## OS Support
+Supported OS:
+
+Termux App for Android
+Linux (Alpine Linux x64)
+macOS
+Windows WSL
+
+Not supported:
+
+iOS (Pythonista) or Jailbroken
+Windows
+special devariants like Alpine Linux (x86) etc.
+
 ## Features:
 
 - Lots of integrated SMS/call APIs
 - Unlimited (Limited against abusing) and super-fast bombing
 - International bombing available (APIS Dead. Try Your Luck.) 
-- Call bombing
+- Call bombing (India Only)
 - Frequent updates
 - Automatic updating mechanism
-- Easy to use and embed in code
+- Easy to use and embedded code
 
 ## Usage:
 
@@ -131,7 +145,7 @@ sudo bash TBomb.sh
 
 # CONTACT ME:
 
-Feel Free To Open An Issue...
+Feel free to open a issue if you have seen any.
 
 ```
                  Mail: ggspeedx29@gmail.com<br>
