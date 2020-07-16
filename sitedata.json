@@ -342,7 +342,7 @@
                 "Accept-Language": "en-IN,en;q=0.9,en-GB;q=0.8,en-US;q=0.7,hi;q=0.6,ar;q=0.5"
             },
             "data": {
-                "email": "+#ISDCODE#PHONENO",
+                "email": "#ISDCODE#PHONENO",
                 "firstname": "SpeedX",
                 "lastname": "SpeedX"
             }
