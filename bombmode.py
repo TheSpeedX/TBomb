@@ -28,6 +28,7 @@ def banntext():
     print("TBomb")
 
 countinf = 0
+maxlim = 0
 
 def infinite(pn, dl, ch, max):
     global countinf
@@ -248,13 +249,13 @@ def start(target, counter, delay, ch, cc):
                           "You can request the support for your country code by mailing at 'ggspeedx29@gmail.com' about it")
                     input("Press [ENTER] to exit")
                     sys.exit()
-        print("Bombing is in progress - Please be patient" + \
-             "Please stay connected to the internet during bombing" + \
-             "Target number       : " + str(cc) + str(target) + \
-             "Sent requests       : " + str(requested) + \
-             "Successful requests : " + str(success) + \
-             "Failed requests     : " + str(failed) + \
-             "This tool was made for fun and research purposes only" + \
+        print("Bombing is in progress - Please be patient" + "\n" + \
+             "Please stay connected to the internet during bombing" + "\n" + \
+             "Target number       : " + str(cc) + str(target) + "\n" + \
+             "Sent requests       : " + str(requested) + "\n" + \
+             "Successful requests : " + str(success) + "\n" + \
+             "Failed requests     : " + str(failed) + "\n" + \
+             "This tool was made for fun and research purposes only" + "\n" + \
              "TBomb was created by SpeedX")
         try:
             result = getapi(target, api, cc)
@@ -277,13 +278,141 @@ def start(target, counter, delay, ch, cc):
     sys.exit()
 
 def update():
-    stuff_to_update = ["bomber.py", ".version", "bombmode.py"]
-    for fl in stuff_to_update:
-        dat = urllib.request.urlopen("https://raw.githubusercontent.com/TheSpeedX/TBomb/master/" + fl).read()
-        file = open(fl, "wb")
-        file.write(dat)
-        file.close()
-    print("TBomb was updated to the latest version" + "\n" + 
-          "Please run the script again to load the latest version")
-    sys.exit()
+    print("Checking for updates")
+    ver = urllib.request.urlopen("https://raw.githubusercontent.com/TheSpeedX/TBomb/master/.version").read().decode('utf-8')
+    ver1 = ""
+    try:
+        ver1 = open(".version","r").read()
+    except Exception:
+        pass
+    if ver != ver1:
+        print("An update is available" + "\n" + \
+              "Starting update...")
+        stuff_to_update = ["bomber.py", ".version", "bombmode.py"]
+        for fl in stuff_to_update:
+            dat = urllib.request.urlopen("https://raw.githubusercontent.com/TheSpeedX/TBomb/master/" + fl).read()
+            file = open(fl, "wb")
+            file.write(dat)
+            file.close()
+        print("TBomb was updated to the latest version" + "\n" + 
+            "Please run the script again to load the latest version")
+        sys.exit()
+    else:
+        print("TBomb is up-to-date" + "\n" +
+              "Starting TBomb")
 
+def notifyen():
+    try:
+        noti = urllib.request.urlopen("https://raw.githubusercontent.com/TheSpeedX/TBomb/master/.notify").read().decode('utf-8')
+        noti = noti.upper().strip()
+        if len(noti) > 10:
+            print('\n\n\tNOTIFICATION: ' + noti + '\n\n')
+    except Exception:
+        pass
+
+def callbomb():
+    try:
+        if sys.argv[1] == "call":
+            type = 1
+    except Exception:
+        type = 0
+    if type == 1:
+        nm = int(input("Enter number of calls to send (Max 15) "))
+        if nm > 15:
+            print("You have requsted " + str(nm) + " calls" + "\n" + "Automatically capping the value to 15")
+            nm = 15
+        dl = float(input("Enter delay time (in seconds) [Recommended 10] "))
+    elif type == 0:
+        if cc == "91":
+            nm = int(input("Enter number of messages to send (0 for unlimited) "))
+            dl = float(input("Enter delay time (in seconds) [Recommended 2] "))
+        else:
+            nm = int(input("Enter number of messages to send "))
+            dl = float(input("Enter delay time (in seconds) [Recommended 10] "))
+    maxlim = 0
+    if cc == "91":
+        maxlim = 500
+    else:
+        maxlim = 100
+    if nm > maxlim:
+        print("Due to the script abuse, we can provide only " + str(maxlim) + " messages at once")
+        print("Automatically capping the value to " + str(maxlim) + " messages")
+        nm = maxlim
+    if not cc.strip() == "91":
+        if type == 1:
+            print("Call bombing is currently supported only for Indian numbers")
+            input("Press [ENTER] to exit")
+            banntext()
+            sys.exit()
+        cnt = 0
+        if pn.strip() == '' or dl <= 0 or nm <= 0 or cc.strip() == '' or cc.find('+') != -1:
+            print("The inputs provided are invalid")
+            input("Press [ENTER] to exit")
+            banntext()
+            sys.exit()
+        ch = [0, 14, 15, 16]
+        start(pn, nm, dl, ch, str(cc))
+        exit()
+    ch = [i for i in range(17)]
+    cbomb = False
+    if pn.strip() == '' or dl <= 0 or nm < 0:
+        print("The inputs provided are invalid")
+        input("Press [ENTER] to exit")
+        banntext()
+        sys.exit()
+    if type == 1:
+        print("Call bomb might not work on DND activated numbers")
+        print("Overloading the call bomber might reduce the working period")
+        cbomb = True
+    if cbomb:
+        chl = [100, 101, 102, 103, 104, 105, 106]
+        start(pn, nm, dl, chl, str(cc))
+        exit()
+    if nm == 0:
+        nt = int(input("Number of threads [10-20] "))
+        if nt <= 0 or nt >= 30:
+            print("The range of 20-25 is highly recommended" + "\n" + "Resuming operation...")
+        print("This script is experimental and can be incredibly fast")
+        t = [None] * nt
+        print(random.choice(colors))
+        print("Gearing up the call bomber - Please be patient" + "\n" + \
+              "Please stay connected to the internet during bombing" + "\n" + \
+              "Target number     : +91 " + pn + "\n" + \
+              "Number of threads : " + nt + " threads" + "\n" + \
+              "Delay per call    : " + dl + " seconds" + "\n" + \
+              "This tool was made for fun and research purposes only" + "\n" + \
+              "TBomb was created by SpeedX")
+        print(W)
+        input("Press [CTRL+Z] to suspend the bomber" + "\n" + "Press [ENTER] to start it")
+        os.system('rm *.xxx* > /dev/null 2>&1')
+        print("Starting bomber....")
+        for i in range(nt):
+            t[i] = threading.Thread(target=infinite, args=(pn, dl, ch, maxlim,))
+            t[i].daemon = True
+            t[i].start()
+        time.sleep(2)
+        ci = 0
+        while True:
+            ci += 1
+            l = count_inf
+            print("Total Number of Requests Sent : ", l)
+            if int(l) > maxlim:
+                print("Due to the script abuse, we can provide only " + str(maxlim) + " messages at once")
+                input("Press [ENTER] to exit")
+                os.system('rm *xxx* > /dev/null 2>&1')
+                banntext()
+                sys.exit()
+            time.sleep(1)
+            if ci % 3 == 0:
+                chekintr()
+    else:
+        start(pn, nm, dl, ch, '91')
+        exit()
+
+if __name__ == "__main__":
+    clerscrn()
+    banntext()
+    chekintr()
+    update()
+    notifyen()
+    callbomb()
