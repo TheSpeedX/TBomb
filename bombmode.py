@@ -1,13 +1,71 @@
 from datetime import datetime
 import os, hashlib, sys, time, threading, string, random, base64
 import urllib.request, urllib.parse, json, requests
+from colorama import Fore, Style
+
+class IconicDecorator(object):
+    def __init__(self):
+        self.PASS = Style.BRIGHT + Fore.GREEN + "[ ✔ ]" + Style.RESET_ALL
+        self.FAIL = Style.BRIGHT + Fore.RED + "[ ✘ ]" + Style.RESET_ALL
+        self.WARN = Style.BRIGHT + Fore.YELLOW + "[ ! ]" + Style.RESET_ALL
+        self.HEAD = Style.BRIGHT + Fore.CYAN + "[ # ]" + Style.RESET_ALL
+        self.CMDL = Style.BRIGHT + Fore.BLUE + "[ → ]" + Style.RESET_ALL
+        self.STDS = "     "
+
+class StatusDecorator(object):
+    def __init__(self):
+        self.PASS = Style.BRIGHT + Fore.GREEN + "[ SUCCESS ]" + Style.RESET_ALL
+        self.FAIL = Style.BRIGHT + Fore.RED + "[ FAILURE ]" + Style.RESET_ALL
+        self.WARN = Style.BRIGHT + Fore.YELLOW + "[ WARNING ]" + Style.RESET_ALL
+        self.HEAD = Style.BRIGHT + Fore.CYAN + "[ SECTION ]" + Style.RESET_ALL
+        self.CMDL = Style.BRIGHT + Fore.BLUE + "[ COMMAND ]" + Style.RESET_ALL
+        self.STDS = "           "
+
+class MessageDecorator(object):
+    def __init__(self, attr):
+        ICON = IconicDecorator()
+        STAT = StatusDecorator()
+        if attr == "icon":
+            self.PASS = ICON.PASS
+            self.FAIL = ICON.FAIL
+            self.WARN = ICON.WARN
+            self.HEAD = ICON.HEAD
+            self.CMDL = ICON.CMDL
+            self.STDS = ICON.STDS
+        elif attr == "stat":
+            self.PASS = STAT.PASS
+            self.FAIL = STAT.FAIL
+            self.WARN = STAT.WARN
+            self.HEAD = STAT.HEAD
+            self.CMDL = STAT.CMDL
+            self.STDS = STAT.STDS
+
+    def SuccessMessage(self, RequestMessage):
+        print(self.PASS + " " + Style.RESET_ALL + RequestMessage)
+
+    def FailureMessage(self, RequestMessage):
+        print(self.FAIL + " " + Style.RESET_ALL + RequestMessage)
+
+    def WarningMessage(self, RequestMessage):
+        print(self.WARN + " " + Style.RESET_ALL + RequestMessage)
+
+    def SectionMessage(self, RequestMessage):
+        print(self.HEAD + " " + Fore.CYAN + Style.BRIGHT + RequestMessage + Style.RESET_ALL)
+
+    def CommandMessage(self, RequestMessage):
+        return self.CMDL + " " + Style.RESET_ALL + RequestMessage
+
+    def GeneralMessage(self, RequestMessage):
+        print(self.STDS + " " + Style.RESET_ALL + RequestMessage)
+
+mesgdcrt = MessageDecorator("icon")
 
 def dpndchek():
     try:
         import requests
     except ImportError:
-        print("Error - Some dependencies could not be imported")
-        print("Type `pip3 install -r requirments.txt` to install all required packages")
+        mesgdcrt.FailureMessage("Some dependencies could not be imported")
+        mesgdcrt.GeneralMessage("Type `pip3 install -r requirments.txt` to install all required packages")
         sys.exit()
 
 def readisdc():
@@ -25,7 +83,17 @@ def clerscrn():
 
 def banntext():
     clerscrn()
-    print("TBomb")
+    colrlist = [Fore.GREEN, Fore.RED, Fore.YELLOW, Fore.BLUE, Fore.MAGENTA, Fore.CYAN, Fore.WHITE]
+    logo = """
+ooooooooooooo oooooooooo.                               .o8       
+8'   888   `8 `888'   `Y8b                             "888       
+     888       888     888  .ooooo.  ooo. .oo.  .oo.    888oooo.  
+     888       888oooo888' d88' `88b `888P"Y88bP"Y88b   d88' `88b 
+     888       888    `88b 888   888  888   888   888   888   888 
+     888       888    .88P 888   888  888   888   888   888   888 
+    o888o     o888bood8P'  `Y8bod8P' o888o o888o o888o  `Y8bod8P' 
+    """
+    print(random.choice(colrlist) + logo + Style.RESET_ALL)
 
 countinf = 0
 maxlim = 0
@@ -55,7 +123,7 @@ def chekintr():
     try:
         requests.get("https://www.google.com")
     except Exception:
-        print("Poor internet connection detected")
+        mesgdcrt.FailureMessage("Poor internet connection detected")
         banntext()
         sys.exit()
 
@@ -185,7 +253,7 @@ def getapi(pn, lim, cc):
         headers = sitedata["aala"]["headers"]
         data = sitedata["aala"]["data"]
         data["email"] = cc + pn
-        response = requests.post(hyperurl, headers=headers, cookies=cookies json=data)
+        response = requests.post(hyperurl, headers=headers, cookies=cookies, json=data)
         return response.text.find("code:") != -1
     elif lim == 16:
         hyperurl = sitedata["grab"]["hyperurl"]
@@ -232,31 +300,31 @@ def start(target, counter, delay, ch, cc):
             api = random.choice(ch)
         except Exception:
             if cc == "91":
-                print("All API endpoints seem to have expired or patched up" + "\n" + \
-                      "You must update TBomb to continue using this tool")
-                input("Press [ENTER] to exit")
+                mesgdcrt.FailureMessage("All API endpoints seem to have expired or patched up")
+                mesgdcrt.GeneralMessage("You must update TBomb to continue using this tool")
+                input(mesgdcrt.CommandMessage("Press [ENTER] to exit"))
                 sys.exit()
             else:
                 if success>0:
-                    print("Bombing limit for your country has been reached" + "\n" + \
-                          "TBomb is worked upon to increase the international limit")
-                    input("Press [ENTER] to exit")
+                    mesgdcrt.FailureMessage("Bombing limit for your country has been reached")
+                    mesgdcrt.GeneralMessage("TBomb is worked upon to increase the international limit")
+                    input(mesgdcrt.CommandMessage("Press [ENTER] to exit"))
                     os.system("rm *.xxx* > /dev/null 2>&1")
                     banntext()
                     sys.exit()
                 else:
-                    print("Your country code is not supported as of now" + "\n" + \
-                          "You can request the support for your country code by mailing at 'ggspeedx29@gmail.com' about it")
-                    input("Press [ENTER] to exit")
+                    mesgdcrt.FailureMessage("Your country code is not supported as of now")
+                    mesgdcrt.GeneralMessage("You can request the support for your country code by mailing at 'ggspeedx29@gmail.com' about it")
+                    input(mesgdcrt.CommandMessage("Press [ENTER] to exit"))
                     sys.exit()
-        print("Bombing is in progress - Please be patient" + "\n" + \
-             "Please stay connected to the internet during bombing" + "\n" + \
-             "Target number       : " + str(cc) + str(target) + "\n" + \
-             "Sent requests       : " + str(requested) + "\n" + \
-             "Successful requests : " + str(success) + "\n" + \
-             "Failed requests     : " + str(failed) + "\n" + \
-             "This tool was made for fun and research purposes only" + "\n" + \
-             "TBomb was created by SpeedX")
+        mesgdcrt.SectionMessage("Bombing is in progress - Please be patient")
+        mesgdcrt.GeneralMessage("Please stay connected to the internet during bombing")
+        mesgdcrt.GeneralMessage("Target number       : " + str(cc) + str(target))
+        mesgdcrt.GeneralMessage("Sent requests       : " + str(requested))
+        mesgdcrt.GeneralMessage("Successful requests : " + str(success))
+        mesgdcrt.GeneralMessage("Failed requests     : " + str(failed))
+        mesgdcrt.WarningMessage("This tool was made for fun and research purposes only")
+        mesgdcrt.SuccessMessage("TBomb was created by SpeedX")
         try:
             result = getapi(target, api, cc)
         except Exception:
@@ -271,14 +339,13 @@ def start(target, counter, delay, ch, cc):
             time.sleep(float(delay))
             if requested % 3 == 0:
                 chekintr()
-    #print(W)
-    print("Bombing completed!")
+    mesgdcrt.SuccessMessage("Bombing completed!")
     os.system("rm *.xxx* > /dev/null 2>&1")
     banntext()
     sys.exit()
 
 def update():
-    print("Checking for updates")
+    mesgdcrt.SectionMessage("Checking for updates")
     ver = urllib.request.urlopen("https://raw.githubusercontent.com/TheSpeedX/TBomb/master/.version").read().decode('utf-8')
     ver1 = ""
     try:
@@ -286,50 +353,50 @@ def update():
     except Exception:
         pass
     if ver != ver1:
-        print("An update is available" + "\n" + \
-              "Starting update...")
+        mesgdcrt.WarningMessage("An update is available")
+        mesgdcrt.GeneralMessage("Starting update...")
         stuff_to_update = ["bomber.py", ".version", "bombmode.py"]
         for fl in stuff_to_update:
             dat = urllib.request.urlopen("https://raw.githubusercontent.com/TheSpeedX/TBomb/master/" + fl).read()
             file = open(fl, "wb")
             file.write(dat)
             file.close()
-        print("TBomb was updated to the latest version" + "\n" + 
-            "Please run the script again to load the latest version")
+        mesgdcrt.SuccessMessage("TBomb was updated to the latest version")
+        mesgdcrt.GeneralMessage("Please run the script again to load the latest version")
         sys.exit()
     else:
-        print("TBomb is up-to-date" + "\n" +
-              "Starting TBomb")
+        mesgdcrt.SuccessMessage("TBomb is up-to-date")
+        mesgdcrt.GeneralMessage("Starting TBomb")
 
 def notifyen():
     try:
         noti = urllib.request.urlopen("https://raw.githubusercontent.com/TheSpeedX/TBomb/master/.notify").read().decode('utf-8')
         noti = noti.upper().strip()
         if len(noti) > 10:
-            print('\n\n\tNOTIFICATION: ' + noti + '\n\n')
+            mesgdcrt.SectionMessage("NOTIFICATION: " + noti)
     except Exception:
         pass
 
 def callbomb():
     while True:
         pn = ""
-        cc = input("Enter your country code (Without +) ")
+        cc = input(mesgdcrt.CommandMessage("Enter your country code (Without +) "))
         if "+" in cc:
             tc = list(cc)
             tc.remove('+')
             cc = "".join(tc)
             cc = cc.strip()
-        pn = input("Enter the target number +" + cc + " ")
+        pn = input(mesgdcrt.CommandMessage("Enter the target number +" + cc + " "))
         pn = remsp(pn)
         if len(cc) >= 4 or len(cc) < 1:
-            print("Invalid country code" + "\n" + "Country codes are generally 1-3 digits long")
+            mesgdcrt.WarningMessage("The country code that you have entered is invalid")
             continue
         if len(pn) <= 6:
-            print("The phone number that you have entered is not valid")
+            mesgdcrt.WarningMessage("The phone number that you have entered is not valid")
             continue
         for cch in str(cc + pn):
             if not cch.isdigit():
-                print("The phone number is expected to contain only numeric characters")
+                mesgdcrt.WarningMessage("The phone number is expected to contain only numeric characters")
                 continue
         break
     type = 0
@@ -339,75 +406,75 @@ def callbomb():
     except Exception:
         type = 0
     if type == 1:
-        nm = int(input("Enter number of calls to send (Max 15) "))
+        nm = int(input(mesgdcrt.CommandMessage("Enter number of calls to send (Max 15) ")))
         if nm > 15:
-            print("You have requsted " + str(nm) + " calls" + "\n" + "Automatically capping the value to 15")
+            mesgdcrt.WarningMessage("You have requested " + str(nm) + " calls")
+            mesgdcrt.GeneralMessage("Automatically capping the value to 15")
             nm = 15
-        dl = float(input("Enter delay time (in seconds) [Recommended 10] "))
+        dl = float(input(mesgdcrt.CommandMessage("Enter delay time (in seconds) [Recommended 10] ")))
     elif type == 0:
         if cc == "91":
-            nm = int(input("Enter number of messages to send (0 for unlimited) "))
-            dl = float(input("Enter delay time (in seconds) [Recommended 2] "))
+            nm = int(input(mesgdcrt.CommandMessage("Enter number of messages to send (0 for unlimited) ")))
+            dl = float(input(mesgdcrt.CommandMessage("Enter delay time (in seconds) [Recommended 2] ")))
         else:
-            nm = int(input("Enter number of messages to send "))
-            dl = float(input("Enter delay time (in seconds) [Recommended 10] "))
+            nm = int(input(mesgdcrt.CommandMessage("Enter number of messages to send ")))
+            dl = float(input(mesgdcrt.CommandMessage("Enter delay time (in seconds) [Recommended 10] ")))
     maxlim = 0
     if cc == "91":
         maxlim = 500
     else:
         maxlim = 100
     if nm > maxlim:
-        print("Due to the script abuse, we can provide only " + str(maxlim) + " messages at once")
-        print("Automatically capping the value to " + str(maxlim) + " messages")
+        mesgdcrt.WarningMessage("Due to the script abuse, we can provide only " + str(maxlim) + " messages at once")
+        mesgdcrt.GeneralMessage("Automatically capping the value to " + str(maxlim) + " messages")
         nm = maxlim
     if not cc.strip() == "91":
         if type == 1:
-            print("Call bombing is currently supported only for Indian numbers")
-            input("Press [ENTER] to exit")
+            mesgdcrt.WarningMessage("Call bombing is currently supported only for Indian numbers")
+            input(mesgdcrt.CommandMessage("Press [ENTER] to exit"))
             banntext()
             sys.exit()
         cnt = 0
         if pn.strip() == '' or dl <= 0 or nm <= 0 or cc.strip() == '' or cc.find('+') != -1:
-            print("The inputs provided are invalid")
-            input("Press [ENTER] to exit")
+            mesgdcrt.WarningMessage("The inputs provided are invalid")
+            input(mesgdcrt.CommandMessage("Press [ENTER] to exit"))
             banntext()
             sys.exit()
         ch = [0, 14, 15, 16]
         start(pn, nm, dl, ch, str(cc))
-        exit()
+        sys.exit()
     ch = [i for i in range(17)]
     cbomb = False
     if pn.strip() == '' or dl <= 0 or nm < 0:
-        print("The inputs provided are invalid")
-        input("Press [ENTER] to exit")
+        mesgdcrt.WarningMessage("The inputs provided are invalid")
+        input(mesgdcrt.CommandMessage("Press [ENTER] to exit"))
         banntext()
         sys.exit()
     if type == 1:
-        print("Call bomb might not work on DND activated numbers")
-        print("Overloading the call bomber might reduce the working period")
+        mesgdcrt.WarningMessage("Call bomb might not work on DND activated numbers")
+        mesgdcrt.GeneralMessage("Overloading the call bomber might reduce the working period")
         cbomb = True
     if cbomb:
         chl = [100, 101, 102, 103, 104, 105, 106]
         start(pn, nm, dl, chl, str(cc))
-        exit()
+        sys.exit()
     if nm == 0:
-        nt = int(input("Number of threads [10-20] "))
+        nt = int(input(mesgdcrt.CommandMessage("Number of threads [10-20] ")))
         if nt <= 0 or nt >= 30:
-            print("The range of 20-25 is highly recommended" + "\n" + "Resuming operation...")
-        print("This script is experimental and can be incredibly fast")
+            mesgdcrt.WarningMessage("The range of 20-25 is highly recommended")
+            mesgdcrt.GeneralMessage("Resuming operation...")
+        mesgdcrt.GeneralMessage("This script is experimental and can be incredibly fast")
         t = [None] * nt
-        #print(random.choice(colors))
-        print("Gearing up the call bomber - Please be patient" + "\n" + \
-              "Please stay connected to the internet during bombing" + "\n" + \
-              "Target number     : +91 " + pn + "\n" + \
-              "Number of threads : " + nt + " threads" + "\n" + \
-              "Delay per call    : " + dl + " seconds" + "\n" + \
-              "This tool was made for fun and research purposes only" + "\n" + \
-              "TBomb was created by SpeedX")
-        #print(W)
-        input("Press [CTRL+Z] to suspend the bomber" + "\n" + "Press [ENTER] to start it")
+        mesgdcrt.SectionMessage("Gearing up the call bomber - Please be patient")
+        mesgdcrt.GeneralMessage("Please stay connected to the internet during bombing")
+        mesgdcrt.GeneralMessage("Target number     : +91 " + pn)
+        mesgdcrt.GeneralMessage("Number of threads : " + nt + " threads")
+        mesgdcrt.GeneralMessage("Delay per call    : " + dl + " seconds")
+        mesgdcrt.WarningMessage("This tool was made for fun and research purposes only")
+        mesgdcrt.SuccessMessage("TBomb was created by SpeedX")
+        input(mesgdcrt.CommandMessage("Press [CTRL+Z] to suspend the bomber or [ENTER] to resume it"))
         os.system('rm *.xxx* > /dev/null 2>&1')
-        print("Starting bomber....")
+        mesgdcrt.GeneralMessage("Starting bomber...")
         for i in range(nt):
             t[i] = threading.Thread(target=infinite, args=(pn, dl, ch, maxlim,))
             t[i].daemon = True
@@ -417,11 +484,11 @@ def callbomb():
         while True:
             ci += 1
             l = countinf
-            print("Total Number of Requests Sent : ", l)
+            mesgdcrt.GeneralMessage("Total Number of Requests Sent : ", l)
             if int(l) > maxlim:
-                print("Due to the script abuse, we can provide only " + str(maxlim) + " messages at once")
-                input("Press [ENTER] to exit")
-                os.system('rm *xxx* > /dev/null 2>&1')
+                mesgdcrt.SuccessMessage("Due to the script abuse, we can provide only " + str(maxlim) + " messages at once")
+                input(mesgdcrt.CommandMessage("Press [ENTER] to exit"))
+                os.system("rm *xxx* > /dev/null 2>&1")
                 banntext()
                 sys.exit()
             time.sleep(1)
@@ -429,12 +496,17 @@ def callbomb():
                 chekintr()
     else:
         start(pn, nm, dl, ch, '91')
-        exit()
+        sys.exit()
 
 if __name__ == "__main__":
-    clerscrn()
-    banntext()
-    chekintr()
-    #update()
-    notifyen()
-    callbomb()
+    try:
+        clerscrn()
+        banntext()
+        chekintr()
+        #update()
+        notifyen()
+        callbomb()
+    except KeyboardInterrupt:
+        print()
+        mesgdcrt.WarningMessage("Received INTR call - Exiting...")
+        sys.exit()
