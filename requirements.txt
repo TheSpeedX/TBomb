@@ -1,2 +1,2 @@
-requests >=2, <3
-urllib3 >=1, <2
+requests >=2, <15
+urllib3 >=1, <10
