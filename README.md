@@ -19,7 +19,7 @@ $ python --version
 ```
 If you get the following
 ```shell script
-Python 3.8.5
+Python 3.8.3
 ```
 or any version greater than or equal to 3.4, this script has been tested and confirmed to be supported. For obsolete versions of Python (eg 2.7), use discretion while executing the script as it has not been tested there.
 
@@ -116,10 +116,6 @@ sudo bash TBomb.sh
 
 - **0n1cOn3 (Stefan)**<br>
 [X] Mail at: 0n1cOn3@gmx.ch
-
-- **scpketer**<br>
-[-] Mail At: scpketer@protonmail.ch
-
 
 ## Donators:
 
