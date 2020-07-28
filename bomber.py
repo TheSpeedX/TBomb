@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 import os, shutil, sys, subprocess
 import string, random, json, re
 import time
@@ -257,7 +260,7 @@ def get_phone_info():
             continue
         target = input(mesgdcrt.CommandMessage("Enter the target number +" + cc + " "))
         target = format_phone(pn)
-        if len(target) <= 6:
+        if ((len(target) <= 6) or (len(target) >= 12)):
             mesgdcrt.WarningMessage("The phone number ({target}) that you have entered is invalid".format(target=target))
             continue
         break

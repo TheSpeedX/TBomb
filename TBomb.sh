@@ -39,7 +39,7 @@ banner() {
     echo -e "\e[1;32m           Mail: ggspeedx29@gmail.com \e[0m"
     echo -e "\e[4;32m   YouTube: https://www.youtube.com/c/GyanaTech \e[0m"
     echo " "
-    pause
+
 }
 
 init_environ(){
@@ -68,7 +68,7 @@ init_environ(){
 install_deps(){
     
     packages=(openssl git $PYTHON $PYTHON-pip figlet toilet)
-    if [ -n $INSTALL ];then
+    if [ -n "$INSTALL" ];then
         for package in ${packages[@]}; do
             $INSTALL $package
         done
@@ -82,6 +82,7 @@ install_deps(){
 }
 
 banner
+pause
 detect_distro
 init_environ
 if [ -f .update ];then
