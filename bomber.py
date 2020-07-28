@@ -76,21 +76,21 @@ class MessageDecorator(object):
 
 class APIProvider:
 
-    with open('apidata.json', 'r') as file:
-        PROVIDERS = json.load(file)
     api_providers=[]
 
-    def __init__(self,cc,target,mode):
+    def __init__(self,cc,target,mode):    
+        with open('apidata.json', 'r') as file:
+            PROVIDERS = json.load(file)
         self.config = None
         self.cc = cc
         self.target = target
         self.mode = mode
         self.index = 0
-        PROVIDERS=PROVIDERS.get(mode.lower(),{})
+        providers=PROVIDERS.get(mode.lower(),{})
         if (mode.lower()=="mail"):
-            APIProvider.api_providers = PROVIDERS.get("mail",[])
+            APIProvider.api_providers = providers.get("mail",[])
         else:
-            APIProvider.api_providers = PROVIDERS.get(cc,PROVIDERS.get("multi",[]))
+            APIProvider.api_providers = providers.get(cc,providers.get("multi",[]))
 
     def format(self):
         config_dump = json.dumps(self.config)
@@ -254,17 +254,16 @@ def notifyen():
 def get_phone_info():
     while True:
         target = ""
-        cc = input(mesgdcrt.CommandMessage("Enter your country code (Without +) "))
+        cc = input(mesgdcrt.CommandMessage("Enter your country code (Without +): "))
         cc = format_phone(cc)
         if not country_codes.get(cc,False):
             mesgdcrt.WarningMessage("The country code ({cc}) that you have entered is invalid or unsupported".format(cc=cc))
             continue
-        target = input(mesgdcrt.CommandMessage("Enter the target number +" + cc + " "))
+        target = input(mesgdcrt.CommandMessage("Enter the target number: +" + cc + " "))
         target = format_phone(target)
         if ((len(target) <= 6) or (len(target) >= 12)):
             mesgdcrt.WarningMessage("The phone number ({target}) that you have entered is invalid".format(target=target))
             continue
-        break
         return (cc,target)
 
 def get_mail_info():
@@ -289,14 +288,15 @@ def pretty_print(cc,target,success,failed):
 
 def workernode(mode,cc,target,count,delay,max_threads):
 
-    api = APIProvider(cc,target,type)
-
+    api = APIProvider(cc,target,mode)
+    
+    clr()
     mesgdcrt.SectionMessage("Gearing up the Bomber - Please be patient")
     mesgdcrt.GeneralMessage("Please stay connected to the internet during bombing")
     mesgdcrt.GeneralMessage("Target        : " + cc + target)
-    mesgdcrt.GeneralMessage("Amount        : " + count + " to be sent")
-    mesgdcrt.GeneralMessage("Threads       : " + max_threads + " threads")
-    mesgdcrt.GeneralMessage("Delay         : " + delay + " seconds")
+    mesgdcrt.GeneralMessage("Amount        : " + str(count) + " to be sent")
+    mesgdcrt.GeneralMessage("Threads       : " + str(max_threads) + " threads")
+    mesgdcrt.GeneralMessage("Delay         : " + str(delay) + " seconds")
     mesgdcrt.WarningMessage("This tool was made for fun and research purposes only")
     print()
     input(mesgdcrt.CommandMessage("Press [CTRL+Z] to suspend the bomber or [ENTER] to resume it"))
@@ -359,7 +359,7 @@ def selectnode(mode="sms"):
         limit=max_limit[mode]
         while True:
             try:
-                message=("Enter number of {type} to send (Max {limit}) ").format(type=mode.upper(),limit=limit)
+                message=("Enter number of {type} to send (Max {limit}): ").format(type=mode.upper(),limit=limit)
                 count = int(input(mesgdcrt.CommandMessage(message)).strip())
                 if count > limit or count==0:
                     mesgdcrt.WarningMessage("You have requested " + str(count) + " calls")
