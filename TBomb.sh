@@ -1,10 +1,20 @@
 #!/bin/bash
 
-detect_os() {
-    if [ -e $PREFIX/bin/termux-info ]; then
-        OS="TERMUX"
-    else
-        OS="LINUX"
+detect_distro() {
+    if [ -z "$distro" ]; then
+        distro=$(ls /etc | awk 'match($0, "(.+?)[-_](?:release|version)", groups) {if(groups[1] != "os") {print groups[1]}}')
+    fi
+
+    if [ -z "$distro" ]; then
+        if [ -f "/etc/os-release" ]; then
+            distro="$(source /etc/os-release && echo $ID)"
+        elif [ "$OSTYPE" == "linux-android" ] && [ "$(echo "$PATH" | grep "/data/com.termux" >/dev/null 2>&1 && echo $?)" -eq 0 ]; then
+            distro="termux"
+        elif [ "$OSTYPE" == "darwin" ]; then
+            distro="darwin"
+        else 
+            distro="invalid"
+        fi
     fi
 }
 
@@ -33,31 +43,48 @@ banner() {
 }
 
 init_environ(){
-    if [ $OS = "TERMUX" ]; then
+    declare -A backends; backends=(
+        ["arch"]="pacman -S --noconfirm"
+        ["debian"]="apt-get -y install"
+        ["ubuntu"]="apt -y install"
+        ["termux"]="apt -y install"
+        ["fedora"]="yum -y install"
+        ["redhat"]="yum -y install"
+        ["SuSE"]="zypper -n install"
+        ["sles"]="zypper -n install"
+        ["darwin"]="brew install"
+    )
+
+    INSTALL="${backends[$distro]}"
+
+    if [ $distro = "termux" ]; then
         PYTHON="python"
-        PIP="python -m pip"
-        PKG="pkg"
-    elif [ $OS = "LINUX" ]; then
+    else
         PYTHON="python3"
-        PIP="python3 -m pip"
-        PKG="apt"
     fi
+    PIP="$PYTHON -m pip"
 }
 
 install_deps(){
-    $PKG install -y figlet
-    $PKG install -y curl
-    $PKG install -y openssl
-    $PKG install -y git
-    $PKG install -y $PYTHON
-    $PKG install -y $PYTHON-pip
-    $PIP install -r requirements.txt    
+    
+    packages=(openssl git $PYTHON $PYTHON-pip figlet toilet)
+    if [ -n $INSTALL ];then
+        for package in ${packages[@]}; do
+            $INSTALL $package
+        done
+        $PIP install -r requirements.txt
+    else
+        echo "We could not install dependencies."
+        echo "Please make sure you have git, python3, pip3 and requirements installed."
+        echo "Then you can execute bomber.py ."
+        exit
+    fi
 }
 
 banner
-detect_os
+detect_distro
 init_environ
-if [ -e .update ];then
+if [ -f .update ];then
     echo "All Requirements Found...."
 else
     echo 'Installing Requirements....'
@@ -92,8 +119,7 @@ do
     elif [ $ch -eq 4 ];then
         echo -e "\e[1;34m Downloading Latest Files..."
         rm -f .update
-        git reset --hard HEAD
-        git pull --force
+        $PYTHON bomber.py --update
         echo -e "\e[1;32m TBomb Has Been Updated..."
         echo -e "\e[1;32m All The Required Packages Will Be Installed..."
         echo -e "\e[1;34m RUNNING TBomb Again..."
