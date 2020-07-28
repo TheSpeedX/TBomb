@@ -2,12 +2,16 @@
 <p align="center">A free and open-source SMS/Call bombing application for GNU/Linux And Termux</p>
 
 ## Note:
+
+>**Deprecation Warning:**  
+**All TBomb versions below v2.0 will no longer work after 01-10-2020.**  
+**All TBomb users need to update to v2.0 ASAP**
+
 Due to overuse of script, a bunch APIs have been taken offline. It is okay if you do not receive all the messages.
 
 - The application requires active internet connection to contact the APIs
 - You would not be charged for any SMS/calls dispatched as a consequence of this script
-- For infinite bombing, 2-3 seconds delay and threads between 10 to 20 is recommended
-- Spaces are not allowed while entering the phone number (Ex. 99999 99999)
+- For best performance, use single thread with considerable delay time
 - Always ensure that you are using the latest version of TBomb and have Python 3
 - This application must not be used to cause harm/discomfort/trouble to others
 - By using this, you agree that you cannot hold the contributors responsible for any misuse
@@ -125,10 +129,11 @@ sudo bash TBomb.sh
 
 ## TODO:
 
-- [X] Make Code More Readable and Extensible
+- [x] Make Code More Readable and Extensible
 - [ ] Add Mail Spam Module
 - [x] Add Update Feature using git
 - [ ] Add Update Feature without git (download tarball and extract)
+- [ ] Split code into multiple files (after Deprecation)
 
 
 ## Contact me
