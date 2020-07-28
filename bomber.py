@@ -204,7 +204,7 @@ def do_git_update():
     success=False
     try:
         print(ALL_COLORS[0]+"UPDATING "+RESET_ALL,end='')
-        process = subprocess.Popen("git checkout . && git pull https://github.com/TheSpeedX/TBomb.git HEAD", shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        process = subprocess.Popen("git checkout . && git pull ", shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         while process:
             print(ALL_COLORS[0]+'.'+RESET_ALL,end='')
             time.sleep(1)
