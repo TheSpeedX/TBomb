@@ -110,8 +110,8 @@ sudo bash TBomb.sh
 - **[SpeedX](https://github.com/TheSpeedX)**<br>
 [X] Mail at: ggspeedx29@gmail.com
 
-- **[Akashdeep](https://github.com/t0xic0der)**<br>
-[X] Check at: https://github.com/t0xic0der
+- **[t0xic0der](https://github.com/t0xic0der)**<br>
+[X] Catch at: https://atlasdoc.netlify.app
 
 - **[scpketer](https://github.com/scpketer)**<br>
 [X] Check at: https://github.com/scpketer
