@@ -4,7 +4,7 @@
 ## Note:
 
 >**Deprecation Warning:**  
-**All TBomb versions below v2.0 will no longer work after 01-10-2020.**  
+**All TBomb versions below v2.0 will no longer work after 31-10-2020.**  
 **All TBomb users need to update to v2.0 ASAP**
 
 Due to overuse of script, a bunch APIs have been taken offline. It is okay if you do not receive all the messages.

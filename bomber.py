@@ -7,7 +7,6 @@ from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
-
 try:
     import requests
     from colorama import Fore, Style
@@ -429,6 +428,7 @@ if __name__ == "__main__":
                 print("Available Options:\n")
                 for key,value in avail_choice.items():
                     print("[ {key} ] {value} Bomb".format(key=key,value=value))
+                print()
                 choice=input(mesgdcrt.CommandMessage("Enter Choice : "))
             selectnode(mode=avail_choice[choice].lower())
         except KeyboardInterrupt:        
