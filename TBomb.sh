@@ -57,10 +57,12 @@ init_environ(){
 
     INSTALL="${backends[$distro]}"
 
-    if [ $distro = "termux" ] || [ $distro = "debian" ] ; then
+    if [ $distro = "termux" ]; then
         PYTHON="python"
+        SUDO=""
     else
         PYTHON="python3"
+        SUDO="sudo"
     fi
     PIP="$PYTHON -m pip"
 }
@@ -70,7 +72,7 @@ install_deps(){
     packages=(openssl git $PYTHON $PYTHON-pip figlet toilet)
     if [ -n "$INSTALL" ];then
         for package in ${packages[@]}; do
-            $INSTALL $package
+            $SUDO $INSTALL $package
         done
         $PIP install -r requirements.txt
     else

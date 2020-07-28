@@ -43,6 +43,8 @@ or any version greater than or equal to 3.4, this script has been tested and con
 
 Git installation methods are not universal and are likely to differ between distributions so installing Git as per the given instructions below may not work. Please check out how to install Git for your Linux distribution [here](https://git-scm.com/). Commands below provide instructions for Debian-based systems.
 
+>Ruuning `TBomb.sh` as sudo miscofigures files ownership. It is recommended not to run it as sudo
+
 Run these commands to clone and run TBomb.
 
 ### For Termux
@@ -65,7 +67,7 @@ sudo apt install git
 git clone https://github.com/TheSpeedX/TBomb.git
 cd TBomb
 chmod +x TBomb.sh
-sudo bash TBomb.sh
+bash TBomb.sh
 ```
 
 ### For MacOS
@@ -97,7 +99,7 @@ The package `toilet` cannot be installed yet. But TBomb does still work.
 #### Run TBomb
 
 ```shell script
-sudo bash TBomb.sh
+bash TBomb.sh
 ```
 
 ## Demonstrative Video:
