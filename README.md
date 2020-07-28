@@ -1,8 +1,8 @@
-<h1 align="center">TBomb v1.7b</h1>
+<h1 align="center">TBomb v2.0b</h1>
 <p align="center">A free and open-source SMS/Call bombing application for GNU/Linux And Termux</p>
 
 ## Note:
-Due to the script abuse, many APIs have been taken offline. It is okay if you do not receive all the messages.
+Due to overuse of script, a bunch APIs have been taken offline. It is okay if you do not receive all the messages.
 
 - The application requires active internet connection to contact the APIs
 - You would not be charged for any SMS/calls dispatched as a consequence of this script
@@ -98,39 +98,44 @@ sudo bash TBomb.sh
 
 ## Demonstrative Video:
 
-- Watch Indian Bombing Method <a href="https://youtu.be/9KWkwsr_QGw">here</a>.
-- Watch International Bombing Method <a href="https://youtu.be/JqsHkyIcnPM">here</a>.
+- Watch Indian Bombing Method [here](https://youtu.be/9KWkwsr_QGw)  
+- Watch International Bombing Method [here](https://youtu.be/JqsHkyIcnPM).  
 
 ## Contributors
 
-- **SpeedX**<br>
+- **[SpeedX](https://github.com/TheSpeedX)**<br>
 [X] Mail at: ggspeedx29@gmail.com
 
-- **DarkestEntropy**<br>
-[X] Check at: https://github.com/darkestentropy
+- **[Akashdeep](https://github.com/t0xic0der)**<br>
+[X] Check at: https://github.com/t0xic0der
 
-- **The Black Hacker Roxstar**<br>
+- **[scpketer](https://github.com/scpketer)**<br>
+[X] Check at: https://github.com/scpketer
+
+- **[Stefan](https://github.com/0n1cOn3)**<br>
+[X] Mail at: 0n1cOn3@gmx.ch
 
 - **Rieltar**<br>
 [X] Ping at: https://t.me/RieltarReborn
-
-- **0n1cOn3 (Stefan)**<br>
-[X] Mail at: 0n1cOn3@gmx.ch
 
 ## Donators:
 
 * **[@] 34D30Y (34db0y@protonmail.com)**
 * **[@] SC AMAN**
 
+## TODO:
+
+- [X] Make Code More Readable and Extensible
+- [ ] Add Mail Spam Module
+- [x] Add Update Feature using git
+- [ ] Add Update Feature without git (download tarball and extract)
+
+
 ## Contact me
 
-Feel free to open an issue
+Feel free to open an issue  
 
-```
-Mail: ggspeedx29@gmail.com<br>
-YouTube Channel: https://www.youtube.com/c/GyanaTech
-```
 
-<a href="https://www.youtube.com/c/GyanaTech">Check Out My YouTube Channel</a>
+Mail: [ggspeedx29@gmail.com](mailto:ggspeedx29@gmail.com)  
+[Check Out My YouTube Channel](https://www.youtube.com/c/GyanaTech)
 
-<!-- L3yvMKWbLJAermqvZT1vKmDkGwqsZmD1rK0= -->
