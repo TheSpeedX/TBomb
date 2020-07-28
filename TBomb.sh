@@ -57,7 +57,7 @@ init_environ(){
 
     INSTALL="${backends[$distro]}"
 
-    if [ $distro = "termux" ]; then
+    if [ $distro = "termux" ] || [ $distro = "debian" ] ; then
         PYTHON="python"
     else
         PYTHON="python3"
@@ -121,11 +121,8 @@ do
         echo -e "\e[1;34m Downloading Latest Files..."
         rm -f .update
         $PYTHON bomber.py --update
-        echo -e "\e[1;32m TBomb Has Been Updated..."
-        echo -e "\e[1;32m All The Required Packages Will Be Installed..."
-        echo -e "\e[1;34m RUNNING TBomb Again..."
+        echo -e "\e[1;34m RUN TBomb Again..."
         pause
-        ./TBomb.sh
         exit
     elif [ $ch -eq 5 ];then
         banner

@@ -378,6 +378,9 @@ def selectnode(mode="sms"):
         mesgdcrt.WarningMessage("Received INTR call - Exiting...")
         sys.exit()
 
+if sys.version_info[0]!=3:
+    mesgdcrt.FailureMessage("TBomb will work only in Python v3")
+    sys.exit()
 
 country_codes = readisdc()["isdcodes"]
 mesgdcrt = MessageDecorator("icon")
