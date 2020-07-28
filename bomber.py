@@ -3,7 +3,7 @@
 
 import os, shutil, sys, subprocess
 import string, random, json, re
-import time
+import time, threading
 import argparse
 
 from datetime import datetime
@@ -86,6 +86,7 @@ class APIProvider:
         self.target = target
         self.mode = mode
         self.index = 0
+        self.lock = threading.Lock()
         providers=PROVIDERS.get(mode.lower(),{})
         if (mode.lower()=="mail"):
             APIProvider.api_providers = providers.get("mail",[])
@@ -128,11 +129,18 @@ class APIProvider:
         return identifier in response.text.lower()
 
     def hit(self,delay):
-        time.sleep(delay)
-        response = self.request()
-        if response==False:
-            self.remove()
-        return response
+        try:
+            self.lock.acquire()
+            response = self.request()
+            if response==False:
+                self.remove()
+            return response
+        except:
+            response=False
+        finally:
+            time.sleep(delay)
+            self.lock.release()
+            return response
 
 
 
