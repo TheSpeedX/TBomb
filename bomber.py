@@ -247,6 +247,7 @@ def notifyen():
         noti = requests.get("https://raw.githubusercontent.com/TheSpeedX/TBomb/master/.notify").text.upper().strip()
         if len(noti) > 10:
             mesgdcrt.SectionMessage("NOTIFICATION: " + noti)
+            print()
     except Exception:
         pass
 
@@ -259,7 +260,7 @@ def get_phone_info():
             mesgdcrt.WarningMessage("The country code ({cc}) that you have entered is invalid or unsupported".format(cc=cc))
             continue
         target = input(mesgdcrt.CommandMessage("Enter the target number +" + cc + " "))
-        target = format_phone(pn)
+        target = format_phone(target)
         if ((len(target) <= 6) or (len(target) >= 12)):
             mesgdcrt.WarningMessage("The phone number ({target}) that you have entered is invalid".format(target=target))
             continue
