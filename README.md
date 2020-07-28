@@ -45,6 +45,7 @@ or any version greater than or equal to 3.4, this script has been tested and con
 - Recently made free and open-source for community contributions
 - Modular codebase and snippets can be easily embedded in other program
 
+
 ## Usage:
 
 ### NOTE 
@@ -134,6 +135,10 @@ bash TBomb.sh
 
 - **Rieltar**<br>
 [X] Ping at: https://t.me/RieltarReborn
+
+- **scpketer**<br>
+[-] Mail At: scpketer@protonmail.ch
+
 
 ## Donators:
 
