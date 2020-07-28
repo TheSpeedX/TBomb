@@ -113,6 +113,9 @@ sudo bash TBomb.sh
 - **[t0xic0der](https://github.com/t0xic0der)**<br>
 [X] Catch at: https://atlasdoc.netlify.app
 
+- **[Avinash](https://github.com/AvinashReddy3108)**<br>
+[X] Check at: https://github.com/AvinashReddy3108
+
 - **[scpketer](https://github.com/scpketer)**<br>
 [X] Check at: https://github.com/scpketer
 
