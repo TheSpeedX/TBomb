@@ -53,6 +53,7 @@ init_environ(){
         ["SuSE"]="zypper -n install"
         ["sles"]="zypper -n install"
         ["darwin"]="brew install"
+        ["alpine"]="apk add"
     )
 
     INSTALL="${backends[$distro]}"
