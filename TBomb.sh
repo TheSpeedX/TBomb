@@ -8,7 +8,7 @@ detect_distro() {
     if [ -z "$distro" ]; then
         if [ -f "/etc/os-release" ]; then
             distro="$(source /etc/os-release && echo $ID)"
-        elif [ "$OSTYPE" == "linux-android*" ] && [ "$(echo "$PATH" | grep "/data/com.termux" >/dev/null 2>&1 && echo $?)" -eq 0 ]; then
+        elif [[ "$OSTYPE" == linux-android* ]] && [ "$(echo "$PATH" | grep "/data/com.termux" >/dev/null 2>&1 && echo $?)" -eq 0 ]; then
             distro="termux"
         elif [ "$OSTYPE" == "darwin" ]; then
             distro="darwin"
