@@ -240,7 +240,7 @@ def update():
         do_zip_update()
 def check_for_updates():
     mesgdcrt.SectionMessage("Checking for updates")
-    fver = request.get("https://raw.githubusercontent.com/TheSpeedX/TBomb/master/.version").text.strip()
+    fver = requests.get("https://raw.githubusercontent.com/TheSpeedX/TBomb/master/.version").text.strip()
     if fver != __VERSION__:
         mesgdcrt.WarningMessage("An update is available")
         mesgdcrt.GeneralMessage("Starting update...")
