@@ -391,7 +391,11 @@ if sys.version_info[0]!=3:
     mesgdcrt.FailureMessage("TBomb will work only in Python v3")
     sys.exit()
 
-country_codes = readisdc()["isdcodes"]
+try:
+    country_codes = readisdc()["isdcodes"]
+except FileNotFoundError:
+    update()
+
 mesgdcrt = MessageDecorator("icon")
 
 
@@ -426,7 +430,7 @@ if __name__ == "__main__":
     elif args.contributors:
         print("Contributors: "," ".join(__CONTRIBUTORS__))
     elif args.update:
-        do_git_update()
+        update()
     elif args.mail:
         selectnode(mode="mail")
     elif args.call:
