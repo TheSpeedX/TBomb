@@ -11,8 +11,8 @@
 
 ## Note:
 
->**Deprecation Warning:**  
-**All TBomb versions below v2.0 will no longer work after 31-10-2020.**  
+> ## Deprecation Warning:
+> **All TBomb versions below v2.0 will no longer work after 31-10-2020.**  
 **All TBomb users need to update to v2.0 ASAP**
 
 Due to overuse of script, a bunch APIs have been taken offline. It is okay if you do not receive all the messages.
@@ -128,16 +128,13 @@ bash TBomb.sh
 [X] Check at: https://github.com/AvinashReddy3108
 
 - **[scpketer](https://github.com/scpketer)**<br>
-[X] Check at: https://github.com/scpketer
+[X] Mail At: scpketer@protonmail.ch
 
 - **[Stefan](https://github.com/0n1cOn3)**<br>
 [X] Mail at: 0n1cOn3@gmx.ch
 
 - **Rieltar**<br>
 [X] Ping at: https://t.me/RieltarReborn
-
-- **scpketer**<br>
-[-] Mail At: scpketer@protonmail.ch
 
 
 ## Donators:
