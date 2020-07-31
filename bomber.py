@@ -150,7 +150,7 @@ def readisdc():
 
 def get_version():
     try:
-        return open(".version","r").read()
+        return open(".version","r").read().strip()
     except:
         return '1.0'
 
