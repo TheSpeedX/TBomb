@@ -101,7 +101,7 @@ cd TBomb
 chmod +x TBomb.sh
 ```
 
-#### Missing Tools on MacOS
+#### Missing Tools on MacOS & iSH App
 
 The package `toilet` cannot be installed yet. But TBomb does still work.
 
