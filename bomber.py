@@ -7,7 +7,7 @@ import time
 import threading
 import string
 import random
-import base64
+import shutil
 import urllib.request
 import urllib.parse
 
@@ -765,16 +765,13 @@ def start(target, counter, delay, ch, cc):
 
 
 def update():
-    stuff_to_update = ['bomber.py', '.version']
-    for fl in stuff_to_update:
-        dat = urllib.request.urlopen(
-            "https://raw.githubusercontent.com/TheSpeedX/TBomb/master/" + fl).read()
-        file = open(fl, 'wb')
-        file.write(dat)
-        file.close()
-    print('\n\t\tUpdated Successfull !!!!')
-    print('\tPlease Run The Script Again...')
-    exit()
+    if shutil.which('git'):
+        os.system('git checkout . && git pull')
+        print('\n\t\tUpdated Successfull !!!!')
+        print('\tPlease Run The Script Again...')
+    else:
+        print("Please reclone TBomb Again")
+    sys.exit()
 
 
 clr()
