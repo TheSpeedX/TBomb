@@ -83,7 +83,7 @@ To use the bomber type the following commands in macOS terminal:
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Install dependencys:
+# Install dependencies:
 
 brew install git
 brew install python3
@@ -140,4 +140,4 @@ Feel Free To Open An Issue...
 
 <a href="https://www.youtube.com/c/GyanaTech">Check Out My YouTube Channel</a>
 
-<!-- L3yvMKWbLJAermqvZT1vKmDkGwqsZmD1rK0= -->
+
