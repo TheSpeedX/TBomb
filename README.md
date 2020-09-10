@@ -3,7 +3,7 @@
 
 ## Note:
 
-**Due misusing of TBomb, several API's died.** 
+**Due misusing of TBomb, several API's died.**  
 **Don't be afraid if you don't see all send messages.**
 
 - The script requires working network connection to work.
