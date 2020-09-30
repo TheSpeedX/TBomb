@@ -682,6 +682,12 @@ def getapi(pn,lim,cc):
     elif lim == 104:
         rd = os.popen('curl -s -X GET -H "Host:api.magicbricks.com" -H "Connection:keep-alive" -H "User-Agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.89 Safari/537.36" -H "Save-Data:on" -H "Accept:image/webp,image/apng,image/*,*/*;q=0.8" -H "Accept-Encoding:gzip, deflate, br" -H "Accept-Language:en-IN,en;q=0.9,en-GB;q=0.8,en-US;q=0.7,hi;q=0.6" "https://api.magicbricks.com/bricks/verifyOnCall.html?mobile=' + pn + '"').read().decode('utf-8')
         return rd.lower().strip().find('callmade') != -1
+        elif lim == 105:
+        rd = os.popen('''
+        curl -X POST -H "Host:www.careers360.com" -H "Connection:keep-alive" -H "Content-Length:49" -H "Accept:*/*" -H "X-CSRFToken:9tKY96jb358WKiZBMwhz2EcranwljWDbxdqrQCnvqQWXNGbIvtfEQQLCbrzA8ssj" -H "X-Requested-With:XMLHttpRequest" -H "User-Agent:Mozilla/5.0 (Linux; Android 10; vivo 1818) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.101 Mobile Safari/537.36" -H "Content-Type:application/x-www-form-urlencoded; charset=UTF-8" -H "Origin:https://www.careers360.com" -H "Sec-Fetch-Site:same-origin" -H "Sec-Fetch-Mode:cors" -H "Sec-Fetch-Dest:empty" -H "Referer:https://www.careers360.com/user/otp-verify/101e8d6e591af6688f640eee08f5a5f8?destination=&click_location=header&google_success=header" -H "Accept-Encoding:gzip, deflate, br" -H "Accept-Language:en-US,en;q=0.9,hi;q=0.8" -H "Cookie:_gcl_au=1.1.1168325424.1600579108; WZRK_G=4584ba1e8345400d92392a88464c9183; __asc=ce35392c174a9f2fbe2f2c29a0c; __auc=ce35392c174a9f2fbe2f2c29a0c; _ga=GA1.2.1646044729.1600579108; _gid=GA1.2.365026440.1600579108; _fbp=fb.1.1600579107930.1446075664; dataLayer_=Home Pages; csrftoken=RI5TGK7tuZdkJjVNzu3lRdSeRcztdtYqfsLmngbNRK1lMH7Uir1qFprpSgCI2ZNy; _omappvp=RIeaJ0pgkcvqwRygRT8VTxJ6PrpnRvze6xwTpZBXztsuBXhgRV5OIU97g9s0DivdxwVAHM0DF1teulefRfsK0wCo2MRjp325; G_ENABLED_IDPS=google; _dc_gtm_UA-46098128-1=1; _omappvs=1600579353765; WZRK_S_654-ZZ4-5Z5Z=%7B%22p%22%3A5%2C%22s%22%3A1600579103%2C%22t%22%3A1600579356%7D" -d 'mobile_number='''+pn+'''&method=call&uid=12692588' "https://www.careers360.com/ajax/no-cache/user/otp-send"
+        ''').read()
+        return rd.find("1") != -1
+    return False
     elif lim == 106:
         rd = os.popen(
             'curl -s "https://www.myupchar.com/user_profile/resend_otp_via_voice?id=' + pn + '"').read()
