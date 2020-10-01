@@ -134,7 +134,7 @@ sudo bash TBomb.sh
 Feel Free To Open An Issue...
 
 ```
-                 Mail: ggspeedx29@gmail.com<br>
+                 Mail: ggspeedx29@gmail.com
        YouTube Channel: https://www.youtube.com/c/GyanaTech
 ```
 
