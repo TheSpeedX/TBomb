@@ -129,12 +129,15 @@ sudo bash TBomb.sh
 
 **[@] SC AMAN**
 
+# License
+This Project is distributed under GPL-3.0 License can be found [here]((https://github.com/TheSpeedX/TBomb/blob/master/LICENSE)).
+
 # CONTACT ME:
 
 Feel Free To Open An Issue...
 
 ```
-                 Mail: ggspeedx29@gmail.com<br>
+                 Mail: ggspeedx29@gmail.com
        YouTube Channel: https://www.youtube.com/c/GyanaTech
 ```
 
