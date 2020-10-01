@@ -1,5 +1,7 @@
 <h1 align="center">TBomb v1.7b</h1>
 <p align="center">An open-source SMS/call bomber for Linux And Termux.</p><br>
+<p align="center">An open-source project to irritate your most irritating friend .</p><br>
+
 
 ## Note:
 
@@ -29,7 +31,7 @@ If output looks like `Python 3` - Congrats, Python 3 is installed properly.
 - Lots of integrated SMS/call APIs
 - Unlimited (Limited against abusing) and super-fast bombing
 - International bombing available (APIS Dead. Try Your Luck.) 
-- Call bombing
+- Call bombing(APIS Dead. Few calls might get placed )
 - Frequent updates
 - Automatic updating mechanism
 - Easy to use and embed in code
@@ -38,24 +40,7 @@ If output looks like `Python 3` - Congrats, Python 3 is installed properly.
 
 Run these commands to run TBomb
 
-### > For Termux:
 
-**Notice:** 
-
-git installation methods are not universal and do differ between distributions,
-so, installing git as per instructions below may not work.
-Please check out how to install `git` for your Linux distribution.
-Commands below provide instructions for Debian-based systems.
-
-To use the bomber type the following commands in Termux:
-```
-pkg install git
-pkg install python
-git clone https://github.com/TheSpeedX/TBomb.git
-cd TBomb
-chmod +x TBomb.sh
-./TBomb.sh
-```
 
 ### > For Linux:
 
@@ -66,7 +51,7 @@ so, installing git as per instructions below may not work.
 Please check out how to install `git` for your Linux distribution.
 Commands below provide instructions for Debian-based systems.
 
-To use the bomber type the following commands in Linux terminal:
+To use the bomber type the following commands in Linux terminal/:
 ```
 sudo apt install git
 git clone https://github.com/TheSpeedX/TBomb.git
@@ -101,7 +86,29 @@ Toilet cannot be installed yet. But TBomb does still work.
 
 sudo bash TBomb.sh
 ```
+### > For Termux:
 
+**Notice:** 
+
+git installation methods are not universal and do differ between different emulator
+so, installing git as per instructions below may not work.
+Please check out how to install `git` for your emulator.
+Commands below provide instructions for Termux app.
+
+You need python before installing bomber.
+
+You can install python by typing in: 
+```
+pkg install python
+```
+To install and use bomber type the following commands in Termux:
+```
+pkg install git
+git clone https://github.com/TheSpeedX/TBomb.git
+cd TBomb
+chmod +x TBomb.sh
+./TBomb.sh
+```
 ## Demontrative Video:
 
 - Watch Indian Bombing Method <a href="https://youtu.be/9KWkwsr_QGw">here</a><br>
