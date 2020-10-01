@@ -13,8 +13,10 @@ echo .
 echo .
 apt install figlet toilet python curl -y
 apt install python3-pip
+apt install espeak
 pip install -r requirements.txt
 echo This Script Was Made By SpeedX >update.speedx
+espeak 'This Script Was Made By SpewdX' &
 echo Requirements Installed....
 echo Press Enter To Continue...
 read upd
@@ -32,6 +34,7 @@ echo -e "\e[1;34m For Any Queries Mail Me!!!\e[0m"
 echo -e "\e[1;32m           Mail: ggspeedx29@gmail.com \e[0m"
 echo -e "\e[4;32m   YouTube Page: https://www.youtube.com/c/GyanaTech \e[0m"
 echo " "
+espeak 'Please Read Instruction Carefully' &
 echo -e "\e[4;31m Please Read Instruction Carefully !!! \e[0m"
 echo " "
 echo "Press 1 To  Start SMS Bomber "
@@ -44,6 +47,7 @@ if [ $ch -eq 1 ];then
 clear
 echo -e "\e[1;32m"
 rm *.xxx >/dev/null 2>&1
+espeak ' Starting bomber' &
 python3 bomber.py
 rm *.xxx >/dev/null 2>&1
 exit 0
@@ -51,6 +55,7 @@ elif [ $ch -eq 2 ];then
 clear
 echo -e "\e[1;32m"
 echo 'Call Bomb By SpeedX'> call.xxx
+espeak 'Call Bomb by SpeedX' &
 python3 bomber.py call
 rm *.xxx >/dev/null 2>&1
 exit 0
@@ -58,6 +63,7 @@ elif [ $ch -eq 3 ];then
 clear
 apt install git -y
 echo -e "\e[1;34m Downloading Latest Files..."
+espeak 'Downloading Latest Files...' &
 git clone https://github.com/TheSpeedX/TBomb
 if [[ -s TBomb/TBomb.sh ]];then
 cd TBomb
