@@ -849,24 +849,7 @@ elif type == 0:
         dl = float(
             input("Enter Delay time (in seconds) [Recommended 10 sec ] : "))
 maxlim = 0
-if cc == "91":
-    maxlim = 500
-else:
-    maxlim = 100
-if nm > maxlim:
-    print('\n\n\tSorry Due To Misuse Of This Script We Only Provide ' +
-          str(maxlim) + ' SMS At Once...\n\n')
-    print('Number Of SMS Has been Set To ' + str(maxlim))
-    nm = maxlim
-if not cc.strip() == "91":
-    if type == 1:
-        print(
-            '\t\tSorry But Call Bombing is Currently Supported Only For Indian Numbers!!!!')
-        print()
-        input('Press Enter To Exit....')
-        print('\n\n')
-        banner()
-        exit()
+
     cnt = 0
     if pn.strip() == '' or dl <= 0 or nm <= 0 or cc.strip() == '' or cc.find('+') != -1:
         print('\n\n\tSeems Like You Have Given Wrong Inputs...')
@@ -902,7 +885,7 @@ if nm == 0:
     print("                Gearing Up Bomber, please wait !!               ")
     print("     Please keep your data connection active during bombing !!    ")
     print("==================================================================")
-    print("             Target Number       : +91", pn)
+    print("             Target Number       :+" + str(cc) + " ", target)
     print("             Number of Threads   : ", nt)
     print("             Delay               : ", dl)
     print("==================================================================")
