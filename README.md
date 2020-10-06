@@ -53,7 +53,6 @@ pkg install git -y
 pkg install python -y 
 git clone https://github.com/TheSpeedX/TBomb.git
 cd TBomb
-chmod +x TBomb.sh
 ./TBomb.sh
 ```
 
@@ -71,7 +70,6 @@ To use the bomber type the following commands in Linux terminal:
 sudo apt install git
 git clone https://github.com/TheSpeedX/TBomb.git
 cd TBomb
-chmod +x TBomb.sh
 sudo bash TBomb.sh
 ```
 
@@ -91,7 +89,6 @@ sudo easy_install pip
 sudo pip install --upgrade pip
 git clone https://github.com/TheSpeedX/TBomb.git
 cd TBomb
-chmod +x TBomb.sh
 
 # Missing Tools on MacOS
 
