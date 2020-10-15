@@ -102,7 +102,8 @@ Toilet cannot be installed yet. But TBomb does still work.
 sudo bash TBomb.sh
 ```
 ## WebBased Bomber Using Django :
-Check At: https://xploitbomber.herokuapp.ml
+Check At: https://xploitbomber.herokuapp.com
+## Webbased Version Repo:
 Git Repo : https://github.com/xploitwizer/xploitbomber
 
 
