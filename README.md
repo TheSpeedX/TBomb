@@ -68,6 +68,20 @@ chmod +x TBomb.sh
 ./TBomb.sh
 ```
 
+### For iSH
+
+To use the application, type in the following commands in iSH.
+```shell script
+apk add git
+apk add python3
+apk add py3-pip
+git clone https://github.com/TheSpeedX/TBomb.git
+cd TBomb
+pip3 install -r requirements.txt
+chmod +x TBomb.sh
+./TBomb.sh
+```
+
 ### For Debian-based GNU/Linux distributions
 
 To use the application, type in the following commands in GNU/Linux terminal.
