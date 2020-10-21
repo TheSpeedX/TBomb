@@ -11,11 +11,13 @@
 
 ## Note:
 
+
 > ## Deprecation Warning:
 > **All TBomb versions below v2.0 will no longer work after 14-11-2020.**  
 **All TBomb users need to update to v2.0 ASAP**
 
-Due to overuse of script, a bunch APIs have been taken offline. It is okay if you do not receive all the messages.
+**Due to overuse of script, a bunch APIs have been taken offline. It is okay if you do not receive all the messages.**
+
 
 - The application requires active internet connection to contact the APIs
 - You would not be charged for any SMS/calls dispatched as a consequence of this script
@@ -58,11 +60,11 @@ Run these commands to clone and run TBomb.
 
 ### For Termux
 
-To use the application, type in the following commands in Termux.
+To use the bomber type the following commands in Termux:
 ```shell script
-pkg install git
-pkg install python
-git clone https://github.com/TheSpeedX/TBomb.git
+pkg install git -y 
+pkg install python -y 
+git clone https://github.com/TheSpeedX/TBomb.git
 cd TBomb
 chmod +x TBomb.sh
 ./TBomb.sh
@@ -103,7 +105,7 @@ To use the application, type in the following commands in MacOS terminal:
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ````
 
-#### Install dependencies
+#### Install dependencies:
 
 ```shell script
 brew install git
