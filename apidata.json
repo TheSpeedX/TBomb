@@ -385,6 +385,17 @@
                     "lj80gertdfg":"0"
                 },
                 "identifier":"1"
+            },
+            {
+                "name":"redbus",
+                "method":"GET",
+                "url":"https://m.redbus.in/api/getOtp",
+                "params":{
+                    "number":"{target}",
+                    "cc":"{cc}",
+                    "whatsAppOpted":false
+                },
+                "identifier":"200"
             }
         ]
     },
@@ -444,6 +455,8 @@
         ]
     },
     "mail":{
-
+        "multi":[
+        
+        ]
     }
 }

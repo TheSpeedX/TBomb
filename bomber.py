@@ -77,8 +77,10 @@ class MessageDecorator(object):
 class APIProvider:
 
     api_providers=[]
+    delay = 0
+    status = True
 
-    def __init__(self,cc,target,mode):    
+    def __init__(self,cc,target,mode,delay=0):
         with open('apidata.json', 'r') as file:
             PROVIDERS = json.load(file)
         self.config = None
@@ -87,11 +89,11 @@ class APIProvider:
         self.mode = mode
         self.index = 0
         self.lock = threading.Lock()
+        APIProvider.delay = delay
         providers=PROVIDERS.get(mode.lower(),{})
-        if (mode.lower()=="mail"):
-            APIProvider.api_providers = providers.get("mail",[])
-        else:
-            APIProvider.api_providers = providers.get(cc,providers.get("multi",[]))
+        APIProvider.api_providers = providers.get(cc,[])
+        if len(APIProvider.api_providers)<10:
+            APIProvider.api_providers+=providers.get("multi",[])
 
     def format(self):
         config_dump = json.dumps(self.config)
@@ -103,6 +105,7 @@ class APIProvider:
             self.index = random.choice(range(len(APIProvider.api_providers)))
         except IndexError:
             self.index=-1
+            return
         self.config = APIProvider.api_providers[self.index]
         perma_headers = {"User-Agent":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0"}
         if "headers" in self.config:
@@ -130,10 +133,15 @@ class APIProvider:
 
     def hit(self):
         try:
+            if not APIProvider.status:
+                return
+            time.sleep(APIProvider.delay)
             self.lock.acquire()
             response = self.request()
             if response==False:
                 self.remove()
+            elif response==None:
+                APIProvider.status=False
             return response
         except:
             response=False
@@ -277,7 +285,7 @@ def get_mail_info():
     mail_regex='^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
     while True:
         target = input(mesgdcrt.CommandMessage("Enter target mail: "))
-        if not re.search(mail_regex,target):
+        if not re.search(mail_regex,target, re.IGNORECASE):
             mesgdcrt.WarningMessage("The mail ({target}) that you have entered is invalid".format(target=target))
             continue
         return target
@@ -295,7 +303,7 @@ def pretty_print(cc,target,success,failed):
 
 def workernode(mode,cc,target,count,delay,max_threads):
 
-    api = APIProvider(cc,target,mode)
+    api = APIProvider(cc,target,mode,delay=delay)
     
     clr()
     mesgdcrt.SectionMessage("Gearing up the Bomber - Please be patient")
@@ -327,7 +335,7 @@ def workernode(mode,cc,target,count,delay,max_threads):
                 if result==None:
                     mesgdcrt.FailureMessage("Bombing limit for your target has been reached")
                     mesgdcrt.GeneralMessage("Try Again Later !!")
-                    input(mesgdcrt.CommandMessage("Press [ENTER] to exit"))
+                    input(mesgdcrt.CommandMessage("Press [ENTER] to exit"))                   
                     bann_text()
                     sys.exit()
                 if result:
@@ -369,15 +377,17 @@ def selectnode(mode="sms"):
                 message=("Enter number of {type} to send (Max {limit}): ").format(type=mode.upper(),limit=limit)
                 count = int(input(mesgdcrt.CommandMessage(message)).strip())
                 if count > limit or count==0:
-                    mesgdcrt.WarningMessage("You have requested " + str(count) + " calls")
-                    mesgdcrt.GeneralMessage("Automatically capping the value to 100")
+                    mesgdcrt.WarningMessage("You have requested " + str(count) + " {type}".format(type=mode.upper()))
+                    mesgdcrt.GeneralMessage("Automatically capping the value to {limit}".format(limit=limit))
                     count = limit
-                #delay = float(input(mesgdcrt.CommandMessage("Enter delay time (in seconds): ")).strip())
-                delay = 0
+                delay = float(input(mesgdcrt.CommandMessage("Enter delay time (in seconds): ")).strip())
+                # delay = 0
                 max_threads = int(input(mesgdcrt.CommandMessage("Enter Number of Thread: ")).strip())
                 if (count < 0 or delay < 0):
                     raise Exception
                 break
+            except KeyboardInterrupt as ki:
+                raise ki
             except:
                 mesgdcrt.FailureMessage("Read Instructions Carefully !!!")
                 print()
@@ -423,6 +433,7 @@ parser.add_argument("-u","--update", action="store_true",help="update TBomb")
 parser.add_argument("-c","--contributors", action="store_true",help="show current TBomb contributors")
 parser.add_argument("-v","--version", action="store_true",help="show current TBomb version")
 
+
 if __name__ == "__main__":
     args = parser.parse_args()
     if args.version:
@@ -446,7 +457,7 @@ if __name__ == "__main__":
                 bann_text()
                 print("Available Options:\n")
                 for key,value in avail_choice.items():
-                    print("[ {key} ] {value} Bomb".format(key=key,value=value))
+                    print("[ {key} ] {value} BOMB".format(key=key,value=value))
                 print()
                 choice=input(mesgdcrt.CommandMessage("Enter Choice : "))
             selectnode(mode=avail_choice[choice].lower())
