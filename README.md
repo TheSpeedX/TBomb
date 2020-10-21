@@ -66,7 +66,6 @@ pkg install git -y
 pkg install python -y 
 git clone https://github.com/TheSpeedX/TBomb.git
 cd TBomb
-chmod +x TBomb.sh
 ./TBomb.sh
 ```
 
@@ -91,7 +90,6 @@ To use the application, type in the following commands in GNU/Linux terminal.
 sudo apt install git
 git clone https://github.com/TheSpeedX/TBomb.git
 cd TBomb
-chmod +x TBomb.sh
 bash TBomb.sh
 ```
 
@@ -114,18 +112,17 @@ sudo easy_install pip
 sudo pip install --upgrade pip
 git clone https://github.com/TheSpeedX/TBomb.git
 cd TBomb
-chmod +x TBomb.sh
 ```
-
-#### Missing Tools on MacOS & iSH App
-
-The package `toilet` cannot be installed yet. But TBomb does still work.
 
 #### Run TBomb
 
 ```shell script
 bash TBomb.sh
 ```
+
+#### Missing Tools on MacOS & iSH App
+
+The package `toilet` cannot be installed yet. But TBomb does still work.
 
 ## Demonstrative Video:
 
