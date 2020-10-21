@@ -450,7 +450,7 @@ if __name__ == "__main__":
         selectnode(mode="sms")
     else:
         choice=""
-        avail_choice={"1":"SMS","2":"CALL","3":"MAIL"}
+        avail_choice={"1":"SMS","2":"CALL","3":"MAIL (Coming Soon)"}
         try:
             while (not choice in avail_choice):
                 clr()
