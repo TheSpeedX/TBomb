@@ -6,10 +6,10 @@ detect_distro() {
     fi
 
     if [ -z "$distro" ]; then
-        if [ -f "/etc/os-release" ]; then
-            distro="$(source /etc/os-release && echo $ID)"
-        elif [[ "$OSTYPE" == linux-android* ]] ; then
+        if [[ "$OSTYPE" == linux-android* ]]; then
             distro="termux"
+        elif [ -f "/etc/os-release" ]; then
+            distro="$(source /etc/os-release && echo $ID)"
         elif [ "$OSTYPE" == "darwin" ]; then
             distro="darwin"
         else 
