@@ -58,7 +58,7 @@ init_environ(){
 
     INSTALL="${backends[$distro]}"
 
-    if [ $distro = "termux" ]; then
+    if [ "$distro" == "termux" ]; then
         PYTHON="python"
         SUDO=""
     else
