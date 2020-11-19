@@ -132,7 +132,7 @@ The package `toilet` cannot be installed yet. But TBomb does still work.
 ## Contributors
 
 - **[SpeedX](https://github.com/TheSpeedX)**<br>
-[X] Mail at: ggspeedx29@gmail.com
+[X] Join at: https://t.me/TBombChat
 
 - **[t0xic0der](https://github.com/t0xic0der)**<br>
 [X] Catch at: https://atlasdoc.netlify.app
@@ -169,6 +169,6 @@ The package `toilet` cannot be installed yet. But TBomb does still work.
 Feel free to open an issue  
 
 
-Mail: [ggspeedx29@gmail.com](mailto:ggspeedx29@gmail.com)  
+For Queries: [Telegram Group](https://t.me/TBombChat)  
 [Check Out My YouTube Channel](https://www.youtube.com/c/GyanaTech)
 
