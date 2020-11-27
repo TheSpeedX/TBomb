@@ -171,15 +171,15 @@ def clr():
 def bann_text():
     clr()
     logo="""
-   ████████ █████                 ██
-   ▒▒▒██▒▒▒ ██▒▒██                ██
-      ██    ██  ██        ██   ██ ██
-      ██    █████▒  ████  ███ ███ █████
-      ██    ██▒▒██ ██  ██ ██▒█▒██ ██▒▒██
-      ██    ██  ██ ██  ██ ██ ▒ ██ ██  ██
-      ██    █████▒ ▒████▒ ██   ██ █████▒
-      ▒▒    ▒▒▒▒▒   ▒▒▒▒  ▒▒   ▒▒ ▒▒▒▒▒
-                                         """
+   __/\\\\\\\\\\\\\\\________________/\\\\\\\\\\\\\_________/\\\\\____________/\\\\\_______/\\\\____________/\\\\_  
+    _\///////\\\/////________________\/\\\/////////\\\_____/\\\///\\\________/\\\///\\\____\/\\\\\\________/\\\\\\_       
+   _______\/\\\_____________________\/\\\_______\/\\\___/\\\/__\///\\\____/\\\/__\///\\\__\/\\\//\\\____/\\\//\\\_      
+    _______\/\\\________/\\\\\\\\\\\_\/\\\\\\\\\\\\\\___/\\\______\//\\\__/\\\______\//\\\_\/\\\\///\\\/\\\/_\/\\\_     
+     _______\/\\\_______\///////////__\/\\\/////////\\\_\/\\\_______\/\\\_\/\\\_______\/\\\_\/\\\__\///\\\/___\/\\\_    
+      _______\/\\\_____________________\/\\\_______\/\\\_\//\\\______/\\\__\//\\\______/\\\__\/\\\____\///_____\/\\\_   
+       _______\/\\\_____________________\/\\\_______\/\\\__\///\\\__/\\\_____\///\\\__/\\\____\/\\\_____________\/\\\_  
+        _______\/\\\_____________________\/\\\\\\\\\\\\\/_____\///\\\\\/________\///\\\\\/_____\/\\\_____________\/\\\_ 
+         _______\///______________________\/////////////_________\/////____________\/////_______\///______________\///__"""
     version="Version: "+__VERSION__
     contributors="Contributors: "+" ".join(__CONTRIBUTORS__)
     print(random.choice(ALL_COLORS) + logo + RESET_ALL)
@@ -193,7 +193,7 @@ def check_intr():
         requests.get("https://motherfuckingwebsite.com")
     except Exception:
         bann_text()
-        mesgdcrt.FailureMessage("Poor internet connection detected")
+        mesgdcrt.FailureMessage("To run the attack internet speed is very low")
         sys.exit(2)
 
 def format_phone(num):
@@ -208,7 +208,7 @@ def do_zip_update():
 
     if success:
         mesgdcrt.SuccessMessage("TBomb was updated to the latest version")
-        mesgdcrt.GeneralMessage("Please run the script again to load the latest version")
+        mesgdcrt.GeneralMessage("Please restart the T-Boom to load the latest Features")
     else:
         mesgdcrt.FailureMessage("Unable to update TBomb.")
         mesgdcrt.WarningMessage("Grab The Latest one From https://github.com/TheSpeedX/TBomb.git")

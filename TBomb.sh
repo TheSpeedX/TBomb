@@ -25,7 +25,8 @@ banner() {
     clear
     echo -e "\e[1;31m"
     if ! [ -x "$(command -v figlet)" ]; then
-        echo 'Introducing TBomb'
+        echo 'Presenting The interesting project'
+        echo -e '\e[1;32m            ₮-฿ØØ₥ \e[0m'
     else
         figlet TBomb
     fi
@@ -91,24 +92,29 @@ init_environ
 if [ -f .update ];then
     echo "All Requirements Found...."
 else
+    echo 'Creating Environments....'
+    echo 'Making the files ready....'
     echo 'Installing Requirements....'
     echo .
     echo .
     install_deps
     echo This Script Was Made By SpeedX > .update
+    echo 'Environments is ready sir....'
     echo 'Requirements Installed....'
     pause
 fi
 while :
 do
     banner
+    echo " ✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭"
     echo -e "\e[4;31m Please Read Instruction Carefully !!! \e[0m"
-    echo " "
-    echo "Press 1 To  Start SMS  Bomber "
-    echo "Press 2 To  Start CALL Bomber "
-    echo "Press 3 To  Start MAIL Bomber "
-    echo "Press 4 To  Update (Works On Linux And Linux Emulators) "
-    echo "Press 5 To  Exit "
+    echo "✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭ "
+    echo "  ✭✭ Press 1 To  Start SMS  Bomber                      ✭✭       "                       
+    echo "  ✭✭ Press 2 To  Start CALL Bomber                      ✭✭"
+    echo "  ✭✭ Press 3 To  Start MAIL Bomber                      ✭✭"
+    echo "  ✭✭ Press 4 To  Get Latest Version                     ✭✭ "
+    echo "  ✭✭ Press 5 To  Exit                                   ✭✭ "
+    echo " ✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭ "
     read ch
     clear
     if [ $ch -eq 1 ];then
@@ -121,17 +127,21 @@ do
         $PYTHON bomber.py --mail
         exit
     elif [ $ch -eq 4 ];then
+        echo -e "\e[1;34m Please Wait sir ..."
         echo -e "\e[1;34m Downloading Latest Files..."
+        echo -e "\e[1;34m ︾︾︾︾︾︾︾︾︾︾︾︾︾︾"
         rm -f .update
         $PYTHON bomber.py --update
-        echo -e "\e[1;34m RUN TBomb Again..."
+        echo -e "\e[1;34m Restating the T-Boom...."
+        echo -e "\e[1;34m ︾︾︾︾︾︾︾︾︾︾︾"
         pause
         exit
     elif [ $ch -eq 5 ];then
         banner
         exit
     else
-        echo -e "\e[4;32m Invalid Input !!! \e[0m"
+        echo -e "\e[4;32m Please choose the correct option.{invalid Input} !!! \e[0m"
+        echo -e "\e[4;32m ︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾︾ \e[0m"
         pause
     fi
 done
