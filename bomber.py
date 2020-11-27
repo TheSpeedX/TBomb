@@ -171,15 +171,14 @@ def clr():
 def bann_text():
     clr()
     logo="""
-   __/\\\\\\\\\\\\\\\________________/\\\\\\\\\\\\\_________/\\\\\____________/\\\\\_______/\\\\____________/\\\\_  
-    _\///////\\\/////________________\/\\\/////////\\\_____/\\\///\\\________/\\\///\\\____\/\\\\\\________/\\\\\\_       
-   _______\/\\\_____________________\/\\\_______\/\\\___/\\\/__\///\\\____/\\\/__\///\\\__\/\\\//\\\____/\\\//\\\_      
-    _______\/\\\________/\\\\\\\\\\\_\/\\\\\\\\\\\\\\___/\\\______\//\\\__/\\\______\//\\\_\/\\\\///\\\/\\\/_\/\\\_     
-     _______\/\\\_______\///////////__\/\\\/////////\\\_\/\\\_______\/\\\_\/\\\_______\/\\\_\/\\\__\///\\\/___\/\\\_    
-      _______\/\\\_____________________\/\\\_______\/\\\_\//\\\______/\\\__\//\\\______/\\\__\/\\\____\///_____\/\\\_   
-       _______\/\\\_____________________\/\\\_______\/\\\__\///\\\__/\\\_____\///\\\__/\\\____\/\\\_____________\/\\\_  
-        _______\/\\\_____________________\/\\\\\\\\\\\\\/_____\///\\\\\/________\///\\\\\/_____\/\\\_____________\/\\\_ 
-         _______\///______________________\/////////////_________\/////____________\/////_______\///______________\///__"""
+    ████████╗   ██████╗  ██████╗  ██████╗ ███╗   ███╗
+    ╚══██╔══╝   ██╔══██╗██╔═══██╗██╔═══██╗████╗ ████║
+       ██║█████╗██████╔╝██║   ██║██║   ██║██╔████╔██║
+       ██║╚════╝██╔══██╗██║   ██║██║   ██║██║╚██╔╝██║
+       ██║      ██████╔╝╚██████╔╝╚██████╔╝██║ ╚═╝ ██║
+       ╚═╝      ╚═════╝  ╚═════╝  ╚═════╝ ╚═╝     ╚═╝
+                                     Made by :- SPEEDX 
+    """
     version="Version: "+__VERSION__
     contributors="Contributors: "+" ".join(__CONTRIBUTORS__)
     print(random.choice(ALL_COLORS) + logo + RESET_ALL)
@@ -193,7 +192,7 @@ def check_intr():
         requests.get("https://motherfuckingwebsite.com")
     except Exception:
         bann_text()
-        mesgdcrt.FailureMessage("To run the attack internet speed is very low")
+        mesgdcrt.FailureMessage("To run the attack , Your internet speed is very low")
         sys.exit(2)
 
 def format_phone(num):
@@ -233,7 +232,7 @@ def do_git_update():
 
     if success:
         mesgdcrt.SuccessMessage("TBomb was updated to the latest version")
-        mesgdcrt.GeneralMessage("Please run the script again to load the latest version")
+        mesgdcrt.GeneralMessage("Please restart the T-Boom to load the latest Features")
     else:
         mesgdcrt.FailureMessage("Unable to update TBomb.")
         mesgdcrt.WarningMessage("Make Sure To Install 'git' ")
@@ -272,7 +271,7 @@ def get_phone_info():
         cc = input(mesgdcrt.CommandMessage("Enter your country code (Without +): "))
         cc = format_phone(cc)
         if not country_codes.get(cc,False):
-            mesgdcrt.WarningMessage("The country code ({cc}) that you have entered is invalid or unsupported".format(cc=cc))
+            mesgdcrt.WarningMessage("The country code ({cc}) that you have entered is invalid or not available(cooming soon)".format(cc=cc))
             continue
         target = input(mesgdcrt.CommandMessage("Enter the target number: +" + cc + " "))
         target = format_phone(target)
@@ -292,29 +291,34 @@ def get_mail_info():
 
 def pretty_print(cc,target,success,failed):
     requested = success+failed
-    mesgdcrt.SectionMessage("Bombing is in progress - Please be patient")
-    mesgdcrt.GeneralMessage("Please stay connected to the internet during bombing")
-    mesgdcrt.GeneralMessage("Target       : " + cc +" "+ target)
-    mesgdcrt.GeneralMessage("Sent         : " + str(requested))
-    mesgdcrt.GeneralMessage("Successful   : " + str(success))
-    mesgdcrt.GeneralMessage("Failed       : " + str(failed))
-    mesgdcrt.WarningMessage("This tool was made for fun and research purposes only")
-    mesgdcrt.SuccessMessage("TBomb was created by SpeedX")
+    mesgdcrt.SuccessMessage(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    mesgdcrt.SuccessMessage("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+    mesgdcrt.GeneralMessage(" >> Bombing is in progress - Please be patient       ")
+    mesgdcrt.GeneralMessage(" >> Please stay connected to the internet during Attacking")
+    mesgdcrt.GeneralMessage(" >> Target       : " + cc +" "+ target)
+    mesgdcrt.GeneralMessage(" >> Sent         : " + str(requested))
+    mesgdcrt.GeneralMessage(" >> Successful   : " + str(success))
+    mesgdcrt.GeneralMessage(" >> Failed       : " + str(failed))
+    mesgdcrt.WarningMessage(" >> This tool was made for fun and research purposes only")
+    mesgdcrt.SuccessMessage(">>>>>>>>>>>>>> TBomb was created by SpeedX <<<<<<<<<<<<<<")
 
 def workernode(mode,cc,target,count,delay,max_threads):
 
     api = APIProvider(cc,target,mode,delay=delay)
     
     clr()
-    mesgdcrt.SectionMessage("Gearing up the Bomber - Please be patient")
-    mesgdcrt.GeneralMessage("Please stay connected to the internet during bombing")
-    mesgdcrt.GeneralMessage("Target        : " + cc + target)
-    mesgdcrt.GeneralMessage("Amount        : " + str(count) )
-    mesgdcrt.GeneralMessage("Threads       : " + str(max_threads) + " threads")
-    mesgdcrt.GeneralMessage("Delay         : " + str(delay) + " seconds")
-    mesgdcrt.WarningMessage("This tool was made for fun and research purposes only")
+    mesgdcrt.SuccessMessage(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    mesgdcrt.SuccessMessage("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+    mesgdcrt.GeneralMessage(" >>Gearing up the Bomber - Please be patient")
+    mesgdcrt.GeneralMessage(" >>Please stay connected to the internet during bombing")
+    mesgdcrt.GeneralMessage(" >>Target        : " + cc + target)
+    mesgdcrt.GeneralMessage(" >>Amount        : " + str(count) )
+    mesgdcrt.GeneralMessage(" >>Threads       : " + str(max_threads) + " threads")
+    mesgdcrt.GeneralMessage(" >>Delay         : " + str(delay) + " seconds")
+    mesgdcrt.WarningMessage(" >>This tool was made for fun and research purposes only")
+    mesgdcrt.SuccessMessage(">>>>>>>>>>>>TBomb was created by SpeedX <<<<<<<<<<<<<<<")
     print()
-    input(mesgdcrt.CommandMessage("Press [CTRL+Z] to suspend the bomber or [ENTER] to resume it"))
+    input(mesgdcrt.CommandMessage("Press [CTRL+Z] to pause the bomber or [ENTER] to resume it"))
 
     if len(APIProvider.api_providers)==0:
         mesgdcrt.FailureMessage("Your country/target is not supported as of now")

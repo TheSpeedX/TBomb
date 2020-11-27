@@ -124,6 +124,12 @@ bash TBomb.sh
 
 The package `toilet` cannot be installed yet. But TBomb does still work.
 
+## Preview of Quiz
+![alt text](https://i.ibb.co/XpHmmhG/678-EFDDD-9940-43-B2-97-EE-8-A4-DA31085-DD-png.jpg) 
+
+
+![alt text](https://i.ibb.co/tmNvgnh/E7720-F7-B-0-AFE-4-CDA-8-D76-604386-F30249-png.jpg)
+
 ## Demonstrative Video:
 
 - Watch Indian Bombing Method [here](https://youtu.be/9KWkwsr_QGw)  
