@@ -217,12 +217,11 @@ def pretty_print(cc, target, success, failed):
 def workernode(mode, cc, target, count, delay, max_threads):
 
     api = APIProvider(cc, target, mode, delay=delay)
-    api_version = api.PROVIDERS.get("version", "2")
     clr()
     mesgdcrt.SectionMessage("Gearing up the Bomber - Please be patient")
     mesgdcrt.GeneralMessage(
         "Please stay connected to the internet during bombing")
-    mesgdcrt.GeneralMessage("API Version   : " + api_version)
+    mesgdcrt.GeneralMessage("API Version   : " + api.api_version)
     mesgdcrt.GeneralMessage("Target        : " + cc + target)
     mesgdcrt.GeneralMessage("Amount        : " + str(count))
     mesgdcrt.GeneralMessage("Threads       : " + str(max_threads) + " threads")

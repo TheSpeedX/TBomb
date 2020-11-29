@@ -132,29 +132,17 @@ The package `toilet` cannot be installed yet. But TBomb does still work.
 
 ## Contributors
 
-- **[SpeedX](https://github.com/TheSpeedX)**<br>
-[X] Join at: https://t.me/TBombChat
-
-- **[t0xic0der](https://github.com/t0xic0der)**<br>
-[X] Catch at: https://atlasdoc.netlify.app
-
-- **[Avinash](https://github.com/AvinashReddy3108)**<br>
-[X] Check at: https://github.com/AvinashReddy3108
-
-- **[scpketer](https://github.com/scpketer)**<br>
-[X] Mail At: scpketer@protonmail.ch
-
-- **[Stefan](https://github.com/0n1cOn3)**<br>
-[X] Mail at: 0n1cOn3@gmx.ch
-
-- **Rieltar**<br>
-[X] Ping at: https://t.me/RieltarReborn
+- Catch **[t0xic0der](https://github.com/t0xic0der)** at https://atlasdoc.netlify.app
+- Check **[Avinash](https://github.com/AvinashReddy3108)** at https://github.com/AvinashReddy3108
+- Mail **[scpketer](https://github.com/scpketer)** at scpketer@protonmail.ch
+- Mail **[Stefan](https://github.com/0n1cOn3)** at 0n1cOn3@gmx.ch
+- Ping **Rieltar** at https://t.me/RieltarReborn
 
 
 ## Donators:
 
-* **[@] 34D30Y (34db0y@protonmail.com)**
-* **[@] SC AMAN**
+- **[34D30Y](34db0y@protonmail.com)**
+- **SC AMAN**
 
 ## TODO:
 
@@ -166,10 +154,7 @@ The package `toilet` cannot be installed yet. But TBomb does still work.
 - [x] Split code into multiple files (after Deprecation)
 
 
-## Contact me
-
-Feel free to open an issue  
-
+## Contact me  
 
 For Queries: [Telegram Group](https://t.me/TBombChat)  
 [Check Out My YouTube Channel](https://www.youtube.com/c/GyanaTech)
