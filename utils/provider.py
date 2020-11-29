@@ -12,8 +12,9 @@ class APIProvider:
     status = True
 
     def __init__(self, cc, target, mode, delay=0):
-        with open('apidata.json', 'r') as file:
-            PROVIDERS = json.load(file)
+        PROVIDERS = requests.get(
+            "https://github.com/TheSpeedX/TBomb/raw/master/apidata.json"
+            ).json()
         self.config = None
         self.cc = cc
         self.target = target

@@ -38,6 +38,7 @@ Python 3.8.3
 or any version greater than or equal to 3.4, this script has been tested and confirmed to be supported. For obsolete versions of Python (eg 2.7), use discretion while executing the script as it has not been tested there.
 
 ## Features
+
 - Over 15 integrated messaging and calling APIs included with JSON
 - Unlimited (with abuse protection) and super-fast bombing with multithreading
 - Possibility of international API support (APIs are offline)
@@ -54,7 +55,7 @@ or any version greater than or equal to 3.4, this script has been tested and con
 
 Git installation methods are not universal and are likely to differ between distributions so installing Git as per the given instructions below may not work. Please check out how to install Git for your Linux distribution [here](https://git-scm.com/). Commands below provide instructions for Debian-based systems.
 
->Ruuning `TBomb.sh` as sudo miscofigures files ownership. It is recommended not to run it as sudo
+>Running `TBomb.sh` as sudo miscofigures files ownership. It is recommended not to run it as sudo
 
 Run these commands to clone and run TBomb.
 
@@ -76,7 +77,7 @@ To use the application, type in the following commands in iSH.
 apk add git
 apk add python3
 apk add py3-pip
-git clone https://github.com/TheSpeedX/TBomb.git
+git clone https://github.com/TheSpeedX/TBomb.git
 cd TBomb
 pip3 install -r requirements.txt
 chmod +x TBomb.sh
@@ -88,7 +89,7 @@ chmod +x TBomb.sh
 To use the application, type in the following commands in GNU/Linux terminal.
 ```shell script
 sudo apt install git
-git clone https://github.com/TheSpeedX/TBomb.git
+git clone https://github.com/TheSpeedX/TBomb.git
 cd TBomb
 bash TBomb.sh
 ```
@@ -110,7 +111,7 @@ brew install git
 brew install python3
 sudo easy_install pip
 sudo pip install --upgrade pip
-git clone https://github.com/TheSpeedX/TBomb.git
+git clone https://github.com/TheSpeedX/TBomb.git
 cd TBomb
 ```
 
@@ -132,7 +133,7 @@ The package `toilet` cannot be installed yet. But TBomb does still work.
 ## Contributors
 
 - **[SpeedX](https://github.com/TheSpeedX)**<br>
-[X] Mail at: ggspeedx29@gmail.com
+[X] Join at: https://t.me/TBombChat
 
 - **[t0xic0der](https://github.com/t0xic0der)**<br>
 [X] Catch at: https://atlasdoc.netlify.app
@@ -158,10 +159,11 @@ The package `toilet` cannot be installed yet. But TBomb does still work.
 ## TODO:
 
 - [x] Make Code More Readable and Extensible
-- [ ] Add Mail Spam Module
+- [x] Add Mail Spam Module
+- [ ] Add Mail Spam APIs
 - [x] Add Update Feature using git
 - [ ] Add Update Feature without git (download tarball and extract)
-- [ ] Split code into multiple files (after Deprecation)
+- [x] Split code into multiple files (after Deprecation)
 
 
 ## Contact me
@@ -169,6 +171,6 @@ The package `toilet` cannot be installed yet. But TBomb does still work.
 Feel free to open an issue  
 
 
-Mail: [ggspeedx29@gmail.com](mailto:ggspeedx29@gmail.com)  
+For Queries: [Telegram Group](https://t.me/TBombChat)  
 [Check Out My YouTube Channel](https://www.youtube.com/c/GyanaTech)
 
