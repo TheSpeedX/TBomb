@@ -180,7 +180,7 @@ def bann_text():
       ██    █████▒ ▒████▒ ██   ██ █████▒
       ▒▒    ▒▒▒▒▒   ▒▒▒▒  ▒▒   ▒▒ ▒▒▒▒▒
                                          """
-   create by Ashok Kanuka
+   made by Ashok Kanuka
  version="Version: "+__VERSION__
     contributors="Contributors: "+" ".join(__CONTRIBUTORS__)
     print(random.choice(ALL_COLORS) + logo + RESET_ALL)
