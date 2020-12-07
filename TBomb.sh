@@ -19,13 +19,13 @@ detect_distro() {
 }
 
 pause() {
-    read -n1 -r -p "Press any key to continue..." key
+    read -n1 -r -p "[+] Press any key to continue... [+]" key
 }
 banner() {
     clear
     echo -e "\e[1;31m"
     if ! [ -x "$(command -v figlet)" ]; then
-        echo 'Introducing TBomb'
+        echo '[+] Introducing TBomb [+]'
     else
         figlet TBomb
     fi
@@ -35,9 +35,9 @@ banner() {
         echo -e "\e[1;34mCreated By \e[1;34m"
         toilet -f mono12 -F border SpeedX
     fi
-    echo -e "\e[1;34m For Any Queries Mail Me!!!\e[0m"
-    echo -e "\e[1;32m           Mail: ggspeedx29@gmail.com \e[0m"
-    echo -e "\e[4;32m   YouTube: https://www.youtube.com/c/GyanaTech \e[0m"
+    echo -e "\e[1;34m [+] For Any Queries Mail Me!!!\e[0m [+]"
+    echo -e "\e[1;32m        [+] Mail: ggspeedx29@gmail.com [+]\e[0m "
+    echo -e "\e[4;32m   [+] YouTube: https://www.youtube.com/c/GyanaTech [+]\e[0m"
     echo " "
 
 }
@@ -77,9 +77,9 @@ install_deps(){
         done
         $PIP install -r requirements.txt
     else
-        echo "We could not install dependencies."
-        echo "Please make sure you have git, python3, pip3 and requirements installed."
-        echo "Then you can execute bomber.py ."
+        echo "[!!] We could not install dependencies. [!!]"
+        echo "[!!] Please make sure you have git, python3, pip3 and requirements installed.[!!]"
+        echo "[!!] Then you can execute bomber.py. [!!]"
         exit
     fi
 }
@@ -89,14 +89,14 @@ pause
 detect_distro
 init_environ
 if [ -f .update ];then
-    echo "All Requirements Found...."
+    echo "[+] All Requirements Found.... [+]"
 else
-    echo 'Installing Requirements....'
+    echo '[+] Installing Requirements.... [+]'
     echo .
     echo .
     install_deps
     echo This Script Was Made By SpeedX > .update
-    echo 'Requirements Installed....'
+    echo '[+] Requirements Installed.... [+]'
     pause
 fi
 while :
@@ -104,11 +104,11 @@ do
     banner
     echo -e "\e[4;31m Please Read Instruction Carefully !!! \e[0m"
     echo " "
-    echo "Press 1 To  Start SMS  Bomber "
-    echo "Press 2 To  Start CALL Bomber "
-    echo "Press 3 To  Start MAIL Bomber "
-    echo "Press 4 To  Update (Works On Linux And Linux Emulators) "
-    echo "Press 5 To  Exit "
+    echo "[+] Press 1 To  Start SMS  Bomber [+]"
+    echo "[+] Press 2 To  Start CALL Bomber [+]"
+    echo "[+] Press 3 To  Start MAIL Bomber [+]"
+    echo "[+] Press 4 To  Update (Works On Linux And Linux Emulators [+]) "
+    echo "[+] Press 5 To  Exit [+]"
     read ch
     clear
     if [ $ch -eq 1 ];then
