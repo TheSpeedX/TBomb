@@ -157,5 +157,5 @@ The package `toilet` cannot be installed yet. But TBomb does still work.
 ## Contact me  
 
 For Queries: [Telegram Group](https://t.me/TBombChat)  
-[Check Out My YouTube Channel](https://www.youtube.com/c/GyanaTech)
+[Check Out My YouTube Channel](https://www.youtube.com/c/SpeedXTech)
 
