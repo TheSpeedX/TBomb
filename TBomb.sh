@@ -1,14 +1,16 @@
 #!/bin/bash
 
 detect_distro() {
+    if [[ "$OSTYPE" == linux-android* ]]; then
+            distro="termux"
+    fi
+
     if [ -z "$distro" ]; then
         distro=$(ls /etc | awk 'match($0, "(.+?)[-_](?:release|version)", groups) {if(groups[1] != "os") {print groups[1]}}')
     fi
 
     if [ -z "$distro" ]; then
-        if [[ "$OSTYPE" == linux-android* ]]; then
-            distro="termux"
-        elif [ -f "/etc/os-release" ]; then
+        if [ -f "/etc/os-release" ]; then
             distro="$(source /etc/os-release && echo $ID)"
         elif [ "$OSTYPE" == "darwin" ]; then
             distro="darwin"
@@ -35,9 +37,9 @@ banner() {
         echo -e "\e[1;34mCreated By \e[1;34m"
         toilet -f mono12 -F border SpeedX
     fi
-    echo -e "\e[1;34m For Any Queries Mail Me!!!\e[0m"
-    echo -e "\e[1;32m           Mail: ggspeedx29@gmail.com \e[0m"
-    echo -e "\e[4;32m   YouTube: https://www.youtube.com/c/GyanaTech \e[0m"
+    echo -e "\e[1;34m For Any Queries Join Me!!!\e[0m"
+    echo -e "\e[1;32m           Telegram: https://t.me/TBombChat \e[0m"
+    echo -e "\e[4;32m   YouTube: https://www.youtube.com/c/SpeedXTech \e[0m"
     echo " "
 
 }
