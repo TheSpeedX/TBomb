@@ -1,4 +1,6 @@
 {
+    "contributors":["TheSpeedX","Avinash","Reiltar"],
+    "version":"2.1",
     "sms": {
         "91": [
             {
@@ -118,18 +120,6 @@
                     "phone_number": "{target}"
                 },
                 "identifier": "sent"
-            },
-            {
-                "name": "mobikwik",
-                "method": "POST",
-                "url": "https://webapi.mobikwik.com/p/account/otp/cell/v2",
-                "data": {
-                    "cell": "{target}"
-                },
-                "headers": {
-                    "X-MClient": "0"
-                },
-                "identifier": "true"
             },
             {
                 "name": "airtel",
@@ -396,6 +386,18 @@
                     "whatsAppOpted": false
                 },
                 "identifier": "200"
+            },
+            {
+                "name": "newtonschools",
+                "method": "POST",
+                "url": "https://my.newtonschool.co:443/api/v1/user/otp/",
+                "params":{
+                    "registration": true
+                },
+                "data": {
+                    "phone":"+{cc}{target}"
+                },
+                "identifier": "S003"
             }
         ]
     },
