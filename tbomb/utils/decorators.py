@@ -10,14 +10,17 @@ class IconicDecorator(object):
         self.CMDL = Style.BRIGHT + Fore.BLUE + "[ → ]" + Style.RESET_ALL
         self.STDS = "     "
 
+
 class StatusDecorator(object):
     def __init__(self):
         self.PASS = Style.BRIGHT + Fore.GREEN + "[ SUCCESS ]" + Style.RESET_ALL
         self.FAIL = Style.BRIGHT + Fore.RED + "[ FAILURE ]" + Style.RESET_ALL
-        self.WARN = Style.BRIGHT + Fore.YELLOW + "[ WARNING ]" + Style.RESET_ALL
+        self.WARN = Style.BRIGHT + Fore.YELLOW + "[ WARNING ]"\
+            + Style.RESET_ALL
         self.HEAD = Style.BRIGHT + Fore.CYAN + "[ SECTION ]" + Style.RESET_ALL
         self.CMDL = Style.BRIGHT + Fore.BLUE + "[ COMMAND ]" + Style.RESET_ALL
         self.STDS = "           "
+
 
 class MessageDecorator(object):
     def __init__(self, attr):
@@ -48,7 +51,8 @@ class MessageDecorator(object):
         print(self.WARN + " " + Style.RESET_ALL + RequestMessage)
 
     def SectionMessage(self, RequestMessage):
-        print(self.HEAD + " " + Fore.CYAN + Style.BRIGHT + RequestMessage + Style.RESET_ALL)
+        print(self.HEAD + " " + Fore.CYAN + Style.BRIGHT
+              + RequestMessage + Style.RESET_ALL)
 
     def CommandMessage(self, RequestMessage):
         return self.CMDL + " " + Style.RESET_ALL + RequestMessage
@@ -56,5 +60,3 @@ class MessageDecorator(object):
     def GeneralMessage(self, RequestMessage):
         print(self.STDS + " " + Style.RESET_ALL + RequestMessage)
 
-ALL_COLORS=[Fore.GREEN, Fore.RED, Fore.YELLOW, Fore.BLUE, Fore.MAGENTA, Fore.CYAN, Fore.WHITE]
-RESET_ALL=Style.RESET_ALL

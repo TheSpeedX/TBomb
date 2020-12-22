@@ -1,0 +1,9 @@
+[flake8]
+exclude = .git,
+        __pycache__,
+        .github,
+        build,
+        dist,
+        .eggs,
+        tbomb.egg-info,
+        setup.py
