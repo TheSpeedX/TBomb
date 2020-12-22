@@ -40,5 +40,6 @@ setup(
             'console_scripts': [
                 'tbomb = tbomb.bomber:main',
             ],
-    }
+    },
+    python_requires='>=3.5'
 )
