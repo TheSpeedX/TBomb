@@ -253,7 +253,7 @@ def selectnode(mode="sms"):
         clr()
         bann_text()
         check_intr()
-        # check_for_updates()
+        check_for_updates()
         notifyen()
 
         max_limit = {"sms": 500, "call": 15, "mail": 200}
@@ -315,7 +315,7 @@ if sys.version_info[0] != 3:
 try:
     country_codes = readisdc()["isdcodes"]
 except FileNotFoundError:
-    # update()
+    update()
     pass
 
 __VERSION__ = get_version()
