@@ -7,7 +7,7 @@
 </h1>
 
 
-<p align="center">A free and open-source SMS/Call bombing application for GNU/Linux And Termux</p>
+<p align="center">A free and open-source SMS/Call bombing application</p>
 
 ## Note:
 

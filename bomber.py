@@ -307,10 +307,14 @@ def selectnode(mode="sms"):
                     mesgdcrt.CommandMessage("Enter delay time (in seconds): "))
                     .strip())
                 # delay = 0
+                max_thread_limit = (count//10) if (count//10) > 0 else 1
                 max_threads = int(input(
                     mesgdcrt.CommandMessage(
-                        "Enter Number of Thread (Recommended: 10): "))
+                        "Enter Number of Thread (Recommended: {max_limit}): "
+                        .format(max_limit=max_thread_limit)))
                     .strip())
+                max_threads = max_threads if (
+                    max_threads > 0) else max_thread_limit
                 if (count < 0 or delay < 0):
                     raise Exception
                 break
@@ -386,7 +390,8 @@ if __name__ == "__main__":
         selectnode(mode="sms")
     else:
         choice = ""
-        avail_choice = {"1": "SMS", "2": "CALL", "3": "MAIL (Not Yet Available)"}
+        avail_choice = {"1": "SMS", "2": "CALL",
+                        "3": "MAIL (Not Yet Available)"}
         try:
             while (choice not in avail_choice):
                 clr()
