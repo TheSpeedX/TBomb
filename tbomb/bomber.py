@@ -2,7 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 import os
-import shutil
 import sys
 import subprocess
 import string
@@ -11,11 +10,12 @@ import json
 import re
 import time
 import argparse
+from pkg_resources import resource_string
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from utils.decorators import MessageDecorator
-from utils.provider import APIProvider
+from .utils.decorators import MessageDecorator
+from .utils.provider import APIProvider
 
 try:
     import requests
@@ -28,15 +28,18 @@ except ImportError:
     sys.exit(1)
 
 
+def read_resource(path):
+    return resource_string(__name__, path).decode()
+
+
 def readisdc():
-    with open("isdcodes.json") as file:
-        isdcodes = json.load(file)
+    isdcodes = json.loads(read_resource("isdcodes.json"))
     return isdcodes
 
 
 def get_version():
     try:
-        return open(".version", "r").read().strip()
+        return read_resource(".version").strip()
     except Exception:
         return '1.0'
 
@@ -82,32 +85,15 @@ def format_phone(num):
     return ''.join(num).strip()
 
 
-def do_zip_update():
-    success = False
-
-    # Download Zip from git
-    # Unzip and overwrite the current folder
-
-    if success:
-        mesgdcrt.SuccessMessage("TBomb was updated to the latest version")
-        mesgdcrt.GeneralMessage(
-            "Please run the script again to load the latest version")
-    else:
-        mesgdcrt.FailureMessage("Unable to update TBomb.")
-        mesgdcrt.WarningMessage(
-            "Grab The Latest one From https://github.com/TheSpeedX/TBomb.git")
-
-    sys.exit()
-
-
-def do_git_update():
+def do_pip_update():
     success = False
     try:
         print(ALL_COLORS[0]+"UPDATING "+RESET_ALL, end='')
-        process = subprocess.Popen("git checkout . && git pull ",
-                                   shell=True,
-                                   stdout=subprocess.PIPE,
-                                   stderr=subprocess.STDOUT)
+        process = subprocess.Popen(
+            [sys.executable, "-m", "pip", "install", "-U", "tbomb"],
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT)
         while process:
             print(ALL_COLORS[0]+'.'+RESET_ALL, end='')
             time.sleep(1)
@@ -118,26 +104,18 @@ def do_git_update():
     except Exception:
         success = False
     print("\n")
-
     if success:
         mesgdcrt.SuccessMessage("TBomb was updated to the latest version")
-        mesgdcrt.GeneralMessage(
-            "Please run the script again to load the latest version")
     else:
         mesgdcrt.FailureMessage("Unable to update TBomb.")
-        mesgdcrt.WarningMessage("Make Sure To Install 'git' ")
-        mesgdcrt.GeneralMessage("Then run command:")
-        print(
-            "git checkout . && "
-            "git pull https://github.com/TheSpeedX/TBomb.git HEAD")
+        mesgdcrt.WarningMessage(
+            "Update TBomb by running: pip install -U tbomb")
+
     sys.exit()
 
 
 def update():
-    if shutil.which('git'):
-        do_git_update()
-    else:
-        do_zip_update()
+    do_pip_update()
 
 
 def check_for_updates():
@@ -275,7 +253,7 @@ def selectnode(mode="sms"):
         clr()
         bann_text()
         check_intr()
-        check_for_updates()
+        # check_for_updates()
         notifyen()
 
         max_limit = {"sms": 500, "call": 15, "mail": 200}
@@ -306,11 +284,14 @@ def selectnode(mode="sms"):
                 delay = float(input(
                     mesgdcrt.CommandMessage("Enter delay time (in seconds): "))
                     .strip())
-                # delay = 0
+                max_thread_limit = (count//10) if (count//10) > 0 else 1
                 max_threads = int(input(
                     mesgdcrt.CommandMessage(
-                        "Enter Number of Thread (Recommended: 10): "))
+                        "Enter Number of Thread (Recommended: {max_limit}): "
+                        .format(max_limit=max_thread_limit)))
                     .strip())
+                max_threads = max_threads if (
+                    max_threads > 0) else max_thread_limit
                 if (count < 0 or delay < 0):
                     raise Exception
                 break
@@ -334,8 +315,8 @@ if sys.version_info[0] != 3:
 try:
     country_codes = readisdc()["isdcodes"]
 except FileNotFoundError:
-    update()
-
+    # update()
+    pass
 
 __VERSION__ = get_version()
 __CONTRIBUTORS__ = ['SpeedX', 't0xic0der', 'scpketer', 'Stefan']
@@ -354,23 +335,23 @@ TBomb can be used for many purposes which incudes -
 TBomb is not intented for malicious uses.
 """
 
-parser = argparse.ArgumentParser(description=description,
-                                 epilog='Coded by SpeedX !!!')
-parser.add_argument("-sms", "--sms", action="store_true",
-                    help="start TBomb with SMS Bomb mode")
-parser.add_argument("-call", "--call", action="store_true",
-                    help="start TBomb with CALL Bomb mode")
-parser.add_argument("-mail", "--mail", action="store_true",
-                    help="start TBomb with MAIL Bomb mode")
-parser.add_argument("-u", "--update", action="store_true",
-                    help="update TBomb")
-parser.add_argument("-c", "--contributors", action="store_true",
-                    help="show current TBomb contributors")
-parser.add_argument("-v", "--version", action="store_true",
-                    help="show current TBomb version")
 
-
-if __name__ == "__main__":
+def main():
+    parser = argparse.ArgumentParser(prog="tbomb",
+                                     description=description,
+                                     epilog='Coded by SpeedX !!!')
+    parser.add_argument("-sms", "--sms", action="store_true",
+                        help="start TBomb with SMS Bomb mode")
+    parser.add_argument("-call", "--call", action="store_true",
+                        help="start TBomb with CALL Bomb mode")
+    parser.add_argument("-mail", "--mail", action="store_true",
+                        help="start TBomb with MAIL Bomb mode")
+    parser.add_argument("-u", "--update", action="store_true",
+                        help="update TBomb")
+    parser.add_argument("-c", "--contributors", action="store_true",
+                        help="show current TBomb contributors")
+    parser.add_argument("-v", "--version", action="store_true",
+                        help="show current TBomb version")
     args = parser.parse_args()
     if args.version:
         print("Version: ", __VERSION__)
@@ -403,3 +384,7 @@ if __name__ == "__main__":
             mesgdcrt.WarningMessage("Received INTR call - Exiting...")
             sys.exit()
     sys.exit()
+
+
+if __name__ == "__main__":
+    main()

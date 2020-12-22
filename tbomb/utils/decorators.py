@@ -1,4 +1,7 @@
-from colorama import Fore, Style
+from colorama import Fore, Style, init
+
+
+init()
 
 
 class IconicDecorator(object):
@@ -59,4 +62,3 @@ class MessageDecorator(object):
 
     def GeneralMessage(self, RequestMessage):
         print(self.STDS + " " + Style.RESET_ALL + RequestMessage)
-

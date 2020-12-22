@@ -14,6 +14,7 @@ with open("requirements.txt", "r", encoding="utf8") as fh:
 setup(
     name='tbomb',
     packages=find_packages(),
+    include_package_data=True,
     version=version,
     description='A free and open-source SMS/Call bombing application',
     long_description=long_description,
@@ -24,7 +25,6 @@ setup(
     download_url="https://github.com/TheSpeedX/TBomb/archive/pypi.zip",
         keywords=['android', 'spam', 'sms', 'bomb', 'termux',
                   'sms-bomber', 'bomber', 'sms-bomb', 'bombing', 'call-bomb'],
-    data_files=[('', ['LICENSE'])],
     classifiers=[
             'Development Status :: 4 - Beta',
             'Intended Audience :: Developers',
@@ -38,7 +38,7 @@ setup(
     license='GPL',
     entry_points={
             'console_scripts': [
-                'tbomb = tbomb.bomber',
+                'tbomb = tbomb.bomber:main',
             ],
     }
 )

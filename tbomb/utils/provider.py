@@ -3,6 +3,7 @@ import requests
 import json
 import random
 import time
+from pkg_resources import resource_string
 
 
 class APIProvider:
@@ -15,9 +16,10 @@ class APIProvider:
         try:
             PROVIDERS = requests.get(
                 "https://github.com/TheSpeedX/TBomb/raw/master/apidata.json"
-                ).json()
+            ).json()
         except Exception:
-            PROVIDERS = json.load(open('apidata.json', 'r'))
+            PROVIDERS = json.loads(
+                resource_string(__name__, 'apidata.json').decode())
         self.config = None
         self.cc = cc
         self.target = target
