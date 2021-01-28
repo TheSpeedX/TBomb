@@ -77,6 +77,8 @@ To use the application, type in the following commands in iSH.
 apk add git
 apk add python3
 apk add py3-pip
+apk add ruby
+gem install toilet
 git clone https://github.com/TheSpeedX/TBomb.git
 cd TBomb
 pip3 install -r requirements.txt
@@ -121,9 +123,9 @@ cd TBomb
 bash TBomb.sh
 ```
 
-#### Missing Tools on MacOS & iSH App
+#### Missing Tools on MacOS
 
-The package `toilet` cannot be installed yet. But TBomb does still work.
+The package `toilet` cannot be installed yet on macOS. But TBomb does still work.
 
 ## Demonstrative Video:
 
