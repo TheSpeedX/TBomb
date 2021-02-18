@@ -106,11 +106,11 @@ do
     banner
     echo -e "\e[4;31m Please Read Instruction Carefully !!! \e[0m"
     echo " "
-    echo "Press 1 To  Start SMS  Bomber "
-    echo "Press 2 To  Start CALL Bomber "
-    echo "Press 3 To  Start MAIL Bomber (Not Yet Available)"
-    echo "Press 4 To  Update (Works On Linux And Linux Emulators) "
-    echo "Press 5 To  Exit "
+    echo "[JokerHack] Press 1 To  Start SMS  Bomber "
+    echo "[JokerHack] Press 2 To  Start CALL Bomber "
+    echo "[JokerHack] Press 3 To  Start MAIL Bomber (Not Yet Available)"
+    echo "[JokerHack] Press 4 To  Update (Works On Linux And Linux Emulators) "
+    echo "[JokerHack] Press 5 To  Exit "
     read ch
     clear
     if [ $ch -eq 1 ];then
