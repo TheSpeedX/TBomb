@@ -164,7 +164,7 @@ For Queries: [Telegram Group](https://t.me/TBombChat)
 
 ⁃ Do you support "X" Country?
 
-```Most Countries are supported for sms and only India for calls. The SMS delivery rate might be different for different countries.```
+```Most Countries are supported for SMS and only India for calls. The SMS delivery rate might be different for different countries.```
 
 ⁃ Can you add support for "X" Country?
 
