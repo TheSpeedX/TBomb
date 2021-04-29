@@ -170,7 +170,7 @@ For Queries: [Telegram Group](https://t.me/TBombChat)
 
 ```We do what we can, but we cannot promise. Please stay tuned for future support. If you are ready to help then maybe we can do faster.```
 
-⁃ Why is the Limit so low?
+⁃ Why is the limit so low?
 
 ```Due the amount of requests, the APIs can die. To prevent a bigger outtake of TBomb, it has been limited.``` 
 
