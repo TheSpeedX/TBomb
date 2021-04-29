@@ -158,7 +158,7 @@ For Queries: [Telegram Group](https://t.me/TBombChat)
 
 ## FAQ
 
-⁃ Internet Connection poor:
+⁃ Poor internet connection:
 
 ```Check your connection and try again. Maybe ping any adress to be sure its not your line.```
 
