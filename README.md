@@ -13,7 +13,7 @@
 
 
 > ## Deprecation Warning:
-> **Due to overuse of script, a bunch APIs have been taken offline. It is okay if you do not receive all the messages.**
+> **Due to the overuse of script, a bunch of APIs have been taken offline. It is okay if you do not receive all the messages.**
 
 
 - The application requires active internet connection to contact the APIs
