@@ -160,7 +160,7 @@ For Queries: [Telegram Group](https://t.me/TBombChat)
 
 ⁃ Poor internet connection:
 
-```Check your connection and try again. Maybe ping any adress to be sure its not your line.```
+```Check your internet connection and try pinging any remote address to confirm.```
 
 ⁃ Do you support "X" Country?
 
