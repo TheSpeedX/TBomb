@@ -177,6 +177,10 @@ For Queries: [Telegram Group](https://t.me/TBombChat)
 ⁃ Help, i got the error that the requirements aren't installed, even when the installer has successfully reached the main menu
 
 
+
+
+
+
 The Easy Method:
 ``` pip3 install tbomb```
 Then execute by simply running
