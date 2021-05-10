@@ -13,10 +13,7 @@
 
 
 > ## Deprecation Warning:
-> **All TBomb versions below v2.0 will no longer work after 14-11-2020.**  
-**All TBomb users need to update to v2.0 ASAP**
-
-**Due to overuse of script, a bunch APIs have been taken offline. It is okay if you do not receive all the messages.**
+> **Due to the overuse of script, a bunch of APIs have been taken offline. It is okay if you do not receive all the messages.**
 
 
 - The application requires active internet connection to contact the APIs
@@ -160,4 +157,57 @@ The package `toilet` cannot be installed yet on macOS. But TBomb does still work
 
 For Queries: [Telegram Group](https://t.me/TBombChat)  
 [Check Out My YouTube Channel](https://www.youtube.com/c/SpeedXTech)
+
+## FAQ
+
+⁃ Poor internet connection:
+
+```Check your internet connection and try pinging any remote address to confirm.```
+
+⁃ Do you support "X" Country?
+
+```Most Countries are supported for SMS and only India for calls. The SMS delivery rate might be different for different countries.```
+
+⁃ Can you add support for "X" Country?
+
+```We do what we can, but we cannot promise. Please stay tuned for future support. If you are ready to help then maybe we can do faster.```
+
+⁃ Why is the limit so low?
+
+```Due the amount of requests, the APIs can die. To prevent a bigger outtake of TBomb, it has been limited.``` 
+
+⁃ Help, i got the error that the requirements aren't installed, even when the installer has successfully reached the main menu
+
+
+
+
+
+
+The Easy Method:
+``` pip3 install tbomb```
+Then execute by simply running
+```tbomb```
+The Git Method:
+Clone the repo and Switch to the TBomb Directory and execute this command:
+```pip3 install -r requirements.txt```
+
+⁃ Help, i can't execute TBomb.sh!
+
+Run TBomb Directly with
+```python3 bomber.py```
+
+⁃ VPN? Proxy's? 
+
+```No, TBomb can fail due the high response time or API restrictions.```
+
+⁃ Protection ?
+
+```Use OTP Blockers and activate DND.```
+
+- Call Bombing does not work!
+
+``` It does only work for indian numbers. Other Country's are not supported yet.```
+
+
+Last Update: 29.04.2021
 
