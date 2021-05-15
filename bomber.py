@@ -94,7 +94,7 @@ def do_zip_update():
     else:
         zip_url = "https://github.com/TheSpeedX/TBomb/archive/master.zip"
         dir_name = "TBomb-master"
-    print(ALL_COLORS[0]+"Downloading ZIP ... "+RESET_ALL, end='')
+    print(ALL_COLORS[0]+"Downloading ZIP ... "+RESET_ALL)
     response = requests.get(zip_url)
     if response.status_code == 200:
         zip_content = response.content
