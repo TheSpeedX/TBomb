@@ -88,7 +88,12 @@ def format_phone(num):
 
 def do_zip_update():
     success = False
-    zip_url = "https://github.com/TheSpeedX/TBomb/archive/master.zip"
+    if DEBUG_MODE:
+        zip_url = "https://github.com/TheSpeedX/TBomb/archive/dev.zip"
+        dir_name = "TBomb-dev"
+    else:
+        zip_url = "https://github.com/TheSpeedX/TBomb/archive/master.zip"
+        dir_name = "TBomb-master"
     response = requests.get(zip_url)
     if response.status_code == 200:
         zip_content = response.content
@@ -99,7 +104,7 @@ def do_zip_update():
                     if not filename[1]:
                         continue
                     new_filename = os.path.join(
-                        filename[0].replace("TBomb-master", "."),
+                        filename[0].replace(dir_name, "."),
                         filename[1])
                     source = zip_file.open(member)
                     target = open(new_filename, "wb")
