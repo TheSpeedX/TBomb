@@ -105,6 +105,7 @@ def do_zip_update():
                     target = open(new_filename, "wb")
                     with source, target:
                         shutil.copyfileobj(source, target)
+            success = True
         except Exception:
             mesgdcrt.FailureMessage("Error occured while extracting !!")
     if success:
