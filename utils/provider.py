@@ -12,11 +12,11 @@ class APIProvider:
 
     def __init__(self, cc, target, mode, delay=0):
         try:
+            PROVIDERS = json.load(open('apidata.json', 'r'))
+        except Exception:
             PROVIDERS = requests.get(
                 "https://github.com/TheSpeedX/TBomb/raw/master/apidata.json"
             ).json()
-        except Exception:
-            PROVIDERS = json.load(open('apidata.json', 'r'))
         self.config = None
         self.cc = cc
         self.target = target

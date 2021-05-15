@@ -94,6 +94,7 @@ def do_zip_update():
     else:
         zip_url = "https://github.com/TheSpeedX/TBomb/archive/master.zip"
         dir_name = "TBomb-master"
+    print(ALL_COLORS[0]+"Downloading ZIP ... "+RESET_ALL, end='')
     response = requests.get(zip_url)
     if response.status_code == 200:
         zip_content = response.content
@@ -185,9 +186,11 @@ def check_for_updates():
 
 def notifyen():
     try:
-        noti = requests.get(
-            "https://raw.githubusercontent.com/TheSpeedX/TBomb/master/.notify"
-        ).text.upper()
+        if DEBUG_MODE:
+            url = "https://github.com/TheSpeedX/TBomb/raw/dev/.notify"
+        else:
+            url = "https://github.com/TheSpeedX/TBomb/raw/master/.notify"
+        noti = requests.get(url).text.upper()
         if len(noti) > 10:
             mesgdcrt.SectionMessage("NOTIFICATION: " + noti)
             print()
