@@ -381,7 +381,7 @@ ALL_COLORS = [Fore.GREEN, Fore.RED, Fore.YELLOW, Fore.BLUE,
 RESET_ALL = Style.RESET_ALL
 
 ASCII_MODE = False
-DEBUG_MODE = True
+DEBUG_MODE = False
 
 description = """TBomb - Your Friendly Spammer Application
 
