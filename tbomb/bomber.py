@@ -89,20 +89,14 @@ def format_phone(num):
 
 def do_pip_update():
     success = False
+
     try:
         print(ALL_COLORS[0]+"UPDATING "+RESET_ALL, end='')
-        process = subprocess.Popen(
+        subprocess.check_call(
             [sys.executable, "-m", "pip", "install", "-U", "tbomb"],
-            shell=True,
-            stdout=subprocess.PIPE,
+            stdout=subprocess.STDOUT,
             stderr=subprocess.STDOUT)
-        while process:
-            print(ALL_COLORS[0]+'.'+RESET_ALL, end='')
-            time.sleep(1)
-            returncode = process.poll()
-            if returncode is not None:
-                break
-        success = not process.returncode
+        success = True
     except Exception:
         success = False
     print("\n")
