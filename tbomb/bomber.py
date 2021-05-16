@@ -63,6 +63,8 @@ def bann_text():
       ██    █████▒ ▒████▒ ██   ██ █████▒
       ▒▒    ▒▒▒▒▒   ▒▒▒▒  ▒▒   ▒▒ ▒▒▒▒▒
                                          """
+    if ASCII_MODE:
+        logo = ""
     version = "Version: "+__VERSION__
     contributors = "Contributors: "+" ".join(__CONTRIBUTORS__)
     print(random.choice(ALL_COLORS) + logo + RESET_ALL)
@@ -109,7 +111,7 @@ def do_pip_update():
     else:
         mesgdcrt.FailureMessage("Unable to update TBomb.")
         mesgdcrt.WarningMessage(
-            "Update TBomb by running: pip install -U tbomb")
+            "Update TBomb by running: pip3 install -U tbomb")
 
     sys.exit()
 
@@ -316,7 +318,6 @@ try:
     country_codes = readisdc()["isdcodes"]
 except FileNotFoundError:
     update()
-    pass
 
 __VERSION__ = get_version()
 __CONTRIBUTORS__ = ['SpeedX', 't0xic0der', 'scpketer', 'Stefan']
@@ -324,6 +325,8 @@ __CONTRIBUTORS__ = ['SpeedX', 't0xic0der', 'scpketer', 'Stefan']
 ALL_COLORS = [Fore.GREEN, Fore.RED, Fore.YELLOW, Fore.BLUE,
               Fore.MAGENTA, Fore.CYAN, Fore.WHITE]
 RESET_ALL = Style.RESET_ALL
+
+ASCII_MODE = False
 
 description = """TBomb - Your Friendly Spammer Application
 
@@ -337,6 +340,7 @@ TBomb is not intented for malicious uses.
 
 
 def main():
+    global ASCII_MODE, mesgdcrt
     parser = argparse.ArgumentParser(prog="tbomb",
                                      description=description,
                                      epilog='Coded by SpeedX !!!')
@@ -346,6 +350,8 @@ def main():
                         help="start TBomb with CALL Bomb mode")
     parser.add_argument("-mail", "--mail", action="store_true",
                         help="start TBomb with MAIL Bomb mode")
+    parser.add_argument("-ascii", "--ascii", action="store_true",
+                        help="show only characters of standard ASCII set")
     parser.add_argument("-u", "--update", action="store_true",
                         help="update TBomb")
     parser.add_argument("-c", "--contributors", action="store_true",
@@ -353,6 +359,9 @@ def main():
     parser.add_argument("-v", "--version", action="store_true",
                         help="show current TBomb version")
     args = parser.parse_args()
+    if args.ascii:
+        ASCII_MODE = True
+        mesgdcrt = MessageDecorator("stat")
     if args.version:
         print("Version: ", __VERSION__)
     elif args.contributors:
@@ -368,7 +377,7 @@ def main():
     else:
         choice = ""
         avail_choice = {"1": "SMS", "2": "CALL",
-                        "3": "MAIL (Not Yet Available)"}
+                        "3": "MAIL"}
         try:
             while (choice not in avail_choice):
                 clr()
