@@ -1,7 +1,6 @@
 import threading
 import requests
 import json
-import random
 import time
 
 
@@ -13,11 +12,11 @@ class APIProvider:
 
     def __init__(self, cc, target, mode, delay=0):
         try:
+            PROVIDERS = json.load(open('apidata.json', 'r'))
+        except Exception:
             PROVIDERS = requests.get(
                 "https://github.com/TheSpeedX/TBomb/raw/master/apidata.json"
-                ).json()
-        except Exception:
-            PROVIDERS = json.load(open('apidata.json', 'r'))
+            ).json()
         self.config = None
         self.cc = cc
         self.target = target
@@ -39,7 +38,11 @@ class APIProvider:
 
     def select_api(self):
         try:
-            self.index = random.choice(range(len(APIProvider.api_providers)))
+            if len(APIProvider.api_providers) == 0:
+                raise IndexError
+            self.index += 1
+            if self.index >= len(APIProvider.api_providers):
+                self.index = 0
         except IndexError:
             self.index = -1
             return
