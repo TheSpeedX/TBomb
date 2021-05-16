@@ -94,7 +94,7 @@ def do_pip_update():
         print(ALL_COLORS[0]+"UPDATING "+RESET_ALL, end='')
         subprocess.check_call(
             [sys.executable, "-m", "pip", "install", "-U", "tbomb"],
-            stdout=subprocess.STDOUT,
+            stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT)
         success = True
     except Exception:
