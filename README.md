@@ -158,17 +158,12 @@ The package `toilet` cannot be installed yet on macOS. But TBomb does still work
 - **[34D30Y](34db0y@protonmail.com)**
 - **SC AMAN**
 
-### Contact US  
-
-For Queries: [Telegram Group](https://t.me/TBombChat)  
-[Check Out My YouTube Channel](https://www.youtube.com/c/SpeedXTech)
-
 ## FAQ
 
 **Q:** Is there any TBomb Website/App ?
 
 **A:** There is no official website/app yet.The only official releases of TBomb are published in [Github](https://github.com/TheSpeedX/TBomb) and [PyPi](https://pypi.org/project/tbomb)
-
+##
 **Q:** Poor Internet Connection Detected:
 
 **A:** Here are a few stuff you can try:
@@ -176,19 +171,19 @@ For Queries: [Telegram Group](https://t.me/TBombChat)
 - Make sure `openssl` is installed.
 - Try to `ping` any remote site/address to be sure.
 - Try to reinstall if nothing works.
-
+##
 **Q:** Do you support "X" Country?
 
 **A:** Most Countries are supported for SMS and only India for calls. The SMS delivery rate might be different for different countries.
-
+##
 **Q:** Can you add support for "X" Country?
 
 **A:** We do what we can, but we cannot promise. Please stay tuned for future support. If you are ready to help then maybe we can do faster.
-
+##
 **Q:** Why is the limit so low?
 
 **A:** Due the amount of requests, the APIs can die. To prevent a bigger outtake of TBomb, it has been limited. 
-
+##
 **Q:** Help, I got the error that the requirements aren't installed, even when the installer has successfully reached the main menu
 
 **A:** First, make sure `python3` and `pip3` are installed. 
@@ -198,25 +193,31 @@ For Queries: [Telegram Group](https://t.me/TBombChat)
 - The Git Method:  
     Clone the repo and Switch to the TBomb Directory and execute this command:  
     `pip3 install -r requirements.txt`
-
+##
 **Q:** Help, It says `command 'tbomb' not found` after installing PIP version!
 
 **A:** Try running `sudo pip3 install tbomb`
-
+##
 **Q:** Help, I can't execute TBomb.sh!
 
 **A:** Run TBomb Directly with `python3 bomber.py`
-
+##
 **Q:** Should I use VPN? 
 
 **A:** No, If you are facing high fail rate as TBomb can fail due the high response time or API restrictions.
-
+##
 **Q:** How to get protection ?
 
 **A:** Use OTP blockers and activate DND.
-
+##
 **Q:** Why does it fail?
 
 **A:** Due to the overuse of script, a bunch of APIs have been taken offline. It is okay if you do not receive all the messages.
+##
+### Support
 
-Last Update: 08.08.2021
+For Queries: [Telegram Group](https://t.me/TBombChat)  
+Contributions, issues, and feature requests are welcome!  
+Give a ★ if you like this project!
+
+<p align="right"> Last README Update: 08.08.2021 </p>
