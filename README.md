@@ -165,57 +165,58 @@ For Queries: [Telegram Group](https://t.me/TBombChat)
 
 ## FAQ
 
-- Poor internet connection:
+**Q:** Is there any TBomb Website/App ?
 
-```Check your internet connection and try pinging any remote address to confirm.```
+**A:** There is no official website/app yet.The only official releases of TBomb are published in [Github](https://github.com/TheSpeedX/TBomb) and [PyPi](https://pypi.org/project/tbomb)
 
-FAQ TBomb
+**Q:** Poor Internet Connection Detected:
 
-1)TBomb Website ?
+**A:** Here are a few stuff you can try:
+- Check your connection.
+- Make sure `openssl` is installed.
+- Try to `ping` any remote site/address to be sure.
+- Try to reinstall if nothing works.
 
-https://Github.com/TheSpeedX/TBomb
+**Q:** Do you support "X" Country?
 
-2) Internet Connection poor:
+**A:** Most Countries are supported for SMS and only India for calls. The SMS delivery rate might be different for different countries.
 
-Check your connection and try again. Maybe ping any adress to be sure its not your line.
+**Q:** Can you add support for "X" Country?
 
-3) Do you support "X" Country?
+**A:** We do what we can, but we cannot promise. Please stay tuned for future support. If you are ready to help then maybe we can do faster.
 
-Most Countries are supported for SMS and only India for calls. The SMS delivery rate might be different for different countries.
+**Q:** Why is the limit so low?
 
-4) Can you add support for "X" Country?
+**A:** Due the amount of requests, the APIs can die. To prevent a bigger outtake of TBomb, it has been limited. 
 
-We do what we can, but we cannot promise. Please stay tuned for future support. If you are ready to help then maybe we can do faster.
+**Q:** Help, I got the error that the requirements aren't installed, even when the installer has successfully reached the main menu
 
-5) Why is the Limit so low?
+**A:** First, make sure `python3` and `pip3` are installed. 
+- The Easy Method:  
+   `pip3 install tbomb`  
+    Then execute by simply running `tbomb`
+- The Git Method:  
+    Clone the repo and Switch to the TBomb Directory and execute this command:  
+    `pip3 install -r requirements.txt`
 
-Due the amount of requests, the APIs can die. To prevent a bigger outtake of TBomb, it has been limited. 
+**Q:** Help, It says `command 'tbomb' not found` after installing PIP version!
 
-6) Help, i got the error that the requirements aren't installed, even when the installer has successfully reached the main menu
+**A:** Try running `sudo pip3 install tbomb`
 
-The Easy Method:
-pip3 install tbomb
-Then execute by simply running
-tbomb
-The Git Method:
-Clone the repo and Switch to the TBomb Directory and execute this command: 
-pip3 install -r requirements.txt
+**Q:** Help, I can't execute TBomb.sh!
 
-7) Help, i can't execute TBomb.sh!
+**A:** Run TBomb Directly with `python3 bomber.py`
 
-Run TBomb Directly with 
-python3 bomber.py
+**Q:** Should I use VPN? 
 
-8) VPN? 
+**A:** No, If you are facing high fail rate as TBomb can fail due the high response time or API restrictions.
 
-No, TBomb can fail due the high response time or API restrictions.
+**Q:** How to get protection ?
 
-9)   Protection ?
+**A:** Use OTP blockers and activate DND.
 
-Use OTP blockers and activate DND.
+**Q:** Why does it fail?
 
-10) Why does it fail?
+**A:** Due to the overuse of script, a bunch of APIs have been taken offline. It is okay if you do not receive all the messages.
 
-Due to the overuse of script, a bunch of APIs have been taken offline. It is okay if you do not receive all the messages.
-
-Last Update: 29.07.2021
+Last Update: 08.08.2021
