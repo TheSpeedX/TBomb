@@ -149,7 +149,7 @@ The package `toilet` cannot be installed yet on macOS. But TBomb does still work
 - Catch **[t0xic0der](https://github.com/t0xic0der)** at https://atlasdoc.netlify.app
 - Check **[Avinash](https://github.com/AvinashReddy3108)** at https://github.com/AvinashReddy3108
 - Mail **[scpketer](https://github.com/scpketer)** at scpketer@protonmail.ch
-- Mail **[Stefan](https://github.com/0n1cOn3)** at 0n1cOn3@gmx.ch
+- Mail **[0n1cOn3](https://github.com/0n1cOn3)** at 0n1cOn3@gmx.ch
 - Ping **Rieltar** at https://t.me/RieltarReborn
 
 
@@ -158,16 +158,6 @@ The package `toilet` cannot be installed yet on macOS. But TBomb does still work
 - **[34D30Y](34db0y@protonmail.com)**
 - **SC AMAN**
 
-### TODO:
-
-- [x] Make Code More Readable and Extensible
-- [x] Add Mail Spam Module
-- [x] Add Mail Spam APIs
-- [x] Add Update Feature using git
-- [x] Add Update Feature without git (download zip and extract)
-- [x] Split code into multiple files (after Deprecation)
-
-
 ### Contact US  
 
 For Queries: [Telegram Group](https://t.me/TBombChat)  
@@ -175,53 +165,58 @@ For Queries: [Telegram Group](https://t.me/TBombChat)
 
 ## FAQ
 
-- Poor internet connection:
+**Q:** Is there any TBomb Website/App ?
 
-```Check your internet connection and try pinging any remote address to confirm.```
+**A:** There is no official website/app yet.The only official releases of TBomb are published in [Github](https://github.com/TheSpeedX/TBomb) and [PyPi](https://pypi.org/project/tbomb)
 
-- Do you support "X" Country?
+**Q:** Poor Internet Connection Detected:
 
-```Most Countries are supported for SMS and only India for calls. The SMS delivery rate might be different for different countries.```
+**A:** Here are a few stuff you can try:
+- Check your connection.
+- Make sure `openssl` is installed.
+- Try to `ping` any remote site/address to be sure.
+- Try to reinstall if nothing works.
 
-- Can you add support for "X" Country?
+**Q:** Do you support "X" Country?
 
-```We do what we can, but we cannot promise. Please stay tuned for future support. If you are ready to help then maybe we can do faster.```
+**A:** Most Countries are supported for SMS and only India for calls. The SMS delivery rate might be different for different countries.
 
-- Why is the limit so low?
+**Q:** Can you add support for "X" Country?
 
-```Due the amount of requests, the APIs can die. To prevent a bigger outtake of TBomb, it has been limited.``` 
+**A:** We do what we can, but we cannot promise. Please stay tuned for future support. If you are ready to help then maybe we can do faster.
 
-- Help, i got the error that the requirements aren't installed, even when the installer has successfully reached the main menu
+**Q:** Why is the limit so low?
 
-The Easy Method:
+**A:** Due the amount of requests, the APIs can die. To prevent a bigger outtake of TBomb, it has been limited. 
 
-```pip3 install tbomb```
+**Q:** Help, I got the error that the requirements aren't installed, even when the installer has successfully reached the main menu
 
-Then execute by simply running
+**A:** First, make sure `python3` and `pip3` are installed. 
+- The Easy Method:  
+   `pip3 install tbomb`  
+    Then execute by simply running `tbomb`
+- The Git Method:  
+    Clone the repo and Switch to the TBomb Directory and execute this command:  
+    `pip3 install -r requirements.txt`
 
-```tbomb```
+**Q:** Help, It says `command 'tbomb' not found` after installing PIP version!
 
-The Git Method:  
-Clone the repo and Switch to the TBomb Directory and execute this command:  
-```pip3 install -r requirements.txt```
+**A:** Try running `sudo pip3 install tbomb`
 
-- Help, i can't execute TBomb.sh!
+**Q:** Help, I can't execute TBomb.sh!
 
-Run TBomb Directly with
-```python3 bomber.py```
+**A:** Run TBomb Directly with `python3 bomber.py`
 
-- VPN? Proxy's? 
+**Q:** Should I use VPN? 
 
-```No, TBomb can fail due the high response time or API restrictions.```
+**A:** No, If you are facing high fail rate as TBomb can fail due the high response time or API restrictions.
 
-- Protection ?
+**Q:** How to get protection ?
 
-```Use OTP Blockers and activate DND.```
+**A:** Use OTP blockers and activate DND.
 
-- Call Bombing does not work!
+**Q:** Why does it fail?
 
-``` It does only work for indian numbers. Other Country's are not supported yet.```
+**A:** Due to the overuse of script, a bunch of APIs have been taken offline. It is okay if you do not receive all the messages.
 
-
-Last Update: 15.05.2021
-
+Last Update: 08.08.2021
