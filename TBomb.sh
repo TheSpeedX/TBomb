@@ -1,28 +1,5 @@
 #!/bin/bash
 
-detect_distro() {
-    if [[ "$OSTYPE" == linux-android* ]]; then
-            distro="termux"
-    fi
-
-    if [ -z "$distro" ]; then
-        distro=$(ls /etc | awk 'match($0, "(.+?)[-_](?:release|version)", groups) {if(groups[1] != "os") {print groups[1]}}')
-    fi
-
-    if [ -z "$distro" ]; then
-        if [ -f "/etc/os-release" ]; then
-            distro="$(source /etc/os-release && echo $ID)"
-        elif [ "$OSTYPE" == "darwin" ]; then
-            distro="darwin"
-        else 
-            distro="invalid"
-        fi
-    fi
-}
-
-pause() {
-    read -n1 -r -p "Press any key to continue..." key
-}
 banner() {
     clear
     echo -e "\e[1;31m"
@@ -35,7 +12,7 @@ banner() {
         echo -e "\e[4;34m This Bomber Was Created By \e[1;32mSpeedX \e[0m"
     else
         echo -e "\e[1;34mCreated By \e[1;34m"
-        toilet -f mono12 -F border SpeedX
+        toilet -f mono12 -F gay:border SpeedX
     fi
     echo -e "\e[1;34m For Any Queries Join Me!!!\e[0m"
     echo -e "\e[1;32m           Telegram: https://t.me/TBombChat \e[0m"
@@ -107,11 +84,11 @@ do
     banner
     echo -e "\e[4;31m Please Read Instruction Carefully !!! \e[0m"
     echo " "
-    echo "Press 1 To  Start SMS  Bomber "
-    echo "Press 2 To  Start CALL Bomber "
-    echo "Press 3 To  Start MAIL Bomber (Not Yet Available)"
-    echo "Press 4 To  Update (Works On Linux And Linux Emulators) "
-    echo "Press 5 To  Exit "
+    echo " [1] SMS BOMBER"
+    echo " [2] CALL BOMBER"
+    echo " [3] MAIL BOMBER(NEW)"
+    echo " [4] UPDATE"
+    echo " [99] EXIT"
     read ch
     clear
     if [ $ch -eq 1 ];then
@@ -130,11 +107,11 @@ do
         echo -e "\e[1;34m RUN TBomb Again..."
         pause
         exit
-    elif [ $ch -eq 5 ];then
+    elif [ $ch -eq 99 ];then
         banner
         exit
     else
-        echo -e "\e[4;32m Invalid Input !!! \e[0m"
+        echo -e "\e[4;32m INVALID INPUT TRY AGAIN LATER !!! \e[0m"
         pause
     fi
 done
