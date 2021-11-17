@@ -6,7 +6,7 @@ detect_distro() {
     fi
 
     if [ -z "$distro" ]; then
-        distro=$(ls /etc | awk 'match($0, "(.+?)[-_](?:release|version)", groups) {if(groups[1] != "os") {print groups[1]}}')
+        distro=$(ls /etc | awk 'match($0, "(.+?)[-_](?:release|version)", groups) {if(groups[1] != "os") {print groups[1]}}' | head -n 1)
     fi
 
     if [ -z "$distro" ]; then
