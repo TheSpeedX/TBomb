@@ -158,14 +158,6 @@ The package `toilet` cannot be installed yet on macOS. But TBomb does still work
 - **[34D30Y](34db0y@protonmail.com)**
 - **SC AMAN**
 
-### TODO:
-
-- [x] Make Code More Readable and Extensible
-- [ ] Add More Mail Spam APIs
-- [ ] Add More SMS Spam APIs
-- [ ] Add More Call Spam APIs
-- [ ] Resolve threading issue in some devices
-
 ## FAQ
 
 **Q:** Is there any TBomb Website/App ?
