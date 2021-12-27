@@ -220,4 +220,4 @@ For Queries: [Telegram Group](https://t.me/TBombChat)
 Contributions, issues, and feature requests are welcome!  
 Give a ★ if you like this project!
 
-<p align="right"> Last README Update: 08.08.2021 </p>
+<p align="right"> Last FAQ Update: 08.08.2021 </p>

@@ -76,9 +76,14 @@ def check_intr():
     try:
         requests.get("https://motherfuckingwebsite.com")
     except Exception:
-        bann_text()
-        mesgdcrt.FailureMessage("Poor internet connection detected")
-        sys.exit(2)
+        try:
+            requests.get("https://google.com")
+        except Exception:
+            bann_text()
+            mesgdcrt.FailureMessage("Poor internet connection detected")
+            sys.exit(2)
+        
+    
 
 
 def format_phone(num):
