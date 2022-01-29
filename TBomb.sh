@@ -21,27 +21,27 @@ detect_distro() {
 }
 
 pause() {
-    read -n1 -r -p "Press any key to continue..." key
+    read -n1 -r -p "Devam etmek için herhangi bir tuşa basın..." key
 }
 banner() {
     clear
     echo -e "\e[1;31m"
     if ! [ -x "$(command -v figlet)" ]; then
-        echo 'Introducing TBomb'
+        echo 'LewiBomb'la Tanış'
     else
         figlet TBomb
     fi
     if ! [ -x "$(command -v toilet)" ]; then
-        echo -e "\e[4;34m This Bomber Was Created By \e[1;32mSpeedX \e[0m"
+        echo -e "\e[4;34m This Bomber Was Recoded by \e[1;32mLewimein \e[0m"
     else
         echo -e "\e[1;34mCreated By \e[1;34m"
         toilet -f mono12 -F border SpeedX
     fi
-    echo -e "\e[1;34m For Any Queries Join Me!!!\e[0m"
-    echo -e "\e[1;32m           Telegram: https://t.me/TBombChat \e[0m"
-    echo -e "\e[4;32m   YouTube: https://www.youtube.com/c/SpeedXTech \e[0m"
+    echo -e "\e[1;34m Tüm Sorularınız İçin Bana Katılın!!!\e[0m"
+    echo -e "\e[1;32m           Discord: https://discord.gg/lewimein \e[0m"
+    echo -e "\e[4;32m   YouTube: https://www.youtube.com/channel/UCbHACamCyFT6V_U2AtdgRsQ \e[0m"
     echo " "
-    echo "NOTE: Kindly move to the PIP version Of TBomb for more stability."
+    echo "NOT: Daha fazla kararlılık için lütfen LewiBomb'un PIP sürümüne geçin."
     echo " "
 }
 
@@ -80,9 +80,9 @@ install_deps(){
         done
         $PIP install -r requirements.txt
     else
-        echo "We could not install dependencies."
-        echo "Please make sure you have git, python3, pip3 and requirements installed."
-        echo "Then you can execute bomber.py ."
+        echo "Bağımlılıkları yükleyemedik."
+        echo "Lütfen git, python3, pip3 ve gereksinimlerin kurulu olduğundan emin olun."
+        echo "Ardından bomber.py dosyasını çalıştırabilirsiniz."
         exit
     fi
 }
@@ -92,26 +92,26 @@ pause
 detect_distro
 init_environ
 if [ -f .update ];then
-    echo "All Requirements Found...."
+    echo "Tüm Gereksinimler Bulundu...."
 else
-    echo 'Installing Requirements....'
+    echo 'Yükleme Gereksinimleri...'
     echo .
     echo .
     install_deps
-    echo This Script Was Made By SpeedX > .update
-    echo 'Requirements Installed....'
+    echo This Script Was Recoded by Lewimein > .update
+    echo 'Yüklenen Gereksinimler....'
     pause
 fi
 while :
 do
     banner
-    echo -e "\e[4;31m Please Read Instruction Carefully !!! \e[0m"
+    echo -e "\e[4;31m Lütfen Talimatı Dikkatlice Okuyun !!! \e[0m"
     echo " "
-    echo "Press 1 To  Start SMS  Bomber "
-    echo "Press 2 To  Start CALL Bomber "
-    echo "Press 3 To  Start MAIL Bomber (Not Yet Available)"
-    echo "Press 4 To  Update (Works On Linux And Linux Emulators) "
-    echo "Press 5 To  Exit "
+    echo "Press 1 To  SMS Bomber'ı başlat "
+    echo "Press 2 To  ARAMA Bomber'ı başlat "
+    echo "Press 3 To  MAIL Bomber'ı Başlat (Henüz uygun değil)"
+    echo "Press 4 Dosyaları Güncelle (Works On Linux And Linux Emulators) "
+    echo "Press 5 To  Çıkış "
     read ch
     clear
     if [ $ch -eq 1 ];then
@@ -124,17 +124,17 @@ do
         $PYTHON bomber.py --mail
         exit
     elif [ $ch -eq 4 ];then
-        echo -e "\e[1;34m Downloading Latest Files..."
+        echo -e "\e[1;34m En Son Dosyalar İndiriliyor..."
         rm -f .update
         $PYTHON bomber.py --update
-        echo -e "\e[1;34m RUN TBomb Again..."
+        echo -e "\e[1;34m LewiBomb'u Tekrar Çalıştırın"
         pause
         exit
     elif [ $ch -eq 5 ];then
         banner
         exit
     else
-        echo -e "\e[4;32m Invalid Input !!! \e[0m"
+        echo -e "\e[4;32m Geçersiz Giriş !!! \e[0m"
         pause
     fi
 done
