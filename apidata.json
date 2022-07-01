@@ -4,7 +4,7 @@
         "Avinash",
         "Reiltar"
     ],
-    "version": "2.3",
+    "version": "2.3.5",
     "sms": {
 
         "977":[
@@ -40,8 +40,8 @@
                 "name":"Clamphook",
                 "method":"POST",
                 "url":"https://backend.clamphook.com//auth/register",
-                "params":{
-                    "number":"{cc}-{target}"
+                "json":{
+                    "mobile":"{cc}-{target}"
                 },
                 "headers":{
                     "Host":"backend.clamphook.com",
