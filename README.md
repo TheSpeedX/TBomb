@@ -9,10 +9,12 @@
 
 <p align="center">A free and open-source SMS/Call bombing application</p>
 
-## NOTE:
+## NOTES:
 
 
 > **Due to the overuse of script, a bunch of APIs have been taken offline. It is okay if you do not receive all the messages.**
+
+> **Termux version from Play Store is not supported since 2019, please use the latest version from F-Droid Store!**
 
 
 - The application requires active internet connection to contact the APIs
