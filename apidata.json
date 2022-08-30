@@ -76,6 +76,16 @@
                 "identifier": "sent"
             },
             {
+                "name": "allensolly",
+                "method": "POST",
+                "url": "https://www.allensolly.com/capillarylogin/validateMobileOrEMail",
+                "data": {
+                    "mobileoremail": "{target}",
+                    "name": "markluther"
+                },
+               "identifier": "true"
+            },
+            {
                 "name": "frotels",
                 "method": "POST",
                 "url": "https://www.frotels.com/appsendsms.php",
