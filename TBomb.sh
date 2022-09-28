@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 detect_distro() {
     if [[ "$OSTYPE" == linux-android* ]]; then
