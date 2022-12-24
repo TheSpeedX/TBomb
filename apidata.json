@@ -95,6 +95,28 @@
                 },
                 "identifier":"\"success\":true"
                 
+            },
+            {
+                "name":"OpenAI",
+                "method":"POST",
+                "url":"https://api.openai.com/dashboard/onboarding/phone/verify",
+                "json":{
+                    "channel":"sms",
+                    "country_iso":"NP",
+                    "phone_number":"{target}"
+                },
+                "headers":{
+                    "Host":"api.openai.com",
+                    "User-Agent":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:108.0) Gecko/20100101 Firefox/108.0",
+                    "Accept":"*/*",
+                    "Accept-Language":"en-US,en;q=0.5",
+                    "Accept-Encoding":"gzip, deflate, br",
+                    "Referer":"https://beta.openai.com/",
+                    "Content-Type":"application/json",
+                    "Authorization":"Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1UaEVOVUpHTkVNMVFURTRNMEZCTWpkQ05UZzVNRFUxUlRVd1FVSkRNRU13UmtGRVFrRXpSZyJ9.eyJodHRwczovL2FwaS5vcGVuYWkuY29tL3Byb2ZpbGUiOnsiZW1haWwiOiJqaXdhY2k4MDA0QHN1YmRpdG8uY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJnZW9pcF9jb3VudHJ5IjoiTlAifSwiaXNzIjoiaHR0cHM6Ly9hdXRoMC5vcGVuYWkuY29tLyIsInN1YiI6ImF1dGgwfDYzYTZmYjRkYzUwODM3YzBhMjgwOGM2YiIsImF1ZCI6WyJodHRwczovL2FwaS5vcGVuYWkuY29tL3YxIiwiaHR0cHM6Ly9vcGVuYWkuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY3MTg4NzY5OCwiZXhwIjoxNjcyNDkyNDk4LCJhenAiOiJEUml2c25tMk11NDJUM0tPcHFkdHdCM05ZdmlIWXp3RCIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwgb2ZmbGluZV9hY2Nlc3MifQ.hjtUHmwloXRW-szTanALc7dqpeM_lBO7bZFc7T-3yDruUKPRVEa0DP_-OemRcQ1uTZTg-ISB7Ub5EX5OKO_5ZwrUj4TKtk6USwluK0DIYJNPqMcofL76mWuK2Sh2VXDLfu_-AgOfJdqFDdKGxo4yhY_DWd-M1LKz8cE-91DJzczkrUny9xSq9sIbj5Tz45oq_a_2wkABjlz2-ilqkEkH_MrjrPSP-0Rh7iT3lB9p00WB88AQn_ZnwLfV8DvxbOPr3223LakiOurxhzCVe02QTuJzqkYPYug218GJ7o7iWaXI-EzyyJlIMqDTCKXZIc79X9MYsl8DVsMkYGBmBUZlEg"
+
+                },
+                "identifier":"pending"
             }
     
         ],
