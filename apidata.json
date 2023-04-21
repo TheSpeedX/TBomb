@@ -391,7 +391,7 @@
                 "url": "https://api.gotinder.com/v2/auth/sms/send",
                 "params": {
                     "auth_type": "sms",
-                    "locale": "ru"
+                    "locale": "en"
                 },
                 "data": {
                     "phone_number": "{cc}{target}"
