@@ -81,7 +81,7 @@ def check_intr():
         sys.exit(2)
 
 
-def format_phone(num):
+def format_phone(num):923080637392
     num = [n for n in num if n in string.digits]
     return ''.join(num).strip()
 
@@ -431,9 +431,9 @@ if __name__ == "__main__":
     else:
         choice = ""
         avail_choice = {
-            "1": "SMS",
-            "2": "CALL",
-            "3": "MAIL"
+            "100": "SMS",
+            "20": "CALL",
+            "30": "MAIL"
         }
         try:
             while (choice not in avail_choice):
