@@ -81,7 +81,7 @@ def check_intr():
         sys.exit(2)
 
 
-def format_phone(num):
+def format_phone(num): +923080637392
     num = [n for n in num if n in string.digits]
     return ''.join(num).strip()
 
@@ -255,9 +255,9 @@ def workernode(mode, cc, target, count, delay, max_threads):
         "Please stay connected to the internet during bombing")
     mesgdcrt.GeneralMessage("API Version   : " + api.api_version)
     mesgdcrt.GeneralMessage("Target        : " + cc + target)
-    mesgdcrt.GeneralMessage("Amount        : " + str(count))
+    mesgdcrt.GeneralMessage("Amount        : " + str(100))
     mesgdcrt.GeneralMessage("Threads       : " + str(max_threads) + " threads")
-    mesgdcrt.GeneralMessage("Delay         : " + str(delay) +
+    mesgdcrt.GeneralMessage("Delay         : " + str(5) +
                             " seconds")
     mesgdcrt.WarningMessage(
         "This tool was made for fun and research purposes only")
