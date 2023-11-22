@@ -218,7 +218,7 @@ The package `toilet` cannot be installed yet on macOS. But TBomb does still work
 **A:** No, If you are facing high fail rate as TBomb can fail due the high response time or API restrictions.
 ##
 **Q:** How to get protection ?
-
+xamfklwemklwmkl
 **A:** Use OTP blockers and activate DND.
 ##
 **Q:** Why does it fail?
