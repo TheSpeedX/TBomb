@@ -62,10 +62,25 @@ Install `tbomb` package by running:
 pip3 install tbomb
 ```
 
-Run TBomb by just typing:
+Then check location of tbomb by typing :
 ```shell script
-tbomb
+pip3 show tbomb
 ```
+After that you get location of the tbomb package, now for running that copy that location and at last replace site-packages by scripts and then add tbomb.exe at last , here is the example :
+``` shell script
+Location: C:\Users\saimiren\AppData\Roaming\Python\Python311\site-packages
+```
+```shell script
+C:\users\saimiren\appdata\roaming\python\python311\scripts\tbomb.exe
+```
+Alternative for above, for skipping the long location path , use the following :
+```shell script
+set PATH=%PATH%;C:\users\saim\appdata\roaming\python\python311\scripts
+```
+After running this command, you should be able to use the "tbomb" command directly from the command prompt.
+If you want to make this change permanent, you can update the PATH environment variable in the system settings.
+
+!!! replace the location_path with your location of tbomb package !!!
 
 ### Install from GIT
 
